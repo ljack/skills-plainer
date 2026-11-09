@@ -10,7 +10,9 @@ Evidence objects everywhere have the same shape: `{"file": "SKILL.md", "line": 4
   "id": "impeccable",                              // required, = filename
   "analyzedAt": "2026-11-07",                      // required, ISO date
   "analyzer": "skills-plainer 1.0.0 · claude-opus-5-5",
+  "sourceCommit": "a1b2c3d...",                  // optional: the repository commit that was analyzed, when known
   "sourceUrl": "https://github.com/owner/repo",  // optional: the skill's public home. Set it only when the address opens without logging in
+  "sourcePath": "skills/example",              // optional: verified skill directory within that repository; "" means repository root. Omit when unknown. Combined with sourceUrl and the full sourceCommit SHA, enables file/line links to the analyzed revision.
   "source": { "path": "~/.claude/skills/impeccable", "origin": "user" },  // origin: user | project | plugin:<marketplace>
   "readInFull": ["SKILL.md", "reference/new-work.md"],  // files you actually read end to end
   "readPartially": [{ "file": "reference/critique.md", "upTo": 300 }],  // files read only in part

@@ -303,6 +303,9 @@ body[data-layer="plain"] .internal{display:none}
 /* ---------- evidence chips ---------- */
 .ev{display:inline-flex;align-items:center;font-family:var(--mono);font-size:12px;background:none;border:1px solid var(--ink-3);color:var(--ink-2);padding:1px 6px;margin:0 6px 4px 0;cursor:pointer;border-radius:2px}
 .ev:hover{background:var(--yellow);border-color:var(--ink);color:var(--ink)}
+a.ev,a.filechip{text-decoration:none}
+.source-ref{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}
+.source-ref:hover{text-decoration-thickness:2px}
 
 /* ---------- inspector (non-modal side panel) ---------- */
 .insp{position:fixed;top:0;right:0;bottom:0;width:min(560px,100vw);background:#fff;border-left:6px solid var(--ink);z-index:30;display:flex;flex-direction:column;transform:translateX(105%);transition:transform .35s var(--ease);visibility:hidden}
@@ -337,7 +340,24 @@ body[data-layer="plain"] .internal{display:none}
 .group-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:var(--s2) var(--s4);padding-bottom:var(--s3);border-bottom:6px solid var(--ink)}
 .group-head h2{font-size:30px;font-weight:800;letter-spacing:-.02em}
 .draft-count{font-size:15px;font-weight:700;background:var(--yellow);color:var(--ink);padding:2px 10px}
-.line-row{display:grid;grid-template-columns:72px minmax(0,1.3fr) minmax(0,2fr) repeat(3,110px);gap:var(--s5);align-items:center;padding:var(--s5) 0;border-bottom:2px solid var(--ink);text-decoration:none}
+.draft-note a{color:inherit;text-underline-offset:3px;font-weight:700}
+.drafts-intro{display:flex;align-items:start;justify-content:space-between;gap:var(--s5);margin-bottom:var(--s6)}
+.drafts-intro p{max-width:65ch;font-size:16px;line-height:1.5;color:var(--ink-2)}
+.drafts-intro .btn{flex:none}
+.draft-list{list-style:none;margin:0;padding:0;border-top:6px solid var(--ink)}
+.draft-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s5);padding:var(--s5) 0;border-bottom:1px solid var(--rule)}
+.draft-row h2{font-size:24px;line-height:1.2;font-weight:800;overflow-wrap:anywhere}
+.draft-group,.draft-date{margin-top:var(--s2);font-size:15px;line-height:1.5;color:var(--ink-2)}
+.draft-when{text-align:right}
+.draft-eta{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
+.drafts-empty{border-top:6px solid var(--ink);padding-top:var(--s5)}
+.drafts-empty h2{font-size:24px;margin-bottom:var(--s3)}
+@media (max-width:600px){
+  .drafts-intro{flex-wrap:wrap}
+  .draft-row{grid-template-columns:minmax(0,1fr);gap:var(--s3)}
+  .draft-when{text-align:left}
+}
+.line-row{display:grid;grid-template-columns:72px minmax(0,1.3fr) minmax(0,2fr) repeat(5,84px);gap:var(--s4);align-items:center;padding:var(--s5) 0;border-bottom:2px solid var(--ink);text-decoration:none}
 .line-row:hover{background:var(--tint)}
 .line-row .bullet{font-size:30px;justify-self:center}
 .line-row h3{font-size:30px;font-weight:800;letter-spacing:-.02em;overflow-wrap:anywhere}
@@ -399,7 +419,7 @@ dialog.pub::backdrop{background:rgba(20,20,20,.55)}
   .overview{grid-template-columns:minmax(0,1fr)}
   .overview-map{position:static;border-left:0;padding-left:0;border-top:2px solid var(--rule);padding-top:var(--s5)}
   .map-wide-grid{grid-template-columns:minmax(0,1fr)}
-  .line-row{grid-template-columns:56px minmax(0,1fr) repeat(3,90px)}
+  .line-row{grid-template-columns:56px minmax(0,1fr) repeat(5,72px)}
   .line-row .hl{grid-column:2/-1;grid-row:2}
   .term-grid{grid-template-columns:minmax(0,1fr)}
 }
@@ -448,11 +468,13 @@ dialog.pub::backdrop{background:rgba(20,20,20,.55)}
   .patterns,.gloss{grid-template-columns:minmax(0,1fr)}
   .home{padding:var(--s5) var(--s4) var(--s8)}
   .home-lede{grid-template-columns:minmax(0,1fr);gap:var(--s5)}
-  .line-row{grid-template-columns:44px minmax(0,1fr);gap:var(--s3)}
+  .line-row{grid-template-columns:44px repeat(2,minmax(0,1fr));gap:var(--s3)}
+  .line-row>div:not(.stat){grid-column:2/-1}
   .line-row .bullet{font-size:22px}
   .line-row h3{font-size:24px}
   .line-row .hl{grid-column:1/-1;grid-row:auto}
-  .line-row .stat{display:none}
+  .line-row .stat:not(.rate){display:none}
+  .line-row .stat.rate:nth-last-child(2){grid-column:2}
   .cmp{padding:var(--s5) var(--s4)}
   .cmp-cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 var(--s4)}
   .cmp-cols .lab{grid-column:1/-1;border-bottom:0;padding-bottom:0}
@@ -468,3 +490,23 @@ dialog.pub::backdrop{background:rgba(20,20,20,.55)}
 .draft-note{margin:0;padding:10px var(--s5);background:var(--yellow);color:var(--ink);font-size:15px;border-bottom:2px solid var(--ink)}
 .draft-schedule{display:block;margin-top:var(--s1)}
 .src-link{color:#fff;font-size:15px;font-weight:600;text-underline-offset:3px;align-self:center;white-space:nowrap}
+.rates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s6);border-top:2px solid var(--ink);padding-top:var(--s4)}
+.rates h3{font-size:20px;font-weight:800;letter-spacing:-.01em}
+.rate-fig{font-size:17px;color:var(--ink-2);margin-top:var(--s2);font-variant-numeric:tabular-nums}
+.rate-fig b{font-size:32px;font-weight:800;color:var(--ink);font-stretch:88%}
+.rate-word{font-weight:700;font-size:17px;margin-top:var(--s1)}
+.rates ul{margin:var(--s3) 0 0;padding-left:var(--s4);font-size:15px;line-height:1.45;color:var(--ink-2)}
+.rates li+li{margin-top:var(--s1)}
+.rates+.note{margin-top:var(--s5)}
+.ver-notes{margin:0;padding-left:var(--s4)}
+.ver-notes li+li{margin-top:var(--s1)}
+@media (max-width:640px){.rates{grid-template-columns:minmax(0,1fr);gap:var(--s5)}}
+.tbl-wrap+.note{margin-top:var(--s3)}
+.lede-side{min-width:0}
+.suggest{margin-top:var(--s4)}
+.suggest label{display:block;font-size:14px;color:var(--ink-2);margin-bottom:var(--s2)}
+.suggest-row{display:flex;flex-wrap:wrap;gap:var(--s2)}
+.suggest input{flex:1 1 180px;min-width:0;font:inherit;font-size:16px;border:2px solid var(--ink);padding:8px 10px;background:#fff;color:var(--ink)}
+.suggest input::placeholder{color:var(--ink-3)}
+.suggest input[aria-invalid="true"]{border-color:var(--red)}
+.suggest p.err{color:var(--ink);font-weight:700}

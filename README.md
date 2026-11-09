@@ -53,3 +53,7 @@ python3 skills-plainer/scripts/serve.py --open impeccable
 ```
 
 It opens `http://127.0.0.1:7341/`. Sections: In plain words, When it fires, Load map, Commands, One request, Anatomy, Scripts, Patterns to borrow, Guardrails, Risks, Scorecard, Glossary, Verdict. Point at a route on the load map to isolate it. Select any station or `file:line` chip to open the file with the cited line highlighted.
+
+Choose **Drafts** in the navigation to list draft skills and their publication ETAs, soonest first. Dates include your time zone; drafts without a timer say **Not scheduled**. The public list exposes names, groups and publication times, but not draft share links or analysis content. Use **Refresh** to reload the schedule; relative ETAs update every minute. Publication checks run hourly.
+
+File-and-line references, such as `SKILL.md:16-24`, link to the exact analyzed source revision when the analysis records a public GitHub repository, full commit SHA and verified `sourcePath`. The same applies to evidence and file chips. Unknown source locations retain the local inspector behavior; repository-root paths are never guessed. Automatically fetched skills record their repository subdirectory for future analyses.

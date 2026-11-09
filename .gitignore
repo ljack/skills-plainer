@@ -9,3 +9,4 @@ PRODUCT.md
 skills-plainer/scripts/publish.py
 skills-plainer/scripts/daily.py
 skills-plainer/scripts/rate.py
+skills-plainer/scripts/suggestions.py

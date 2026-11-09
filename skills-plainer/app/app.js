@@ -1,4 +1,5 @@
 // skills-plainer web app: renders skills-plainer/analysis@1 JSON as a transit-diagram reader.
+import { sourceFileURL, linkSourceReferences } from "./source-links.js";
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const app = $("#app");
@@ -97,7 +98,7 @@ function prep(a) {
 const cleanQuote = (q) => String(q).replace(/\*\*|__|(?<![\w*])\*(?!\s)|(?<!\s)\*(?![\w*])/g, "").replace(/^[\s"“”']+|[\s"“”']+$/g, "");
 
 // ------------------------------------------------------------ chips
-const ev = (e) => !e || !e.file ? "" : e.kind === "strings" || e.kind === "inferred" ? `<button type="button" class="ev" data-file="${esc(e.file)}" title="${esc(e.note || e.kind)}">${esc(e.file)} · ${e.kind === "strings" ? "read from binary" : "inferred"}</button>` : `<button type="button" class="ev" data-file="${esc(e.file)}" data-line="${e.line || ""}" title="Open ${esc(e.file)}${e.line ? " at line " + e.line : ""}">${esc(e.file)}${e.line ? ":" + e.line : ""}${e.end ? "–" + e.end : ""}</button>`;
+const ev = (e) => !e || !e.file ? "" : e.kind === "strings" || e.kind === "inferred" ? `<button type="button" class="ev" data-file="${esc(e.file)}" title="${esc(e.note || e.kind)}">${esc(e.file)} · ${e.kind === "strings" ? "read from binary" : "inferred"}</button>` : `<button type="button" class="ev" data-file="${esc(e.file)}" data-line="${e.line || ""}" data-end="${e.end || ""}" title="Open ${esc(e.file)}${e.line ? " at line " + e.line : ""}">${esc(e.file)}${e.line ? ":" + e.line : ""}${e.end ? "–" + e.end : ""}</button>`;
 const evs = (list) => (list || []).map(ev).join("");
 function fileChip(a, p) {
   const f = a._files.get(p.split("#")[0]);
@@ -219,7 +220,7 @@ function pubControl(id) {
   return `${live ? `<a href="${esc(live.share)}" target="_blank" rel="noopener">${draft ? "Draft page" : "Live page"}</a>` : ""}<button type="button" class="pub-btn" data-publish="${esc(id)}">${!live ? "Publish draft" : draft ? "Update draft" : "Update live page"}</button>`;
 }
 function topbar(active, id) {
-  return `<nav class="topbar" aria-label="App"><a class="brand" href="#/">${bullet("S", "#ee352e")}skills-plainer</a><span class="spacer"></span>${pubControl(id)}<a href="#/" ${active === "home" ? 'aria-current="page"' : ""}>Analyses</a><a href="#/compare" ${active === "compare" ? 'aria-current="page"' : ""}>Compare</a><a href="https://github.com/ljack/skills-plainer" target="_blank" rel="noopener">GitHub</a><a href="https://jarkkolietolahti.com" target="_blank" rel="noopener">By Jarkko Lietolahti</a></nav>`;
+  return `<nav class="topbar" aria-label="App"><a class="brand" href="#/">${bullet("S", "#ee352e")}skills-plainer</a><span class="spacer"></span>${pubControl(id)}<a href="#/" ${active === "home" ? 'aria-current="page"' : ""}>Analyses</a><a href="#/drafts" ${active === "drafts" ? 'aria-current="page"' : ""}>Drafts</a><a href="#/compare" ${active === "compare" ? 'aria-current="page"' : ""}>Compare</a><a href="https://github.com/ljack/skills-plainer" target="_blank" rel="noopener">GitHub</a><a href="https://jarkkolietolahti.com" target="_blank" rel="noopener">By Jarkko Lietolahti</a></nav>`;
 }
 
 function comingSoon() {
@@ -240,40 +241,106 @@ async function viewHome() {
   let lineNo = 0;
   const pubState = (id) => { const p = pub?.published?.[id]; return p ? (p.state === "draft" ? " · draft" : " · public") : ""; };
   const row = (d) => `<li><a class="line-row" href="#/${esc(d.id)}">${bullet(letterOf(d.name), ROUTE_C[lineNo++ % ROUTE_C.length])}
-    <div><h3>${esc(d.name)}</h3><div class="arch">${esc(d.archetype || "")}${d.version ? " · v" + esc(d.version) : ""}${d.origin === "showcase" ? " · showcase" : ""}${pubState(d.id)}</div></div>
+    <div><h3>${esc(d.name)}</h3><div class="arch">${esc(d.archetype || "")}${/^v\d/.test(d.versionLabel || "") ? " · " + esc(d.versionLabel) : ""}${d.origin === "showcase" ? " · showcase" : ""}${pubState(d.id)}</div></div>
     <p class="hl">${txt(d.headline || "")}</p>
-    <div class="stat"><b>${d.files ?? "–"}</b>files</div><div class="stat"><b>${tok(d.onTrigger)}</b>tokens on trigger</div><div class="stat"><b>${d.score != null ? Number(d.score).toFixed(1) : "–"}</b>avg score / 5</div></a></li>`;
+    <div class="stat"><b>${d.files ?? "–"}</b>files</div><div class="stat"><b>${tok(d.onTrigger)}</b>tokens on trigger</div><div class="stat"><b>${d.score != null ? Number(d.score).toFixed(1) : "–"}</b>avg score / 5</div><div class="stat rate"><b>${d.interest ?? "–"}</b>interest / 5</div><div class="stat rate">${reachStat(d)}</div></a></li>`;
   const groups = order.map((g) => {
     const items = skills.filter((d) => d.group === g).sort((p, q) => p.name.localeCompare(q.name));
     const n = drafts[g] || 0;
-    return `<section class="line-group"><div class="group-head"><h2>${esc(g)}</h2>${n ? `<span class="draft-count">${n} ${n === 1 ? "draft" : "drafts"}</span>` : ""}</div>${items.length ? `<ol class="lines" aria-label="${esc(g)}">${items.map(row).join("")}</ol>` : ""}</section>`;
+    return `<section class="line-group"><div class="group-head"><h2>${esc(g)}</h2>${n ? `<a class="draft-count" href="#/drafts">${n} ${n === 1 ? "draft" : "drafts"}</a>` : ""}</div>${items.length ? `<ol class="lines" aria-label="${esc(g)}">${items.map(row).join("")}</ol>` : ""}</section>`;
   }).join("");
   const opts = skills.map((d) => `<option value="${esc(d.id)}">${esc(d.name)}</option>`).join("");
   app.innerHTML = `${topbar("home")}
-  <p class="draft-note">${comingSoon()}</p>
+  <p class="draft-note">${comingSoon()} · <a href="#/drafts">View drafts &amp; publication times</a></p>
   <header class="sign"><div class="sign-in">${bullet("S", "#ee352e")}<div class="sign-title"><h1>skills-plainer</h1><span class="ver">how skills work, taken apart</span></div></div></header>
   <div class="home">
     <div class="home-lede">
       <div class="prose"><p class="lede">Every skill is a network of files. Here is the map.</p>
       <p>An agent skill is a folder: a <code>SKILL.md</code> whose description decides when it fires, plus references, scripts and assets it may or may not reach. skills-plainer reads that folder, never runs it, and draws what loads, what runs and what to borrow, with every claim cited to a file and line.</p></div>
-      ${isPublic ? `<div class="howto"><h2>Analyze your own skills</h2><pre><span>#</span> install for Claude Code
+      <div class="lede-side">${isPublic ? `<div class="howto"><h2>Analyze your own skills</h2><pre><span>#</span> install for Claude Code
 git clone https://github.com/ljack/skills-plainer.git
 ln -s "$PWD/skills-plainer/skills-plainer" ~/.claude/skills/skills-plainer
 /skills-plainer analyze &lt;skill&gt;</pre><p>Open source on <a href="https://github.com/ljack/skills-plainer" target="_blank" rel="noopener">GitHub</a> · Built by <a href="https://jarkkolietolahti.com" target="_blank" rel="noopener">Jarkko Lietolahti</a>.</p></div>` : `<div class="howto"><h2>Analyze your own</h2><pre><span>#</span> in Claude Code
 /skills-plainer analyze &lt;skill&gt;
 /skills-plainer trace &lt;skill&gt; "a prompt"
-/skills-plainer compare &lt;a&gt; &lt;b&gt;</pre><p>Analyses land in <code>~/.skills-plainer/analyses/</code> and show up here.</p></div>`}
+/skills-plainer compare &lt;a&gt; &lt;b&gt;</pre><p>Analyses land in <code>~/.skills-plainer/analyses/</code> and show up here.</p></div>`}${isPublic ? SUGGEST_FORM : ""}</div>
     </div>
     ${groups || (isPublic ? `<div class="state"><h1>Nothing published right now</h1></div>` : `<div class="state"><h1>No analyses yet</h1><p>Run <code>/skills-plainer analyze &lt;skill&gt;</code> in Claude Code, then reload. The app needs <code>scripts/serve.py</code> running, or the showcase files in <code>app/analyses/</code>.</p></div>`)}
     ${idx.length > 1 ? `<form class="compare-pick" id="cmpform"><h2>Compare two lines</h2><label class="sr" for="ca">First skill</label><select id="ca">${opts}</select><label class="sr" for="cb">Second skill</label><select id="cb">${opts}</select><button class="btn" type="submit">Compare</button></form>` : ""}
   </div>`;
+  $("#suggest")?.addEventListener("submit", (e) => submitSuggestion(e, skills));
   const f = $("#cmpform");
   if (f) { $("#cb").selectedIndex = Math.min(1, idx.length - 1); f.addEventListener("submit", (e) => { e.preventDefault(); location.hash = `#/compare/${$("#ca").value}/${$("#cb").value}`; }); }
+}
+
+function publicationTime(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  if (!Number.isFinite(date.getTime())) return "";
+  const label = new Intl.DateTimeFormat(undefined, {
+    year: "numeric", month: "short", day: "numeric",
+    hour: "numeric", minute: "2-digit", timeZoneName: "short",
+  }).format(date);
+  return `<time datetime="${esc(date.toISOString())}">${esc(label)}</time>`;
+}
+
+function draftETA(value, now = Date.now()) {
+  if (!value) return "Not scheduled";
+  const remaining = new Date(value).getTime() - now;
+  if (!Number.isFinite(remaining)) return "Publication time unavailable";
+  if (remaining <= 0) return "Awaiting publication";
+  const minutes = Math.ceil(remaining / 60000);
+  if (minutes >= 1440) return `In ${Math.floor(minutes / 1440)}d ${Math.floor(minutes % 1440 / 60)}h`;
+  if (minutes >= 60) return `In ${Math.floor(minutes / 60)}h ${minutes % 60}m`;
+  return `In ${minutes} min`;
+}
+
+let draftClock = null, draftRequest = 0;
+async function viewDrafts() {
+  const request = ++draftRequest;
+  clearInterval(draftClock);
+  document.title = "Drafts · skills-plainer";
+  app.innerHTML = `${topbar("drafts")}<div class="loading" id="draft-loading" role="status"><i></i>Loading drafts</div>`;
+  let drafts;
+  try {
+    if (isPublic) {
+      const fresh = await getJSON([`${ROOT}api/site.json`]);
+      if (!Array.isArray(fresh.draftSchedule)) throw new Error("Schedule unavailable");
+      site = fresh;
+      drafts = fresh.draftSchedule;
+    } else {
+      const fresh = await getJSON([`${ROOT}api/publish/status`]);
+      const idx = await getIndex().catch(() => []);
+      pub = fresh;
+      drafts = Object.entries(fresh.published || {}).filter(([, e]) => e.state === "draft").map(([id, e]) => {
+        const skill = idx.find((d) => d.id === id);
+        return { name: skill?.name || id, group: skill?.group || "Other", listAfter: e.listAfter };
+      });
+    }
+  } catch {
+    if (request !== draftRequest || !$("#draft-loading")) return;
+    app.innerHTML = `${topbar("drafts")}<div class="state"><h1>Could not load drafts</h1><p>The publication schedule is unavailable. Try loading it again.</p><button class="btn" id="reload-drafts" type="button">Try again</button></div>`;
+    $("#reload-drafts").addEventListener("click", viewDrafts);
+    return;
+  }
+  if (request !== draftRequest || !$("#draft-loading")) return;
+  const due = (d) => d.listAfter && Number.isFinite(Date.parse(d.listAfter)) ? Date.parse(d.listAfter) : Infinity;
+  drafts = [...drafts].sort((a, b) => due(a) - due(b) || a.name.localeCompare(b.name));
+  app.innerHTML = `${topbar("drafts")}
+    <header class="sign"><div class="sign-in">${bullet("D", "#fccc0a")}<div class="sign-title"><h1>Drafts</h1><span class="ver">${drafts.length} awaiting publication</span></div></div></header>
+    <main class="home drafts-page" id="main">
+      <div class="drafts-intro"><p>Publication times are shown in your time zone. Checks run hourly, so publication may follow the time shown.</p><button class="btn ghost" id="reload-drafts" type="button">Refresh</button></div>
+      ${drafts.length ? `<ul class="draft-list" aria-label="Drafts by publication time">${drafts.map((d) => `<li class="draft-row"><div><h2>${esc(d.name)}</h2><p class="draft-group">${esc(d.group)}</p></div><div class="draft-when"><p class="draft-eta" data-draft-eta="${esc(d.listAfter || "")}">${esc(draftETA(d.listAfter))}</p>${publicationTime(d.listAfter) ? `<p class="draft-date">${publicationTime(d.listAfter)}</p>` : ""}</div></li>`).join("")}</ul>` : `<div class="drafts-empty"><h2>No drafts right now</h2><p>New drafts will appear here with their publication schedule.</p></div>`}
+    </main>`;
+  $("#reload-drafts").addEventListener("click", viewDrafts);
+  draftClock = setInterval(() => $$("[data-draft-eta]").forEach((el) => { el.textContent = draftETA(el.dataset.draftEta); }), 60000);
+  window.scrollTo({ top: 0 });
 }
 
 const SECTIONS = [
   { zone: "plain", id: "overview", t: "In plain words", s: "What it does, what it touches" },
   { zone: "plain", id: "trigger", t: "When it fires", s: "The description, dissected" },
+  { zone: "plain", id: "standing", t: "How it rates", s: "Interesting and popular" },
   { zone: "internals", id: "loadmap", t: "Load map", s: "What enters context, when" },
   { zone: "internals", id: "commands", t: "Commands", s: "Sub-commands and their files" },
   { zone: "internals", id: "toolbox", t: "Tools it drives", s: "What does the work" },
@@ -284,6 +351,7 @@ const SECTIONS = [
   { zone: "internals", id: "guardrails", t: "Guardrails", s: "Rules that bind the model" },
   { zone: "internals", id: "risks", t: "Risks", s: "What to watch for" },
   { zone: "internals", id: "scorecard", t: "Scorecard", s: "Nine criteria, 0 to 5" },
+  { zone: "internals", id: "versions", t: "Version", s: "What was analyzed, what changed" },
   { zone: "internals", id: "glossary", t: "Glossary", s: "The skill's own words" },
   { zone: "end", id: "verdict", t: "Verdict", s: "End of the line" },
 ];
@@ -377,6 +445,73 @@ function vCommands(a) {
   </tbody></table></div></section>`;
 }
 
+const SUGGEST_HINT = "Opens a prefilled issue, so you'll need a GitHub account. Not every suggestion gets analyzed.";
+const SUGGEST_FORM = `<form class="howto suggest" id="suggest" novalidate><h2>Suggest a skill to analyze</h2>
+  <label for="suggest-ref">A skills.sh or GitHub link, or owner/repo/skill</label>
+  <div class="suggest-row"><input id="suggest-ref" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="owner/repo/skill" aria-describedby="suggest-msg"><button class="btn" type="submit">Continue on GitHub</button></div>
+  <p id="suggest-msg" role="status">${SUGGEST_HINT}</p></form>`;
+function parseSkillRef(raw) {
+  const text = raw.trim().replace(/[?#].*$/, "").replace(/\/+$/, "").replace(/\.git$/, "");
+  const NAME = "[A-Za-z0-9][\\w.-]*";
+  let m = text.match(new RegExp(`^(?:https?://)?(?:www\\.)?skills\\.sh/(${NAME})/(${NAME})/(${NAME})$`, "i"));
+  if (m) return { repo: `${m[1]}/${m[2]}`, skill: m[3] };
+  m = text.match(new RegExp(`^(?:https?://)?(?:www\\.)?github\\.com/(${NAME})/(${NAME})(?:/(?:tree|blob)/[^/]+/(.+))?$`, "i"));
+  if (m) return { repo: `${m[1]}/${m[2]}`, skill: (m[3] || "").replace(/\/?SKILL\.md$/i, "").split("/").pop() || null };
+  m = text.match(new RegExp(`^(${NAME})/(${NAME})(?:/(${NAME}))?$`));
+  return m ? { repo: `${m[1]}/${m[2]}`, skill: m[3] || null } : null;
+}
+function submitSuggestion(e, skills) {
+  e.preventDefault();
+  const input = $("#suggest-ref"), msg = $("#suggest-msg");
+  const ref = parseSkillRef(input.value);
+  input.removeAttribute("aria-invalid");
+  msg.classList.remove("err");
+  if (!ref) {
+    input.setAttribute("aria-invalid", "true");
+    msg.classList.add("err");
+    msg.textContent = input.value.trim() ? "That doesn't look like a skill. Try a link from skills.sh or GitHub, or owner/repo/skill." : "Paste a link to the skill first.";
+    input.focus();
+    return;
+  }
+  const known = ref.skill && skills.find((d) => d.repo?.toLowerCase() === ref.repo.toLowerCase() && d.name.toLowerCase() === ref.skill.toLowerCase());
+  if (known) {
+    msg.innerHTML = `Already analyzed: <a href="#/${esc(known.id)}">${esc(known.name)}</a>.`;
+    return;
+  }
+  const target = ref.skill ? `${ref.repo}/${ref.skill}` : ref.repo;
+  const body = `Source: https://github.com/${ref.repo}\nSkill: ${ref.skill || "not named; the repository as a whole"}\n\nWhy is it worth analyzing? (optional)\n`;
+  window.open(`https://github.com/ljack/skills-plainer/issues/new?${new URLSearchParams({ title: `Suggest skill: ${target}`, body })}`, "_blank", "noopener");
+  msg.textContent = `Finish on GitHub to send your suggestion for ${target}.`;
+}
+function count(n) {
+  return n >= 1e6 ? (n / 1e6).toFixed(1).replace(/\.0$/, "") + "M" : n >= 1e3 ? Math.round(n / 1e3) + "k" : String(n);
+}
+function reachStat(d) {
+  return d.installs != null ? `<b>${count(d.installs)}</b>installs` : d.stars != null ? `<b>${count(d.stars)}</b>repo stars` : `<b>–</b>not listed`;
+}
+function vStanding(a) {
+  if (!a.rating) return "";
+  const { interest: i, popularity: p, updatedAt } = a.rating;
+  const reach = [p.installs != null ? `${count(p.installs)} installs on skills.sh` : "", p.stars != null ? `${count(p.stars)} stars on its GitHub repository${p.installs == null ? ", which may hold other skills too" : ""}` : ""].filter(Boolean);
+  const figure = (level) => `<p class="rate-fig"><b>${level ?? "–"}</b>${level != null ? " of 5" : ""}</p>`;
+  const list = (items) => items.length ? `<ul>${items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : "";
+  return `<section class="sec" id="s-standing" aria-labelledby="h-standing">${secHead("standing", "How it rates", updatedAt ? `Updated ${esc(updatedAt.slice(0, 10))}` : "", "#ee352e")}
+  <div class="rates"><div><h3>Interesting</h3>${figure(i.level)}<p class="rate-word">${esc(i.words)}</p>${list(i.reasons || [])}</div>
+  <div><h3>Popular</h3>${figure(p.level)}<p class="rate-word">${esc(p.words)}</p>${list(reach)}</div></div>
+  <p class="note">Interesting is calculated from this analysis: design moves few other skills here share, how many moving parts it has, how varied its workflow is, its risks and its scorecard. It estimates what an author could learn, so a small, clever skill can score low. Popular counts installs on skills.sh, or GitHub stars when the skill isn't listed. Stars stop at 3 of 5 because they cover a whole repository.</p></section>`;
+}
+function vVersions(a) {
+  const versions = a.versions || [];
+  if (!versions.length) return "";
+  const src = /^https:\/\/github\.com\//.test(a.sourceUrl || "") ? a.sourceUrl.replace(/\/$/, "") : null;
+  const name = (v) => v.commit && src ? `<a href="${esc(src)}/commit/${esc(v.commit)}" target="_blank" rel="noopener noreferrer">${esc(v.label)}</a>` : esc(v.label);
+  const now = versions[0];
+  return `<section class="sec internal" id="s-versions" aria-labelledby="h-versions">${secHead("versions", "Version", `${esc(now.label)} · ${esc(now.basis)}`)}
+  <div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Version</th><th scope="col">Analyzed</th><th scope="col">What changed</th></tr></thead><tbody>
+  ${versions.map((v) => `<tr><td class="cmd">${name(v)}</td><td>${esc(v.analyzedAt || "–")}</td><td>${v.notes?.length ? `<ul class="ver-notes">${v.notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : "First version analyzed"}</td></tr>`).join("")}
+  </tbody></table></div>
+  <p class="note">${versions.length === 1 ? "This is the only version analyzed so far. When a newer one is analyzed, what changed appears here. " : ""}The analyzed files have the fingerprint <code>${esc(now.fingerprint)}</code>.</p></section>`;
+}
 function vToolbox(a) {
   const ext = a.inventory.externalTools || [];
   const rows = a.toolbox?.length ? a.toolbox : ext.map((t) => ({ name: t.name, need: "Named in the instructions; this analysis does not describe it." }));
@@ -479,13 +614,9 @@ function draftNote(a) {
   if (!a.draft) return "";
   let schedule = "Publication is not scheduled.";
   if (a.listAfter) {
-    const date = new Date(a.listAfter);
-    if (Number.isFinite(date.getTime())) {
-      const label = new Intl.DateTimeFormat(undefined, {
-        year: "numeric", month: "short", day: "numeric",
-        hour: "numeric", minute: "2-digit", timeZoneName: "short",
-      }).format(date);
-      schedule = `<b>Scheduled publication:</b> <time datetime="${esc(date.toISOString())}">${esc(label)}</time>. ${date <= Date.now() ? "Awaiting publication. " : ""}Publication checks run hourly.`;
+    const time = publicationTime(a.listAfter);
+    if (time) {
+      schedule = `<b>Scheduled publication:</b> ${time}. ${new Date(a.listAfter) <= Date.now() ? "Awaiting publication. " : ""}Publication checks run hourly.`;
     } else {
       schedule = "Publication time is unavailable.";
     }
@@ -504,12 +635,12 @@ async function viewReader(id, anchor) {
     }
     current = a;
     const fm = a.inventory.frontmatter || {}, b = a.inventory.budget || {}, sc = a.scorecard || [];
-    const body = [vOverview(a), vTrigger(a), vLoadmap(a), vCommands(a), vToolbox(a), vLifecycle(a), vAnatomy(a), vScripts(a), vPatterns(a), vGuardrails(a), vRisks(a), vScorecard(a), vGlossary(a), vVerdict(a)].join("");
+    const body = [vOverview(a), vTrigger(a), vStanding(a), vLoadmap(a), vCommands(a), vToolbox(a), vLifecycle(a), vAnatomy(a), vScripts(a), vPatterns(a), vGuardrails(a), vRisks(a), vScorecard(a), vVersions(a), vGlossary(a), vVerdict(a)].join("");
     const present = new Set([...body.matchAll(/id="s-([a-z]+)"/g)].map((m) => m[1]));
     document.title = `${fm.name || id} · skills-plainer`;
     app.innerHTML = `${topbar(undefined, id)}
     ${draftNote(a)}
-    <header class="sign"><div class="sign-in">${bullet(letterOf(fm.name || id), "#ee352e")}<div class="sign-title"><h1>${esc(fm.name || id)}</h1>${fm.version ? `<span class="ver">v${esc(fm.version)}</span>` : ""}${/^https:\/\//.test(a.sourceUrl || "") ? `<a class="src-link" href="${esc(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">${a.sourceUrl.includes("github.com") ? "Source on GitHub" : "Source"}</a>` : ""}</div>
+    <header class="sign"><div class="sign-in">${bullet(letterOf(fm.name || id), "#ee352e")}<div class="sign-title"><h1>${esc(fm.name || id)}</h1>${(a.versions?.[0]?.label || fm.version) ? `<span class="ver">${esc(a.versions?.[0]?.label || "v" + fm.version)}</span>` : ""}${/^https:\/\//.test(a.sourceUrl || "") ? `<a class="src-link" href="${esc(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">${a.sourceUrl.includes("github.com") ? "Source on GitHub" : "Source"}</a>` : ""}</div>
       <div class="sign-meta"><div><b>${a.inventory.totals?.files ?? "–"}</b>files</div><div><b>${(a.commands || []).length || (a.toolbox || []).length || (a.inventory.externalTools || []).length}</b>${(a.commands || []).length || !((a.toolbox || []).length || (a.inventory.externalTools || []).length) ? "commands" : "tools"}</div><div><b>${tok(b.onTrigger)}</b>tokens on trigger</div>${sc.length ? `<div><b>${(sc.reduce((s, x) => s + x.score, 0) / sc.length).toFixed(1)}</b>avg score</div>` : ""}</div></div></header>
     <div class="reader">${rail(a, present)}<main id="main">${body}</main></div>`;
     afterRender(a);
@@ -524,6 +655,7 @@ function scrollToAnchor(anchor) {
 }
 
 function afterRender(a) {
+  linkSourceReferences(app, a);
   // draw-in for lines when a map enters view
   const io = new IntersectionObserver((ents) => ents.forEach((e) => {
     if (!e.isIntersecting) return;
@@ -622,12 +754,22 @@ async function openInspector(path, line) {
     ${refsOut.length ? `<h3 class="subhead">Links to</h3><div>${uniq(refsOut, "to").map((r) => fileChip(a, r.to)).join("")}</div>` : ""}
     <h3 class="subhead">Source${line ? `, line ${line}` : ""}</h3><div id="insp-src" class="note">${f.lines ? "Loading source" : "Binary file; not shown."}</div>`;
   insp.classList.add("open"); insp.setAttribute("aria-hidden", "false");
+  linkSourceReferences($("#insp-body"), a);
   $("#insp-close").focus({ preventScroll: true });
   if (f?.lines) loadSource(a, path, line);
 }
 async function loadSource(a, path, line) {
   const box = $("#insp-src");
-  if (isPublic) { box.textContent = "The source of this file is not published with the analysis."; return; }
+  if (isPublic) {
+    const url = sourceFileURL(a, path, line);
+    if (url) {
+      const link = document.createElement("a");
+      link.href = url; link.target = "_blank"; link.rel = "noopener noreferrer";
+      link.textContent = "View source on GitHub";
+      box.replaceChildren(link);
+    } else box.textContent = "The source of this file is not published with the analysis.";
+    return;
+  }
   try {
     const r = await fetch(`api/source/${encodeURIComponent(a.id)}?path=${encodeURIComponent(path)}`);
     const d = await r.json();
@@ -677,6 +819,7 @@ function isolate(btn, i, pin = false) {
   if (ul.dataset.map === "map-lg" && current) {
     const box = $("#route-detail"), route = current._routes[r];
     if (box) box.innerHTML = route ? `<b style="color:var(--ink)">${esc(route.label)}</b>: ${txt(route.explanation || "")}<br><br>${route.stops.map((p, k) => { const f = current._files.get(p); return `${k + 1}. ${fileChip(current, p)}<span class="mono" style="font-size:12px">${f?.tokens != null ? tok(f.tokens) + " tok" : f ? bytes(f.bytes) : ""}</span>`; }).join("<br>")}<br><br>Reading every stop costs ~${tok(route.stops.reduce((s, p) => s + (current._files.get(p)?.role === "script" || current._files.get(p)?.role === "binary" ? 0 : current._files.get(p)?.tokens || 0), 0))} tokens (scripts run, not read).` : "Point at a route to isolate it. Select a station to open the file.";
+    if (box) linkSourceReferences(box, current);
   }
 }
 document.addEventListener("pointerover", (e) => { const rb = e.target.closest?.(".legend [data-route]"); if (rb) isolate(rb, +rb.dataset.route); });
@@ -736,9 +879,12 @@ pubDlg.addEventListener("click", (e) => {
 // ------------------------------------------------------------ router
 async function route() {
   closeInspector();
+  clearInterval(draftClock);
+  draftRequest++;
   const raw = location.hash ? location.hash.replace(/^#\/?/, "") : (document.body.dataset.skill || "");
   const parts = raw.split("/").filter(Boolean).map(decodeURIComponent);
   if (!parts.length) { current = null; return viewHome(); }
+  if (parts[0] === "drafts") { current = null; return viewDrafts(); }
   if (parts[0] === "compare") return viewCompare(parts[1], parts[2]);
   return viewReader(parts[0], parts[1]);
 }
