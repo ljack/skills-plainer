@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>skills-plainer</title>
+<meta name="description" content="How an AI agent skill works, taken apart: trigger, load map, commands, lifecycle, scripts, patterns and scorecard.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23ee352e'/%3E%3Ctext x='16' y='22.5' font-family='Arial' font-weight='900' font-size='19' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/Archivo-0.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/SourceSerif4-4.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="app.css">
+</head>
+<body data-layer="full">
+<a class="skip" href="#app">Skip to content</a>
+<div id="app" tabindex="-1"><div class="loading" role="status"><i></i>Loading analyses</div></div>
+<aside class="insp" id="insp" aria-labelledby="insp-title" aria-hidden="true">
+  <div class="insp-head">
+    <span class="bullet" id="insp-bullet" aria-hidden="true"><span>F</span></span>
+    <h2 id="insp-title">File</h2>
+    <button type="button" id="insp-close" aria-label="Close file inspector"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
+  </div>
+  <div class="insp-body" id="insp-body"></div>
+</aside>
+<dialog class="pub" id="pub" aria-labelledby="pub-title"></dialog>
+<script type="module" src="app.js"></script>
+</body>
+</html>

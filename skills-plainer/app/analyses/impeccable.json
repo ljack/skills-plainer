@@ -1,0 +1,6501 @@
+{
+  "schema": "skills-plainer/analysis@1",
+  "id": "impeccable",
+  "analyzedAt": "2026-11-07",
+  "analyzer": "skills-plainer 1.0.0 · claude-opus-5-5",
+  "source": {
+    "path": "~/.claude/skills/impeccable",
+    "origin": "user"
+  },
+  "readInFull": [
+    "SKILL.md",
+    "reference/routing.md",
+    "reference/init.md",
+    "reference/new-work.md",
+    "reference/craft-floor.md",
+    "reference/craft.md",
+    "reference/polish.md",
+    "reference/audit.md",
+    "reference/mode-persuade.md",
+    "reference/visualize.md",
+    "reference/shape.md",
+    "scripts/impeccable",
+    "scripts/command-metadata.json",
+    "scripts/engine-checksums.txt",
+    "scripts/VERSION"
+  ],
+  "inventory": {
+    "schema": "skills-plainer/inventory@1",
+    "scannedAt": "2026-11-07T19:47:20+00:00",
+    "root": "impeccable",
+    "folder": "impeccable",
+    "frontmatter": {
+      "name": "impeccable",
+      "description": "Use when the user wants to design, redesign, shape, critique, audit, polish, simplify, harden, animate, or otherwise improve a frontend interface: websites, landing pages, dashboards, product UI, components, forms, settings, onboarding, empty states, and native iOS or Android screens. Handles UX review, hierarchy, layout, typography, color, motion, UX copy, accessibility, responsive behavior, edge cases, and capturing or documenting design systems (DESIGN.md, tokens). Also for making bland UI bolder, loud UI quieter, or ambitious visual effects. Not for backend-only or non-UI tasks.",
+      "version": "4.8.0",
+      "user-invocable": true,
+      "argument-hint": "[shape · audit|critique · animate|bolder|colorize|delight|layout|overdrive|quieter|typeset · adapt|clarify|distill · harden|onboard|optimize|polish · init|document|extract|live|generate] [target]",
+      "license": "Apache 2.0"
+    },
+    "frontmatterUnknownKeys": [],
+    "description": {
+      "chars": 589,
+      "words": 81,
+      "tokens": 147,
+      "hasWhen": true,
+      "whenClauses": [
+        "Use when the user wants to design, redesign, shape, critique, audit, polish, simplify, harden, animate, or otherwise improve a frontend interface: websites, landing pages, dashboards, product UI, components, forms, settings, onboarding, empty states, and native iOS or Android screens"
+      ],
+      "negativeClauses": [
+        "Not for backend-only or non-UI tasks"
+      ],
+      "quotedTriggers": [],
+      "firstPerson": false,
+      "secondPerson": false,
+      "over1024": false
+    },
+    "skillMd": {
+      "lines": 88,
+      "tokens": 2998,
+      "bodyTokens": 2774,
+      "bodyStartLine": 10,
+      "outline": [
+        {
+          "level": 2,
+          "text": "Setup",
+          "line": 17
+        },
+        {
+          "level": 2,
+          "text": "How to design",
+          "line": 25
+        },
+        {
+          "level": 2,
+          "text": "Modes",
+          "line": 32
+        },
+        {
+          "level": 2,
+          "text": "Commands",
+          "line": 43
+        }
+      ],
+      "sections": [
+        {
+          "heading": "Setup",
+          "line": 17,
+          "tokens": 552,
+          "lines": 8
+        },
+        {
+          "heading": "How to design",
+          "line": 25,
+          "tokens": 313,
+          "lines": 7
+        },
+        {
+          "heading": "Modes",
+          "line": 32,
+          "tokens": 306,
+          "lines": 11
+        },
+        {
+          "heading": "Commands",
+          "line": 43,
+          "tokens": 1391,
+          "lines": 46
+        }
+      ]
+    },
+    "budget": {
+      "always": 150,
+      "onTrigger": 2774,
+      "onDemand": 111115,
+      "executedBytes": 18354573,
+      "note": "tokens estimated at ~4 chars/token; 'always' is name+description in the skill index"
+    },
+    "totals": {
+      "bytes": 19922931,
+      "tokens": 550168,
+      "lines": 20769,
+      "files": 59
+    },
+    "roles": {
+      "skill": {
+        "files": 1,
+        "tokens": 2998,
+        "bytes": 12009
+      },
+      "reference": {
+        "files": 45,
+        "tokens": 111115,
+        "bytes": 444787
+      },
+      "data": {
+        "files": 5,
+        "tokens": 277890,
+        "bytes": 1111562
+      },
+      "script": {
+        "files": 7,
+        "tokens": 158165,
+        "bytes": 632717
+      },
+      "binary": {
+        "files": 1,
+        "tokens": 0,
+        "bytes": 17721856
+      }
+    },
+    "files": [
+      {
+        "path": "SKILL.md",
+        "role": "skill",
+        "bytes": 12009,
+        "ext": ".md",
+        "executable": false,
+        "lines": 88,
+        "tokens": 2998,
+        "sha1": "05aa3dcb6e",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Setup",
+            "line": 17
+          },
+          {
+            "level": 2,
+            "text": "How to design",
+            "line": 25
+          },
+          {
+            "level": 2,
+            "text": "Modes",
+            "line": 32
+          },
+          {
+            "level": 2,
+            "text": "Commands",
+            "line": 43
+          }
+        ],
+        "title": "Setup",
+        "inbound": 0,
+        "outbound": 38,
+        "depth": 0
+      },
+      {
+        "path": "reference/adapt.md",
+        "role": "reference",
+        "bytes": 11313,
+        "ext": ".md",
+        "executable": false,
+        "lines": 319,
+        "tokens": 2826,
+        "sha1": "5a472405e1",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Assess Adaptation Challenge",
+            "line": 9
+          },
+          {
+            "level": 2,
+            "text": "Plan Adaptation Strategy",
+            "line": 33
+          },
+          {
+            "level": 3,
+            "text": "Mobile Adaptation (Desktop → Mobile)",
+            "line": 37
+          },
+          {
+            "level": 3,
+            "text": "Tablet Adaptation (Hybrid Approach)",
+            "line": 64
+          },
+          {
+            "level": 3,
+            "text": "Desktop Adaptation (Mobile → Desktop)",
+            "line": 78
+          },
+          {
+            "level": 3,
+            "text": "Print Adaptation (Screen → Print)",
+            "line": 99
+          },
+          {
+            "level": 3,
+            "text": "Email Adaptation (Web → Email)",
+            "line": 113
+          },
+          {
+            "level": 2,
+            "text": "Implement Adaptations",
+            "line": 126
+          },
+          {
+            "level": 3,
+            "text": "Responsive Breakpoints",
+            "line": 130
+          },
+          {
+            "level": 3,
+            "text": "Layout Adaptation Techniques",
+            "line": 138
+          },
+          {
+            "level": 3,
+            "text": "Touch Adaptation",
+            "line": 146
+          },
+          {
+            "level": 3,
+            "text": "Content Adaptation",
+            "line": 154
+          },
+          {
+            "level": 3,
+            "text": "Navigation Adaptation",
+            "line": 161
+          },
+          {
+            "level": 2,
+            "text": "Verify Adaptations",
+            "line": 179
+          },
+          {
+            "level": 2,
+            "text": "Reference Material",
+            "line": 201
+          },
+          {
+            "level": 3,
+            "text": "Responsive Design",
+            "line": 205
+          }
+        ],
+        "title": "Assess Adaptation Challenge",
+        "inbound": 1,
+        "outbound": 1,
+        "depth": 1
+      },
+      {
+        "path": "reference/adapt.native.md",
+        "role": "reference",
+        "bytes": 3910,
+        "ext": ".md",
+        "executable": false,
+        "lines": 59,
+        "tokens": 976,
+        "sha1": "de73db7313",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Assess Adaptation Challenge",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Adaptation Strategies",
+            "line": 11
+          },
+          {
+            "level": 3,
+            "text": "Phone → Tablet (iPad / large screens)",
+            "line": 13
+          },
+          {
+            "level": 3,
+            "text": "Orientation & foldables",
+            "line": 20
+          },
+          {
+            "level": 3,
+            "text": "Platform → platform (iOS ↔ Android)",
+            "line": 25
+          },
+          {
+            "level": 3,
+            "text": "Web → native (porting a website or web app)",
+            "line": 41
+          },
+          {
+            "level": 2,
+            "text": "Implement & Verify",
+            "line": 45
+          }
+        ],
+        "title": "Assess Adaptation Challenge",
+        "inbound": 2,
+        "outbound": 2,
+        "depth": 1
+      },
+      {
+        "path": "reference/android.md",
+        "role": "reference",
+        "bytes": 4203,
+        "ext": ".md",
+        "executable": false,
+        "lines": 47,
+        "tokens": 1050,
+        "sha1": "9123e642b4",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Android platform",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "The Android slop test",
+            "line": 7
+          },
+          {
+            "level": 2,
+            "text": "Layout & structure",
+            "line": 11
+          },
+          {
+            "level": 2,
+            "text": "Touch targets",
+            "line": 18
+          },
+          {
+            "level": 2,
+            "text": "Typography",
+            "line": 22
+          },
+          {
+            "level": 2,
+            "text": "Color & theming",
+            "line": 28
+          },
+          {
+            "level": 2,
+            "text": "Components & motion",
+            "line": 35
+          },
+          {
+            "level": 2,
+            "text": "Verifying the build",
+            "line": 42
+          }
+        ],
+        "title": "Android platform",
+        "inbound": 9,
+        "outbound": 0,
+        "depth": 2
+      },
+      {
+        "path": "reference/animate.md",
+        "role": "reference",
+        "bytes": 5236,
+        "ext": ".md",
+        "executable": false,
+        "lines": 90,
+        "tokens": 1307,
+        "sha1": "24cdc37918",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Visitor mode",
+            "line": 7
+          },
+          {
+            "level": 2,
+            "text": "Find the job",
+            "line": 13
+          },
+          {
+            "level": 2,
+            "text": "Set the motion thesis",
+            "line": 25
+          },
+          {
+            "level": 2,
+            "text": "Choose material by meaning",
+            "line": 36
+          },
+          {
+            "level": 2,
+            "text": "Timing and easing",
+            "line": 50
+          },
+          {
+            "level": 2,
+            "text": "Implement to the runtime",
+            "line": 63
+          },
+          {
+            "level": 2,
+            "text": "Accessibility and control",
+            "line": 73
+          },
+          {
+            "level": 2,
+            "text": "Verify",
+            "line": 79
+          }
+        ],
+        "title": "Visitor mode",
+        "inbound": 2,
+        "outbound": 2,
+        "depth": 1
+      },
+      {
+        "path": "reference/audit.md",
+        "role": "reference",
+        "bytes": 9584,
+        "ext": ".md",
+        "executable": false,
+        "lines": 140,
+        "tokens": 2396,
+        "sha1": "90e6971586",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Diagnostic Scan",
+            "line": 7
+          },
+          {
+            "level": 3,
+            "text": "1. Accessibility (A11y)",
+            "line": 11
+          },
+          {
+            "level": 3,
+            "text": "2. Performance",
+            "line": 24
+          },
+          {
+            "level": 3,
+            "text": "3. Theming",
+            "line": 36
+          },
+          {
+            "level": 3,
+            "text": "4. Responsive Design",
+            "line": 46
+          },
+          {
+            "level": 3,
+            "text": "5. Implementation Integrity (CRITICAL)",
+            "line": 58
+          },
+          {
+            "level": 2,
+            "text": "Generate Report",
+            "line": 66
+          },
+          {
+            "level": 3,
+            "text": "Audit Health Score",
+            "line": 68
+          },
+          {
+            "level": 3,
+            "text": "Implementation Integrity Verdict",
+            "line": 81
+          },
+          {
+            "level": 3,
+            "text": "Executive Summary",
+            "line": 84
+          },
+          {
+            "level": 3,
+            "text": "Detailed Findings by Severity",
+            "line": 90
+          },
+          {
+            "level": 3,
+            "text": "Patterns & Systemic Issues",
+            "line": 107
+          },
+          {
+            "level": 3,
+            "text": "Positive Findings",
+            "line": 113
+          },
+          {
+            "level": 2,
+            "text": "Recommended Actions",
+            "line": 117
+          }
+        ],
+        "title": "Diagnostic Scan",
+        "inbound": 2,
+        "outbound": 2,
+        "depth": 1
+      },
+      {
+        "path": "reference/audit.native.md",
+        "role": "reference",
+        "bytes": 8326,
+        "ext": ".md",
+        "executable": false,
+        "lines": 140,
+        "tokens": 2082,
+        "sha1": "f051612cd8",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Diagnostic Scan",
+            "line": 5
+          },
+          {
+            "level": 3,
+            "text": "1. Accessibility (VoiceOver / TalkBack)",
+            "line": 9
+          },
+          {
+            "level": 3,
+            "text": "2. Performance",
+            "line": 21
+          },
+          {
+            "level": 3,
+            "text": "3. Appearance & Theming",
+            "line": 33
+          },
+          {
+            "level": 3,
+            "text": "4. Platform Conformance (CRITICAL)",
+            "line": 43
+          },
+          {
+            "level": 3,
+            "text": "5. Adaptivity",
+            "line": 55
+          },
+          {
+            "level": 2,
+            "text": "Generate Report",
+            "line": 66
+          },
+          {
+            "level": 3,
+            "text": "Audit Health Score",
+            "line": 68
+          },
+          {
+            "level": 3,
+            "text": "Platform Conformance Verdict",
+            "line": 81
+          },
+          {
+            "level": 3,
+            "text": "Executive Summary",
+            "line": 84
+          },
+          {
+            "level": 3,
+            "text": "Detailed Findings by Severity",
+            "line": 90
+          },
+          {
+            "level": 3,
+            "text": "Patterns & Systemic Issues",
+            "line": 107
+          },
+          {
+            "level": 3,
+            "text": "Positive Findings",
+            "line": 113
+          },
+          {
+            "level": 2,
+            "text": "Recommended Actions",
+            "line": 117
+          }
+        ],
+        "title": "Diagnostic Scan",
+        "inbound": 2,
+        "outbound": 3,
+        "depth": 1
+      },
+      {
+        "path": "reference/bolder.md",
+        "role": "reference",
+        "bytes": 3497,
+        "ext": ".md",
+        "executable": false,
+        "lines": 34,
+        "tokens": 874,
+        "sha1": "d6b8dc406d",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Scope is sovereign",
+            "line": 7
+          },
+          {
+            "level": 2,
+            "text": "Why it reads flat",
+            "line": 11
+          },
+          {
+            "level": 2,
+            "text": "The amplification",
+            "line": 15
+          },
+          {
+            "level": 2,
+            "text": "The skeleton test",
+            "line": 22
+          },
+          {
+            "level": 2,
+            "text": "Before you finish",
+            "line": 26
+          }
+        ],
+        "title": "Scope is sovereign",
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "reference/clarify.md",
+        "role": "reference",
+        "bytes": 4590,
+        "ext": ".md",
+        "executable": false,
+        "lines": 95,
+        "tokens": 1148,
+        "sha1": "e37520591e",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Audit the language",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Set the message hierarchy",
+            "line": 20
+          },
+          {
+            "level": 2,
+            "text": "Rewrite by function",
+            "line": 31
+          },
+          {
+            "level": 3,
+            "text": "Actions and navigation",
+            "line": 33
+          },
+          {
+            "level": 3,
+            "text": "Forms",
+            "line": 39
+          },
+          {
+            "level": 3,
+            "text": "Errors and permissions",
+            "line": 45
+          },
+          {
+            "level": 3,
+            "text": "Loading, empty, and success states",
+            "line": 55
+          },
+          {
+            "level": 3,
+            "text": "Help and instructional text",
+            "line": 63
+          },
+          {
+            "level": 2,
+            "text": "Voice, accessibility, and localization",
+            "line": 67
+          },
+          {
+            "level": 2,
+            "text": "Verify",
+            "line": 80
+          }
+        ],
+        "title": "Audit the language",
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "reference/colorize.md",
+        "role": "reference",
+        "bytes": 4537,
+        "ext": ".md",
+        "executable": false,
+        "lines": 87,
+        "tokens": 1133,
+        "sha1": "8d529369a7",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Visitor mode",
+            "line": 7
+          },
+          {
+            "level": 2,
+            "text": "Audit before choosing",
+            "line": 12
+          },
+          {
+            "level": 2,
+            "text": "Choose a strategy",
+            "line": 25
+          },
+          {
+            "level": 2,
+            "text": "Apply at system scale",
+            "line": 40
+          },
+          {
+            "level": 2,
+            "text": "Contrast and perception",
+            "line": 53
+          },
+          {
+            "level": 2,
+            "text": "Verify",
+            "line": 67
+          },
+          {
+            "level": 2,
+            "text": "Live-mode signature params",
+            "line": 78
+          }
+        ],
+        "title": "Visitor mode",
+        "inbound": 1,
+        "outbound": 2,
+        "depth": 1
+      },
+      {
+        "path": "reference/component-review.md",
+        "role": "reference",
+        "bytes": 8017,
+        "ext": ".md",
+        "executable": false,
+        "lines": 64,
+        "tokens": 2004,
+        "sha1": "327f94d1b4",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Plan and asset review",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Plan, capture, serve",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Act on the receipt",
+            "line": 15
+          },
+          {
+            "level": 2,
+            "text": "Assemble and review",
+            "line": 28
+          }
+        ],
+        "title": "Plan and asset review",
+        "inbound": 3,
+        "outbound": 6,
+        "depth": 2
+      },
+      {
+        "path": "reference/craft-floor.md",
+        "role": "reference",
+        "bytes": 4516,
+        "ext": ".md",
+        "executable": false,
+        "lines": 45,
+        "tokens": 1128,
+        "sha1": "bcc70bda72",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Craft floor",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Verify",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Refuse",
+            "line": 19
+          }
+        ],
+        "title": "Craft floor",
+        "inbound": 7,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "reference/craft.md",
+        "role": "reference",
+        "bytes": 555,
+        "ext": ".md",
+        "executable": false,
+        "lines": 6,
+        "tokens": 136,
+        "sha1": "2a7a0bf2b5",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Craft (deprecated alias)",
+            "line": 1
+          }
+        ],
+        "title": "Craft (deprecated alias)",
+        "inbound": 1,
+        "outbound": 2,
+        "depth": 1
+      },
+      {
+        "path": "reference/critique.md",
+        "role": "reference",
+        "bytes": 45636,
+        "ext": ".md",
+        "executable": false,
+        "lines": 820,
+        "tokens": 11394,
+        "sha1": "ebe5a9de3d",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 3,
+            "text": "Purpose",
+            "line": 1
+          },
+          {
+            "level": 3,
+            "text": "Hard Invariants",
+            "line": 5
+          },
+          {
+            "level": 3,
+            "text": "Setup",
+            "line": 18
+          },
+          {
+            "level": 3,
+            "text": "Assessment Orchestration",
+            "line": 31
+          },
+          {
+            "level": 3,
+            "text": "Assessment A: Design Review",
+            "line": 46
+          },
+          {
+            "level": 3,
+            "text": "Assessment B: Detector + Browser Evidence",
+            "line": 59
+          },
+          {
+            "level": 3,
+            "text": "Generate Combined Critique Report",
+            "line": 95
+          },
+          {
+            "level": 3,
+            "text": "Deliver the Report",
+            "line": 190
+          },
+          {
+            "level": 3,
+            "text": "Persist the Snapshot",
+            "line": 198
+          },
+          {
+            "level": 3,
+            "text": "Ask the User",
+            "line": 236
+          },
+          {
+            "level": 3,
+            "text": "Recommended Actions",
+            "line": 260
+          },
+          {
+            "level": 2,
+            "text": "Reference Material",
+            "line": 290
+          },
+          {
+            "level": 3,
+            "text": "Cognitive Load Assessment",
+            "line": 294
+          },
+          {
+            "level": 3,
+            "text": "Heuristics Scoring Guide",
+            "line": 403
+          },
+          {
+            "level": 3,
+            "text": "Persona-Based Design Testing",
+            "line": 642
+          }
+        ],
+        "title": "Purpose",
+        "inbound": 1,
+        "outbound": 6,
+        "depth": 1
+      },
+      {
+        "path": "reference/delight.md",
+        "role": "reference",
+        "bytes": 3716,
+        "ext": ".md",
+        "executable": false,
+        "lines": 71,
+        "tokens": 928,
+        "sha1": "5dc6cfe2ac",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Visitor mode",
+            "line": 7
+          },
+          {
+            "level": 2,
+            "text": "Find the opportunity",
+            "line": 12
+          },
+          {
+            "level": 2,
+            "text": "Define one delight thesis",
+            "line": 25
+          },
+          {
+            "level": 2,
+            "text": "Build for the emotional moment",
+            "line": 37
+          },
+          {
+            "level": 2,
+            "text": "Protect the experience",
+            "line": 48
+          },
+          {
+            "level": 2,
+            "text": "Verify",
+            "line": 61
+          }
+        ],
+        "title": "Visitor mode",
+        "inbound": 1,
+        "outbound": 1,
+        "depth": 1
+      },
+      {
+        "path": "reference/distill.md",
+        "role": "reference",
+        "bytes": 5529,
+        "ext": ".md",
+        "executable": false,
+        "lines": 112,
+        "tokens": 1381,
+        "sha1": "6752271b36",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Assess Current State",
+            "line": 6
+          },
+          {
+            "level": 2,
+            "text": "Plan Simplification",
+            "line": 28
+          },
+          {
+            "level": 2,
+            "text": "Simplify the Design",
+            "line": 39
+          },
+          {
+            "level": 3,
+            "text": "Information Architecture",
+            "line": 43
+          },
+          {
+            "level": 3,
+            "text": "Visual Simplification",
+            "line": 50
+          },
+          {
+            "level": 3,
+            "text": "Layout Simplification",
+            "line": 58
+          },
+          {
+            "level": 3,
+            "text": "Interaction Simplification",
+            "line": 65
+          },
+          {
+            "level": 3,
+            "text": "Content Simplification",
+            "line": 72
+          },
+          {
+            "level": 3,
+            "text": "Code Simplification",
+            "line": 80
+          },
+          {
+            "level": 2,
+            "text": "Verify Simplification",
+            "line": 94
+          },
+          {
+            "level": 2,
+            "text": "Document Removed Complexity",
+            "line": 104
+          }
+        ],
+        "title": "Assess Current State",
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "reference/doctor.md",
+        "role": "reference",
+        "bytes": 5617,
+        "ext": ".md",
+        "executable": false,
+        "lines": 55,
+        "tokens": 1404,
+        "sha1": "031f64ae26",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "What this owns, and what it does not",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Step 1: Run the pass",
+            "line": 13
+          },
+          {
+            "level": 2,
+            "text": "Step 2: Act by severity",
+            "line": 25
+          },
+          {
+            "level": 2,
+            "text": "Step 3: Deprecated fields are binding",
+            "line": 35
+          },
+          {
+            "level": 2,
+            "text": "Step 4: Do not overclaim on truth drift",
+            "line": 39
+          },
+          {
+            "level": 2,
+            "text": "Monorepo notes",
+            "line": 45
+          },
+          {
+            "level": 2,
+            "text": "Opting out of the boot check",
+            "line": 52
+          }
+        ],
+        "title": "What this owns, and what it does not",
+        "inbound": 1,
+        "outbound": 4,
+        "depth": 1
+      },
+      {
+        "path": "reference/document.md",
+        "role": "reference",
+        "bytes": 27457,
+        "ext": ".md",
+        "executable": false,
+        "lines": 417,
+        "tokens": 6861,
+        "sha1": "355fbe9158",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "The frontmatter: token schema",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "The markdown body: eight sections (canonical order)",
+            "line": 51
+          },
+          {
+            "level": 2,
+            "text": "When to run",
+            "line": 64
+          },
+          {
+            "level": 2,
+            "text": "Two paths",
+            "line": 73
+          },
+          {
+            "level": 2,
+            "text": "Scan mode (approach C: auto-extract, then confirm descriptive language)",
+            "line": 80
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Find the design assets",
+            "line": 82
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Auto-extract what can be auto-extracted",
+            "line": 94
+          },
+          {
+            "level": 3,
+            "text": "Step 2b: Stage the frontmatter",
+            "line": 105
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Ask the user for qualitative language",
+            "line": 116
+          },
+          {
+            "level": 3,
+            "text": "Step 4: Write DESIGN.md",
+            "line": 128
+          },
+          {
+            "level": 3,
+            "text": "Step 4b: Write .impeccable/design.json sidecar (extensions only)",
+            "line": 251
+          },
+          {
+            "level": 3,
+            "text": "Step 5: Confirm and refine",
+            "line": 342
+          },
+          {
+            "level": 2,
+            "text": "Seed mode",
+            "line": 350
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Route through new-work's workshop",
+            "line": 354
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Write seed DESIGN.md",
+            "line": 362
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Confirm",
+            "line": 385
+          },
+          {
+            "level": 2,
+            "text": "Style guidelines",
+            "line": 392
+          },
+          {
+            "level": 2,
+            "text": "Pitfalls",
+            "line": 406
+          }
+        ],
+        "title": "The frontmatter: token schema",
+        "inbound": 6,
+        "outbound": 2,
+        "depth": 1
+      },
+      {
+        "path": "reference/extract.md",
+        "role": "reference",
+        "bytes": 3337,
+        "ext": ".md",
+        "executable": false,
+        "lines": 70,
+        "tokens": 834,
+        "sha1": "8e39fca5d4",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Extract Flow",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Step 1: Discover the Design System",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Step 2: Identify Patterns",
+            "line": 11
+          },
+          {
+            "level": 2,
+            "text": "Step 3: Plan Extraction",
+            "line": 24
+          },
+          {
+            "level": 2,
+            "text": "Step 4: Extract & Enrich",
+            "line": 36
+          },
+          {
+            "level": 2,
+            "text": "Step 5: Migrate",
+            "line": 44
+          },
+          {
+            "level": 2,
+            "text": "Step 6: Document",
+            "line": 53
+          }
+        ],
+        "title": "Extract Flow",
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "reference/generate.md",
+        "role": "reference",
+        "bytes": 13152,
+        "ext": ".md",
+        "executable": false,
+        "lines": 102,
+        "tokens": 3288,
+        "sha1": "5eeb9fc7b1",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Step 1: Parse the request",
+            "line": 15
+          },
+          {
+            "level": 2,
+            "text": "Step 2: Reuse the page, then start",
+            "line": 39
+          },
+          {
+            "level": 2,
+            "text": "Step 3: Generate",
+            "line": 70
+          },
+          {
+            "level": 2,
+            "text": "Step 4: Accept and close",
+            "line": 86
+          }
+        ],
+        "title": "Step 1: Parse the request",
+        "inbound": 1,
+        "outbound": 8,
+        "depth": 1
+      },
+      {
+        "path": "reference/harden.md",
+        "role": "reference",
+        "bytes": 10748,
+        "ext": ".md",
+        "executable": false,
+        "lines": 363,
+        "tokens": 2679,
+        "sha1": "e1753a80b0",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Assess Hardening Needs",
+            "line": 3
+          },
+          {
+            "level": 2,
+            "text": "Hardening Dimensions",
+            "line": 33
+          },
+          {
+            "level": 3,
+            "text": "Text Overflow & Wrapping",
+            "line": 37
+          },
+          {
+            "level": 3,
+            "text": "Internationalization (i18n)",
+            "line": 85
+          },
+          {
+            "level": 3,
+            "text": "Error Handling",
+            "line": 158
+          },
+          {
+            "level": 3,
+            "text": "Edge Cases & Boundary Conditions",
+            "line": 199
+          },
+          {
+            "level": 3,
+            "text": "Input Validation & Sanitization",
+            "line": 244
+          },
+          {
+            "level": 3,
+            "text": "Accessibility Resilience",
+            "line": 274
+          },
+          {
+            "level": 3,
+            "text": "Performance Resilience",
+            "line": 293
+          },
+          {
+            "level": 2,
+            "text": "Testing Strategies",
+            "line": 316
+          },
+          {
+            "level": 2,
+            "text": "Verify Hardening",
+            "line": 345
+          }
+        ],
+        "title": "Assess Hardening Needs",
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "reference/hooks.md",
+        "role": "reference",
+        "bytes": 14496,
+        "ext": ".md",
+        "executable": false,
+        "lines": 115,
+        "tokens": 3624,
+        "sha1": "0a2cbb475e",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "/impeccable hooks",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Routing",
+            "line": 23
+          },
+          {
+            "level": 2,
+            "text": "Flow",
+            "line": 39
+          },
+          {
+            "level": 2,
+            "text": "Triage findings",
+            "line": 53
+          },
+          {
+            "level": 2,
+            "text": "Constraints",
+            "line": 103
+          },
+          {
+            "level": 2,
+            "text": "Failure modes",
+            "line": 111
+          }
+        ],
+        "title": "/impeccable hooks",
+        "inbound": 1,
+        "outbound": 10,
+        "depth": 1
+      },
+      {
+        "path": "reference/init.md",
+        "role": "reference",
+        "bytes": 11697,
+        "ext": ".md",
+        "executable": false,
+        "lines": 132,
+        "tokens": 2924,
+        "sha1": "15b23c4cc0",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Init flow",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Step 1: Load current state",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Step 2: Explore the project",
+            "line": 17
+          },
+          {
+            "level": 2,
+            "text": "Step 3: Interview for product truth",
+            "line": 25
+          },
+          {
+            "level": 3,
+            "text": "What belongs here",
+            "line": 43
+          },
+          {
+            "level": 3,
+            "text": "What does not belong here",
+            "line": 49
+          },
+          {
+            "level": 2,
+            "text": "Step 4: Write PRODUCT.md",
+            "line": 56
+          },
+          {
+            "level": 3,
+            "text": "Completion gate",
+            "line": 106
+          },
+          {
+            "level": 2,
+            "text": "Step 5: Record workflow defaults",
+            "line": 110
+          },
+          {
+            "level": 2,
+            "text": "Step 6: Wrap up or resume",
+            "line": 120
+          }
+        ],
+        "title": "Init flow",
+        "inbound": 4,
+        "outbound": 5,
+        "depth": 1
+      },
+      {
+        "path": "reference/ios.md",
+        "role": "reference",
+        "bytes": 3812,
+        "ext": ".md",
+        "executable": false,
+        "lines": 52,
+        "tokens": 952,
+        "sha1": "79a611ddf1",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "iOS platform",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "The iOS slop test",
+            "line": 7
+          },
+          {
+            "level": 2,
+            "text": "Layout & structure",
+            "line": 11
+          },
+          {
+            "level": 2,
+            "text": "Touch targets",
+            "line": 18
+          },
+          {
+            "level": 2,
+            "text": "Typography",
+            "line": 22
+          },
+          {
+            "level": 2,
+            "text": "Color & materials",
+            "line": 28
+          },
+          {
+            "level": 2,
+            "text": "Components & controls",
+            "line": 35
+          },
+          {
+            "level": 2,
+            "text": "Motion",
+            "line": 42
+          },
+          {
+            "level": 2,
+            "text": "Verifying the build",
+            "line": 47
+          }
+        ],
+        "title": "iOS platform",
+        "inbound": 9,
+        "outbound": 0,
+        "depth": 2
+      },
+      {
+        "path": "reference/layout.md",
+        "role": "reference",
+        "bytes": 5161,
+        "ext": ".md",
+        "executable": false,
+        "lines": 85,
+        "tokens": 1289,
+        "sha1": "2f43963f1b",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Visitor mode",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Two isolated assessments",
+            "line": 13
+          },
+          {
+            "level": 2,
+            "text": "Set the spatial thesis",
+            "line": 33
+          },
+          {
+            "level": 2,
+            "text": "Apply",
+            "line": 45
+          },
+          {
+            "level": 2,
+            "text": "Verify",
+            "line": 61
+          },
+          {
+            "level": 2,
+            "text": "Live-mode signature params",
+            "line": 76
+          }
+        ],
+        "title": "Visitor mode",
+        "inbound": 1,
+        "outbound": 5,
+        "depth": 1
+      },
+      {
+        "path": "reference/live-setup.md",
+        "role": "reference",
+        "bytes": 8186,
+        "ext": ".md",
+        "executable": false,
+        "lines": 105,
+        "tokens": 2046,
+        "sha1": "f4196400b4",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Write the config",
+            "line": 3
+          },
+          {
+            "level": 2,
+            "text": "Config drift",
+            "line": 39
+          },
+          {
+            "level": 2,
+            "text": "CSP detection (first-time only)",
+            "line": 43
+          },
+          {
+            "level": 3,
+            "text": "Consent prompt (use this phrasing)",
+            "line": 60
+          },
+          {
+            "level": 3,
+            "text": "append-arrays",
+            "line": 73
+          },
+          {
+            "level": 3,
+            "text": "append-string",
+            "line": 85
+          },
+          {
+            "level": 2,
+            "text": "Troubleshooting",
+            "line": 100
+          }
+        ],
+        "title": "Write the config",
+        "inbound": 3,
+        "outbound": 3,
+        "depth": 2
+      },
+      {
+        "path": "reference/live.md",
+        "role": "reference",
+        "bytes": 36892,
+        "ext": ".md",
+        "executable": false,
+        "lines": 326,
+        "tokens": 9211,
+        "sha1": "b4dd988684",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Prerequisites",
+            "line": 3
+          },
+          {
+            "level": 2,
+            "text": "The contract (read once)",
+            "line": 9
+          },
+          {
+            "level": 2,
+            "text": "Poll loop",
+            "line": 32
+          },
+          {
+            "level": 2,
+            "text": "Start",
+            "line": 54
+          },
+          {
+            "level": 2,
+            "text": "Recovery commands",
+            "line": 66
+          },
+          {
+            "level": 2,
+            "text": "Handle `generate`",
+            "line": 78
+          },
+          {
+            "level": 3,
+            "text": "Insert mode branch",
+            "line": 86
+          },
+          {
+            "level": 3,
+            "text": "Replace mode (default)",
+            "line": 98
+          },
+          {
+            "level": 3,
+            "text": "1. Read the screenshot (if present)",
+            "line": 100
+          },
+          {
+            "level": 3,
+            "text": "2. Wrap the element",
+            "line": 106
+          },
+          {
+            "level": 3,
+            "text": "3. Load the action's reference",
+            "line": 133
+          },
+          {
+            "level": 3,
+            "text": "4. Plan three variants: identity first, then mode, then axes",
+            "line": 137
+          },
+          {
+            "level": 3,
+            "text": "5. Apply the freeform prompt (if present)",
+            "line": 175
+          },
+          {
+            "level": 3,
+            "text": "6. Deliver variants",
+            "line": 179
+          },
+          {
+            "level": 3,
+            "text": "7. Parameters (composition-sized, 0-4 per variant)",
+            "line": 216
+          },
+          {
+            "level": 3,
+            "text": "8. Signal done",
+            "line": 242
+          },
+          {
+            "level": 3,
+            "text": "Aborting an in-flight session",
+            "line": 250
+          },
+          {
+            "level": 2,
+            "text": "Handle fallback",
+            "line": 254
+          },
+          {
+            "level": 2,
+            "text": "Handle `accept`",
+            "line": 263
+          },
+          {
+            "level": 3,
+            "text": "Required after accept (carbonize)",
+            "line": 275
+          },
+          {
+            "level": 2,
+            "text": "Handle `discard`",
+            "line": 287
+          },
+          {
+            "level": 2,
+            "text": "Handle `steer`",
+            "line": 291
+          },
+          {
+            "level": 2,
+            "text": "Handle `prefetch`",
+            "line": 295
+          },
+          {
+            "level": 2,
+            "text": "Handle `manual_edit_apply`",
+            "line": 299
+          },
+          {
+            "level": 2,
+            "text": "Exit",
+            "line": 311
+          },
+          {
+            "level": 2,
+            "text": "Cleanup",
+            "line": 315
+          },
+          {
+            "level": 2,
+            "text": "First-time setup",
+            "line": 323
+          }
+        ],
+        "title": "Prerequisites",
+        "inbound": 8,
+        "outbound": 18,
+        "depth": 1
+      },
+      {
+        "path": "reference/mode-operate.md",
+        "role": "reference",
+        "bytes": 4716,
+        "ext": ".md",
+        "executable": false,
+        "lines": 22,
+        "tokens": 1179,
+        "sha1": "692f072b3e",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Operate",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Directions",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Comps",
+            "line": 13
+          }
+        ],
+        "title": "Operate",
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 2
+      },
+      {
+        "path": "reference/mode-persuade.md",
+        "role": "reference",
+        "bytes": 3638,
+        "ext": ".md",
+        "executable": false,
+        "lines": 20,
+        "tokens": 910,
+        "sha1": "130afc0a1e",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Persuade and Experience",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Directions",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Comps",
+            "line": 11
+          }
+        ],
+        "title": "Persuade and Experience",
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 2
+      },
+      {
+        "path": "reference/mode-read.md",
+        "role": "reference",
+        "bytes": 4396,
+        "ext": ".md",
+        "executable": false,
+        "lines": 22,
+        "tokens": 1099,
+        "sha1": "2fccb03f0f",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Read",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Directions",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Comps",
+            "line": 13
+          }
+        ],
+        "title": "Read",
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 2
+      },
+      {
+        "path": "reference/new-work.md",
+        "role": "reference",
+        "bytes": 63084,
+        "ext": ".md",
+        "executable": false,
+        "lines": 155,
+        "tokens": 15770,
+        "sha1": "dd55b12fc7",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "New visual work",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "1. Decide what is already true",
+            "line": 7
+          },
+          {
+            "level": 2,
+            "text": "2. Ask what will change the work",
+            "line": 18
+          },
+          {
+            "level": 2,
+            "text": "3. Choose the right amount of invention",
+            "line": 29
+          },
+          {
+            "level": 3,
+            "text": "Extend an existing surface",
+            "line": 31
+          },
+          {
+            "level": 3,
+            "text": "Create a whole surface inside an established world",
+            "line": 35
+          },
+          {
+            "level": 3,
+            "text": "Create or replace the visual world",
+            "line": 43
+          },
+          {
+            "level": 2,
+            "text": "4. Commit the world",
+            "line": 63
+          },
+          {
+            "level": 2,
+            "text": "5. Record the decision",
+            "line": 73
+          },
+          {
+            "level": 2,
+            "text": "6. Build with full commitment",
+            "line": 95
+          },
+          {
+            "level": 3,
+            "text": "Comp-led: the comp is a measured contract",
+            "line": 99
+          },
+          {
+            "level": 3,
+            "text": "Code-led",
+            "line": 120
+          },
+          {
+            "level": 3,
+            "text": "Both paths",
+            "line": 124
+          },
+          {
+            "level": 2,
+            "text": "7. Inspect and finish",
+            "line": 136
+          }
+        ],
+        "title": "New visual work",
+        "inbound": 12,
+        "outbound": 32,
+        "depth": 1
+      },
+      {
+        "path": "reference/onboard.md",
+        "role": "reference",
+        "bytes": 7688,
+        "ext": ".md",
+        "executable": false,
+        "lines": 235,
+        "tokens": 1922,
+        "sha1": "ad2d1cf2ba",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Assess Onboarding Needs",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Onboarding Principles",
+            "line": 28
+          },
+          {
+            "level": 3,
+            "text": "Show, Don't Tell",
+            "line": 32
+          },
+          {
+            "level": 3,
+            "text": "Make It Optional (When Possible)",
+            "line": 37
+          },
+          {
+            "level": 3,
+            "text": "Time to Value",
+            "line": 42
+          },
+          {
+            "level": 3,
+            "text": "Context Over Ceremony",
+            "line": 48
+          },
+          {
+            "level": 3,
+            "text": "Respect User Intelligence",
+            "line": 53
+          },
+          {
+            "level": 2,
+            "text": "Design Onboarding Experiences",
+            "line": 58
+          },
+          {
+            "level": 3,
+            "text": "Initial Product Onboarding",
+            "line": 62
+          },
+          {
+            "level": 3,
+            "text": "Feature Discovery & Adoption",
+            "line": 88
+          },
+          {
+            "level": 3,
+            "text": "Guided Tours & Walkthroughs",
+            "line": 122
+          },
+          {
+            "level": 3,
+            "text": "Interactive Tutorials",
+            "line": 141
+          },
+          {
+            "level": 3,
+            "text": "Documentation & Help",
+            "line": 155
+          },
+          {
+            "level": 2,
+            "text": "Empty State Design",
+            "line": 168
+          },
+          {
+            "level": 3,
+            "text": "What Will Be Here",
+            "line": 172
+          },
+          {
+            "level": 3,
+            "text": "Why It Matters",
+            "line": 175
+          },
+          {
+            "level": 3,
+            "text": "How to Get Started",
+            "line": 178
+          },
+          {
+            "level": 3,
+            "text": "Visual Interest",
+            "line": 181
+          },
+          {
+            "level": 3,
+            "text": "Contextual Help",
+            "line": 184
+          },
+          {
+            "level": 2,
+            "text": "Implementation Patterns",
+            "line": 194
+          },
+          {
+            "level": 3,
+            "text": "Technical approaches:",
+            "line": 196
+          },
+          {
+            "level": 2,
+            "text": "Verify Onboarding Quality",
+            "line": 223
+          }
+        ],
+        "title": "Assess Onboarding Needs",
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "reference/operate.md",
+        "role": "reference",
+        "bytes": 4145,
+        "ext": ".md",
+        "executable": false,
+        "lines": 62,
+        "tokens": 1035,
+        "sha1": "2152b536f2",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Operate mode depth (and Read notes)",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "The product slop test",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Typography",
+            "line": 11
+          },
+          {
+            "level": 2,
+            "text": "Color",
+            "line": 18
+          },
+          {
+            "level": 2,
+            "text": "Layout",
+            "line": 26
+          },
+          {
+            "level": 2,
+            "text": "Components",
+            "line": 30
+          },
+          {
+            "level": 2,
+            "text": "Motion",
+            "line": 39
+          },
+          {
+            "level": 2,
+            "text": "Product constraints",
+            "line": 45
+          },
+          {
+            "level": 2,
+            "text": "Product permissions",
+            "line": 54
+          }
+        ],
+        "title": "Operate mode depth (and Read notes)",
+        "inbound": 1,
+        "outbound": 1,
+        "depth": 1
+      },
+      {
+        "path": "reference/optimize.md",
+        "role": "reference",
+        "bytes": 7577,
+        "ext": ".md",
+        "executable": false,
+        "lines": 258,
+        "tokens": 1892,
+        "sha1": "4250dbb37e",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Assess Performance Issues",
+            "line": 3
+          },
+          {
+            "level": 2,
+            "text": "Optimization Strategy",
+            "line": 22
+          },
+          {
+            "level": 3,
+            "text": "Loading Performance",
+            "line": 26
+          },
+          {
+            "level": 3,
+            "text": "Rendering Performance",
+            "line": 86
+          },
+          {
+            "level": 3,
+            "text": "Animation Performance",
+            "line": 116
+          },
+          {
+            "level": 3,
+            "text": "React/Framework Optimization",
+            "line": 152
+          },
+          {
+            "level": 3,
+            "text": "Network Optimization",
+            "line": 168
+          },
+          {
+            "level": 2,
+            "text": "Core Web Vitals Optimization",
+            "line": 189
+          },
+          {
+            "level": 3,
+            "text": "Largest Contentful Paint (LCP < 2.5s)",
+            "line": 191
+          },
+          {
+            "level": 3,
+            "text": "Interaction to Next Paint (INP < 200ms)",
+            "line": 198
+          },
+          {
+            "level": 3,
+            "text": "Cumulative Layout Shift (CLS < 0.1)",
+            "line": 204
+          },
+          {
+            "level": 2,
+            "text": "Performance Monitoring",
+            "line": 218
+          },
+          {
+            "level": 2,
+            "text": "Verify Improvements",
+            "line": 246
+          }
+        ],
+        "title": "Assess Performance Issues",
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "reference/overdrive.md",
+        "role": "reference",
+        "bytes": 9010,
+        "ext": ".md",
+        "executable": false,
+        "lines": 128,
+        "tokens": 2238,
+        "sha1": "ff77724530",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 3,
+            "text": "Propose Before Building",
+            "line": 12
+          },
+          {
+            "level": 3,
+            "text": "Verify in the Browser",
+            "line": 22
+          },
+          {
+            "level": 2,
+            "text": "Assess What \"Extraordinary\" Means Here",
+            "line": 28
+          },
+          {
+            "level": 3,
+            "text": "For visual/marketing surfaces",
+            "line": 32
+          },
+          {
+            "level": 3,
+            "text": "For functional UI",
+            "line": 35
+          },
+          {
+            "level": 3,
+            "text": "For performance-critical UI",
+            "line": 38
+          },
+          {
+            "level": 3,
+            "text": "For data-heavy interfaces",
+            "line": 41
+          },
+          {
+            "level": 2,
+            "text": "The Toolkit",
+            "line": 46
+          },
+          {
+            "level": 3,
+            "text": "Make transitions feel cinematic",
+            "line": 50
+          },
+          {
+            "level": 3,
+            "text": "Tie animation to scroll position",
+            "line": 55
+          },
+          {
+            "level": 3,
+            "text": "Render beyond CSS",
+            "line": 58
+          },
+          {
+            "level": 3,
+            "text": "Make data feel alive",
+            "line": 64
+          },
+          {
+            "level": 3,
+            "text": "Animate complex properties",
+            "line": 69
+          },
+          {
+            "level": 3,
+            "text": "Push performance boundaries",
+            "line": 73
+          },
+          {
+            "level": 3,
+            "text": "Interact with the device",
+            "line": 78
+          },
+          {
+            "level": 2,
+            "text": "Implement with Discipline",
+            "line": 84
+          },
+          {
+            "level": 3,
+            "text": "Progressive enhancement is non-negotiable",
+            "line": 86
+          },
+          {
+            "level": 3,
+            "text": "Performance rules",
+            "line": 102
+          },
+          {
+            "level": 3,
+            "text": "Polish is the difference",
+            "line": 109
+          },
+          {
+            "level": 2,
+            "text": "Verify the Result",
+            "line": 120
+          }
+        ],
+        "title": "Propose Before Building",
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "reference/polish.md",
+        "role": "reference",
+        "bytes": 6646,
+        "ext": ".md",
+        "executable": false,
+        "lines": 106,
+        "tokens": 1662,
+        "sha1": "4af56d04e0",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Establish the system",
+            "line": 7
+          },
+          {
+            "level": 2,
+            "text": "2. Gather the evidence",
+            "line": 20
+          },
+          {
+            "level": 2,
+            "text": "3. Triage",
+            "line": 37
+          },
+          {
+            "level": 2,
+            "text": "4. Polish the whole path",
+            "line": 49
+          },
+          {
+            "level": 3,
+            "text": "Flow and hierarchy",
+            "line": 51
+          },
+          {
+            "level": 3,
+            "text": "Layout and type",
+            "line": 57
+          },
+          {
+            "level": 3,
+            "text": "Color, imagery, and icons",
+            "line": 64
+          },
+          {
+            "level": 3,
+            "text": "Interaction and state",
+            "line": 71
+          },
+          {
+            "level": 3,
+            "text": "Content and code",
+            "line": 78
+          },
+          {
+            "level": 2,
+            "text": "5. Verify and finish",
+            "line": 85
+          }
+        ],
+        "title": "1. Establish the system",
+        "inbound": 1,
+        "outbound": 2,
+        "depth": 1
+      },
+      {
+        "path": "reference/quieter.md",
+        "role": "reference",
+        "bytes": 4951,
+        "ext": ".md",
+        "executable": false,
+        "lines": 100,
+        "tokens": 1236,
+        "sha1": "2a29b899d3",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Visitor mode",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Assess Current State",
+            "line": 13
+          },
+          {
+            "level": 2,
+            "text": "Plan Refinement",
+            "line": 35
+          },
+          {
+            "level": 2,
+            "text": "Refine the Design",
+            "line": 46
+          },
+          {
+            "level": 3,
+            "text": "Color Refinement",
+            "line": 50
+          },
+          {
+            "level": 3,
+            "text": "Visual Weight Reduction",
+            "line": 59
+          },
+          {
+            "level": 3,
+            "text": "Simplification",
+            "line": 65
+          },
+          {
+            "level": 3,
+            "text": "Motion Reduction",
+            "line": 71
+          },
+          {
+            "level": 3,
+            "text": "Composition Refinement",
+            "line": 78
+          },
+          {
+            "level": 2,
+            "text": "Verify Quality",
+            "line": 90
+          }
+        ],
+        "title": "Visitor mode",
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "reference/region-map.md",
+        "role": "reference",
+        "bytes": 3361,
+        "ext": ".md",
+        "executable": false,
+        "lines": 27,
+        "tokens": 840,
+        "sha1": "dd63c27a2a",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Region map",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Containment",
+            "line": 14
+          },
+          {
+            "level": 2,
+            "text": "What varies independently",
+            "line": 18
+          },
+          {
+            "level": 2,
+            "text": "Painted material",
+            "line": 22
+          }
+        ],
+        "title": "Region map",
+        "inbound": 2,
+        "outbound": 4,
+        "depth": 2
+      },
+      {
+        "path": "reference/routing.md",
+        "role": "reference",
+        "bytes": 3336,
+        "ext": ".md",
+        "executable": false,
+        "lines": 25,
+        "tokens": 830,
+        "sha1": "800361b4bd",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Command guidance",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Workflow questions",
+            "line": 3
+          },
+          {
+            "level": 2,
+            "text": "No-argument routing: the context-aware menu",
+            "line": 7
+          }
+        ],
+        "title": "Command guidance",
+        "inbound": 2,
+        "outbound": 2,
+        "depth": 1
+      },
+      {
+        "path": "reference/shape.md",
+        "role": "reference",
+        "bytes": 3547,
+        "ext": ".md",
+        "executable": false,
+        "lines": 60,
+        "tokens": 887,
+        "sha1": "cfa2b0f928",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Shape",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Phase 1: Discovery interview",
+            "line": 5
+          },
+          {
+            "level": 3,
+            "text": "Cadence",
+            "line": 9
+          },
+          {
+            "level": 3,
+            "text": "Round 1: purpose, people, and outcome",
+            "line": 16
+          },
+          {
+            "level": 3,
+            "text": "Round 2: material, behavior, and boundaries",
+            "line": 25
+          },
+          {
+            "level": 2,
+            "text": "Phase 2: Resolve the design direction",
+            "line": 37
+          },
+          {
+            "level": 2,
+            "text": "Phase 3: Write the brief",
+            "line": 41
+          },
+          {
+            "level": 2,
+            "text": "Confirm and stop",
+            "line": 55
+          }
+        ],
+        "title": "Shape",
+        "inbound": 2,
+        "outbound": 1,
+        "depth": 1
+      },
+      {
+        "path": "reference/typeset.md",
+        "role": "reference",
+        "bytes": 6263,
+        "ext": ".md",
+        "executable": false,
+        "lines": 91,
+        "tokens": 1564,
+        "sha1": "96167bcfc2",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 2,
+            "text": "Visitor mode",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Two isolated assessments",
+            "line": 13
+          },
+          {
+            "level": 2,
+            "text": "Set the system",
+            "line": 32
+          },
+          {
+            "level": 2,
+            "text": "Apply",
+            "line": 44
+          },
+          {
+            "level": 2,
+            "text": "Line breaks",
+            "line": 59
+          },
+          {
+            "level": 2,
+            "text": "Verify",
+            "line": 69
+          },
+          {
+            "level": 2,
+            "text": "Live-mode signature params",
+            "line": 82
+          }
+        ],
+        "title": "Visitor mode",
+        "inbound": 1,
+        "outbound": 5,
+        "depth": 1
+      },
+      {
+        "path": "reference/visualize.md",
+        "role": "reference",
+        "bytes": 13956,
+        "ext": ".md",
+        "executable": false,
+        "lines": 48,
+        "tokens": 3489,
+        "sha1": "6f885e6b65",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Visualize: Direction Comps & Asset Production",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Generate three compositional options",
+            "line": 7
+          },
+          {
+            "level": 2,
+            "text": "One approval point",
+            "line": 25
+          },
+          {
+            "level": 2,
+            "text": "After approval: the comp becomes a spec",
+            "line": 35
+          },
+          {
+            "level": 2,
+            "text": "Plates and provenance",
+            "line": 41
+          }
+        ],
+        "title": "Visualize: Direction Comps & Asset Production",
+        "inbound": 5,
+        "outbound": 3,
+        "depth": 2
+      },
+      {
+        "path": "reference/degraded/asset-producer.md",
+        "role": "reference",
+        "bytes": 8429,
+        "ext": ".md",
+        "executable": false,
+        "lines": 42,
+        "tokens": 2107,
+        "sha1": "c7c5defb33",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Impeccable Asset Producer",
+            "line": 4
+          },
+          {
+            "level": 2,
+            "text": "Core Rule",
+            "line": 8
+          },
+          {
+            "level": 2,
+            "text": "Decision Comps",
+            "line": 12
+          },
+          {
+            "level": 2,
+            "text": "Review handoff",
+            "line": 16
+          },
+          {
+            "level": 2,
+            "text": "Input Contract",
+            "line": 20
+          },
+          {
+            "level": 2,
+            "text": "The job",
+            "line": 26
+          },
+          {
+            "level": 2,
+            "text": "Output Contract",
+            "line": 40
+          }
+        ],
+        "title": "Impeccable Asset Producer",
+        "inbound": 0,
+        "outbound": 4,
+        "depth": null
+      },
+      {
+        "path": "reference/degraded/documenter.md",
+        "role": "reference",
+        "bytes": 3325,
+        "ext": ".md",
+        "executable": false,
+        "lines": 24,
+        "tokens": 830,
+        "sha1": "6b98edc224",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Impeccable Documenter",
+            "line": 4
+          },
+          {
+            "level": 2,
+            "text": "Input Contract",
+            "line": 10
+          },
+          {
+            "level": 2,
+            "text": "Workflow",
+            "line": 14
+          },
+          {
+            "level": 2,
+            "text": "Output Contract",
+            "line": 22
+          }
+        ],
+        "title": "Impeccable Documenter",
+        "inbound": 1,
+        "outbound": 3,
+        "depth": 2
+      },
+      {
+        "path": "reference/degraded/finish-reviewer.md",
+        "role": "reference",
+        "bytes": 15803,
+        "ext": ".md",
+        "executable": false,
+        "lines": 38,
+        "tokens": 3951,
+        "sha1": "79c127925b",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Impeccable Finish Reviewer",
+            "line": 4
+          },
+          {
+            "level": 2,
+            "text": "Input Contract",
+            "line": 12
+          },
+          {
+            "level": 2,
+            "text": "Checks, in order",
+            "line": 16
+          },
+          {
+            "level": 2,
+            "text": "Disposition",
+            "line": 28
+          },
+          {
+            "level": 2,
+            "text": "Output Contract",
+            "line": 32
+          },
+          {
+            "level": 2,
+            "text": "Verdict Pass",
+            "line": 36
+          }
+        ],
+        "title": "Impeccable Finish Reviewer",
+        "inbound": 2,
+        "outbound": 3,
+        "depth": 2
+      },
+      {
+        "path": "reference/degraded/manual-edit-applier.md",
+        "role": "reference",
+        "bytes": 7196,
+        "ext": ".md",
+        "executable": false,
+        "lines": 92,
+        "tokens": 1799,
+        "sha1": "9f39373154",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Impeccable Manual Edit Applier",
+            "line": 4
+          },
+          {
+            "level": 2,
+            "text": "Input Contract",
+            "line": 10
+          },
+          {
+            "level": 2,
+            "text": "Workflow",
+            "line": 26
+          },
+          {
+            "level": 2,
+            "text": "Entry Atomicity",
+            "line": 51
+          },
+          {
+            "level": 2,
+            "text": "Checks",
+            "line": 66
+          },
+          {
+            "level": 2,
+            "text": "Output Contract",
+            "line": 70
+          }
+        ],
+        "title": "Impeccable Manual Edit Applier",
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/VERSION",
+        "role": "data",
+        "bytes": 7,
+        "ext": null,
+        "executable": false,
+        "lines": 2,
+        "tokens": 2,
+        "sha1": "56c9755fcc",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/command-metadata.json",
+        "role": "data",
+        "bytes": 8318,
+        "ext": ".json",
+        "executable": false,
+        "lines": 99,
+        "tokens": 2079,
+        "sha1": "24ef4710be",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/engine-checksums.txt",
+        "role": "data",
+        "bytes": 787,
+        "ext": ".txt",
+        "executable": false,
+        "lines": 10,
+        "tokens": 197,
+        "sha1": "5372701897",
+        "parsed": true,
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 2
+      },
+      {
+        "path": "scripts/impeccable",
+        "role": "script",
+        "bytes": 10167,
+        "ext": null,
+        "executable": true,
+        "lines": 250,
+        "tokens": 2542,
+        "sha1": "df9f66f14f",
+        "parsed": true,
+        "inbound": 71,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "scripts/impeccable.cmd",
+        "role": "script",
+        "bytes": 11095,
+        "ext": ".cmd",
+        "executable": false,
+        "lines": 279,
+        "tokens": 2774,
+        "sha1": "cd9bfcd0fb",
+        "parsed": true,
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "scripts/live-browser-dom.js",
+        "role": "script",
+        "bytes": 12283,
+        "ext": ".js",
+        "executable": false,
+        "lines": 321,
+        "tokens": 3071,
+        "sha1": "5f74d04e09",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/live-browser-ignores.js",
+        "role": "script",
+        "bytes": 10423,
+        "ext": ".js",
+        "executable": false,
+        "lines": 247,
+        "tokens": 2606,
+        "sha1": "71ef19ca3c",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/live-browser-session.js",
+        "role": "script",
+        "bytes": 5838,
+        "ext": ".js",
+        "executable": false,
+        "lines": 184,
+        "tokens": 1460,
+        "sha1": "1366c347e8",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/live-browser.js",
+        "role": "script",
+        "bytes": 553621,
+        "ext": ".js",
+        "executable": false,
+        "lines": 13646,
+        "tokens": 138390,
+        "sha1": "ca69142e04",
+        "parsed": false,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/modern-screenshot.umd.js",
+        "role": "script",
+        "bytes": 29290,
+        "ext": ".js",
+        "executable": false,
+        "lines": 15,
+        "tokens": 7322,
+        "sha1": "ad498e9ff9",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/bin/darwin-arm64/impeccable",
+        "role": "binary",
+        "bytes": 17721856,
+        "ext": null,
+        "executable": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/data/font-index-failures.json",
+        "role": "data",
+        "bytes": 2437,
+        "ext": ".json",
+        "executable": false,
+        "lines": 121,
+        "tokens": 609,
+        "sha1": "c4ef025ade",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/data/font-index.json",
+        "role": "data",
+        "bytes": 1100013,
+        "ext": ".json",
+        "executable": false,
+        "lines": 1,
+        "tokens": 275003,
+        "sha1": "945027977b",
+        "parsed": false,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      }
+    ],
+    "references": [
+      {
+        "from": "SKILL.md",
+        "to": "scripts/impeccable.cmd",
+        "line": 19,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "scripts/impeccable",
+        "line": 19,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/new-work.md",
+        "line": 20,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/craft-floor.md",
+        "line": 21,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/craft-floor.md",
+        "line": 23,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/new-work.md",
+        "line": 41,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/operate.md",
+        "line": 41,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/craft.md",
+        "line": 47,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/shape.md",
+        "line": 48,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/init.md",
+        "line": 49,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/document.md",
+        "line": 50,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/extract.md",
+        "line": 51,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/critique.md",
+        "line": 52,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/audit.md",
+        "line": 53,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/audit.native.md",
+        "line": 53,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/polish.md",
+        "line": 54,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/bolder.md",
+        "line": 55,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/quieter.md",
+        "line": 56,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/distill.md",
+        "line": 57,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/harden.md",
+        "line": 58,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/onboard.md",
+        "line": 59,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/animate.md",
+        "line": 60,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/colorize.md",
+        "line": 61,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/typeset.md",
+        "line": 62,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/layout.md",
+        "line": 63,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/delight.md",
+        "line": 64,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/overdrive.md",
+        "line": 65,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/clarify.md",
+        "line": 66,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/adapt.md",
+        "line": 67,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/adapt.native.md",
+        "line": 67,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/optimize.md",
+        "line": 68,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/live.md",
+        "line": 69,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/generate.md",
+        "line": 70,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/routing.md",
+        "line": 74,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/routing.md",
+        "line": 76,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "scripts/impeccable",
+        "line": 82,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/hooks.md",
+        "line": 84,
+        "kind": "link"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "reference/doctor.md",
+        "line": 86,
+        "kind": "link"
+      },
+      {
+        "from": "reference/adapt.md",
+        "to": "reference/adapt.native.md",
+        "line": 5,
+        "kind": "link"
+      },
+      {
+        "from": "reference/adapt.native.md",
+        "to": "reference/ios.md",
+        "line": 3,
+        "kind": "link"
+      },
+      {
+        "from": "reference/adapt.native.md",
+        "to": "reference/android.md",
+        "line": 3,
+        "kind": "link"
+      },
+      {
+        "from": "reference/animate.md",
+        "to": "reference/ios.md",
+        "line": 11,
+        "kind": "link"
+      },
+      {
+        "from": "reference/animate.md",
+        "to": "reference/android.md",
+        "line": 11,
+        "kind": "link"
+      },
+      {
+        "from": "reference/audit.md",
+        "to": "reference/audit.native.md",
+        "line": 5,
+        "kind": "link"
+      },
+      {
+        "from": "reference/audit.md",
+        "to": "scripts/impeccable",
+        "line": 62,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/audit.native.md",
+        "to": "reference/ios.md",
+        "line": 3,
+        "kind": "link"
+      },
+      {
+        "from": "reference/audit.native.md",
+        "to": "reference/android.md",
+        "line": 3,
+        "kind": "link"
+      },
+      {
+        "from": "reference/audit.native.md",
+        "to": "reference/audit.md",
+        "line": 3,
+        "kind": "link"
+      },
+      {
+        "from": "reference/colorize.md",
+        "to": "reference/new-work.md",
+        "line": 23,
+        "kind": "link"
+      },
+      {
+        "from": "reference/colorize.md",
+        "to": "reference/live.md",
+        "line": 86,
+        "kind": "link"
+      },
+      {
+        "from": "reference/component-review.md",
+        "to": "scripts/impeccable",
+        "line": 7,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/component-review.md",
+        "to": "scripts/impeccable",
+        "line": 11,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/component-review.md",
+        "to": "scripts/impeccable",
+        "line": 21,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/component-review.md",
+        "to": "scripts/impeccable",
+        "line": 22,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/component-review.md",
+        "to": "scripts/impeccable",
+        "line": 23,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/component-review.md",
+        "to": "scripts/impeccable",
+        "line": 24,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/craft.md",
+        "to": "reference/init.md",
+        "line": 3,
+        "kind": "link"
+      },
+      {
+        "from": "reference/craft.md",
+        "to": "reference/new-work.md",
+        "line": 3,
+        "kind": "link"
+      },
+      {
+        "from": "reference/critique.md",
+        "to": "scripts/impeccable",
+        "line": 26,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/critique.md",
+        "to": "scripts/impeccable",
+        "line": 65,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/critique.md",
+        "to": "scripts/impeccable",
+        "line": 79,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/critique.md",
+        "to": "scripts/impeccable",
+        "line": 86,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/critique.md",
+        "to": "scripts/impeccable",
+        "line": 211,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/critique.md",
+        "to": "scripts/impeccable",
+        "line": 219,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/delight.md",
+        "to": "reference/animate.md",
+        "line": 59,
+        "kind": "link"
+      },
+      {
+        "from": "reference/doctor.md",
+        "to": "scripts/impeccable",
+        "line": 16,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/doctor.md",
+        "to": "scripts/impeccable",
+        "line": 29,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/doctor.md",
+        "to": "reference/ios.md",
+        "line": 47,
+        "kind": "link"
+      },
+      {
+        "from": "reference/doctor.md",
+        "to": "reference/android.md",
+        "line": 47,
+        "kind": "link"
+      },
+      {
+        "from": "reference/document.md",
+        "to": "reference/init.md",
+        "line": 356,
+        "kind": "link"
+      },
+      {
+        "from": "reference/document.md",
+        "to": "reference/new-work.md",
+        "line": 358,
+        "kind": "link"
+      },
+      {
+        "from": "reference/generate.md",
+        "to": "reference/live.md",
+        "line": 3,
+        "kind": "link"
+      },
+      {
+        "from": "reference/generate.md",
+        "to": "scripts/impeccable",
+        "line": 49,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/generate.md",
+        "to": "reference/live-setup.md",
+        "line": 65,
+        "kind": "link"
+      },
+      {
+        "from": "reference/generate.md",
+        "to": "scripts/impeccable",
+        "line": 66,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/generate.md",
+        "to": "scripts/impeccable",
+        "line": 77,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/generate.md",
+        "to": "scripts/impeccable",
+        "line": 88,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/generate.md",
+        "to": "scripts/impeccable",
+        "line": 93,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/generate.md",
+        "to": "scripts/impeccable",
+        "line": 99,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/hooks.md",
+        "to": "reference/craft-floor.md",
+        "line": 9,
+        "kind": "link"
+      },
+      {
+        "from": "reference/hooks.md",
+        "to": "scripts/impeccable",
+        "line": 15,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/hooks.md",
+        "to": "scripts/impeccable",
+        "line": 45,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/hooks.md",
+        "to": "scripts/impeccable",
+        "line": 67,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/hooks.md",
+        "to": "scripts/impeccable",
+        "line": 75,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/hooks.md",
+        "to": "scripts/impeccable",
+        "line": 81,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/hooks.md",
+        "to": "scripts/impeccable",
+        "line": 87,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/hooks.md",
+        "to": "scripts/impeccable",
+        "line": 94,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/hooks.md",
+        "to": "scripts/impeccable",
+        "line": 100,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/hooks.md",
+        "to": "scripts/engine-checksums.txt",
+        "line": 107,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/init.md",
+        "to": "reference/new-work.md",
+        "line": 3,
+        "kind": "link"
+      },
+      {
+        "from": "reference/init.md",
+        "to": "reference/document.md",
+        "line": 3,
+        "kind": "link"
+      },
+      {
+        "from": "reference/init.md",
+        "to": "reference/ios.md",
+        "line": 104,
+        "kind": "link"
+      },
+      {
+        "from": "reference/init.md",
+        "to": "reference/android.md",
+        "line": 104,
+        "kind": "link"
+      },
+      {
+        "from": "reference/init.md",
+        "to": "reference/live.md",
+        "line": 118,
+        "kind": "link"
+      },
+      {
+        "from": "reference/layout.md",
+        "to": "reference/ios.md",
+        "line": 9,
+        "kind": "link"
+      },
+      {
+        "from": "reference/layout.md",
+        "to": "reference/android.md",
+        "line": 9,
+        "kind": "link"
+      },
+      {
+        "from": "reference/layout.md",
+        "to": "reference/new-work.md",
+        "line": 11,
+        "kind": "link"
+      },
+      {
+        "from": "reference/layout.md",
+        "to": "scripts/impeccable",
+        "line": 28,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/layout.md",
+        "to": "reference/live.md",
+        "line": 84,
+        "kind": "link"
+      },
+      {
+        "from": "reference/live-setup.md",
+        "to": "reference/live.md",
+        "line": 1,
+        "kind": "link"
+      },
+      {
+        "from": "reference/live-setup.md",
+        "to": "reference/live.md",
+        "line": 45,
+        "kind": "link"
+      },
+      {
+        "from": "reference/live-setup.md",
+        "to": "scripts/impeccable",
+        "line": 50,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 7,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 13,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 36,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 57,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "reference/live-setup.md",
+        "line": 64,
+        "kind": "link"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 71,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 72,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 73,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 92,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "reference/craft-floor.md",
+        "line": 96,
+        "kind": "link"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 113,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "reference/craft-floor.md",
+        "line": 135,
+        "kind": "link"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 245,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 252,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 293,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 309,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "scripts/impeccable",
+        "line": 318,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/live.md",
+        "to": "reference/live-setup.md",
+        "line": 325,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/init.md",
+        "line": 3,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/region-map.md",
+        "line": 5,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "scripts/impeccable",
+        "line": 39,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/visualize.md",
+        "line": 41,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "scripts/impeccable",
+        "line": 48,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "scripts/impeccable",
+        "line": 51,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/visualize.md",
+        "line": 53,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/mode-persuade.md",
+        "line": 61,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/mode-operate.md",
+        "line": 61,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/mode-read.md",
+        "line": 61,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "scripts/impeccable",
+        "line": 83,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "scripts/impeccable",
+        "line": 85,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/visualize.md",
+        "line": 91,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/shape.md",
+        "line": 93,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "scripts/impeccable",
+        "line": 103,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "scripts/impeccable",
+        "line": 105,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/visualize.md",
+        "line": 107,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/region-map.md",
+        "line": 110,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/component-review.md",
+        "line": 113,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/component-review.md",
+        "line": 115,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "scripts/impeccable",
+        "line": 138,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "scripts/impeccable",
+        "line": 142,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/ios.md",
+        "line": 144,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/android.md",
+        "line": 144,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/degraded/finish-reviewer.md",
+        "line": 144,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/degraded/finish-reviewer.md",
+        "line": 146,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "scripts/impeccable",
+        "line": 146,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/visualize.md",
+        "line": 148,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "scripts/impeccable",
+        "line": 148,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/document.md",
+        "line": 152,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "reference/degraded/documenter.md",
+        "line": 152,
+        "kind": "link"
+      },
+      {
+        "from": "reference/new-work.md",
+        "to": "scripts/impeccable",
+        "line": 154,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/operate.md",
+        "to": "reference/craft-floor.md",
+        "line": 3,
+        "kind": "link"
+      },
+      {
+        "from": "reference/polish.md",
+        "to": "scripts/impeccable",
+        "line": 32,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/polish.md",
+        "to": "scripts/impeccable",
+        "line": 102,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/region-map.md",
+        "to": "scripts/impeccable",
+        "line": 5,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/region-map.md",
+        "to": "scripts/impeccable",
+        "line": 6,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/region-map.md",
+        "to": "scripts/impeccable",
+        "line": 7,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/region-map.md",
+        "to": "reference/new-work.md",
+        "line": 10,
+        "kind": "link"
+      },
+      {
+        "from": "reference/routing.md",
+        "to": "scripts/impeccable",
+        "line": 11,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/routing.md",
+        "to": "scripts/impeccable",
+        "line": 22,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/shape.md",
+        "to": "reference/new-work.md",
+        "line": 39,
+        "kind": "link"
+      },
+      {
+        "from": "reference/typeset.md",
+        "to": "reference/ios.md",
+        "line": 9,
+        "kind": "link"
+      },
+      {
+        "from": "reference/typeset.md",
+        "to": "reference/android.md",
+        "line": 9,
+        "kind": "link"
+      },
+      {
+        "from": "reference/typeset.md",
+        "to": "reference/new-work.md",
+        "line": 11,
+        "kind": "link"
+      },
+      {
+        "from": "reference/typeset.md",
+        "to": "scripts/impeccable",
+        "line": 27,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/typeset.md",
+        "to": "reference/live.md",
+        "line": 90,
+        "kind": "link"
+      },
+      {
+        "from": "reference/visualize.md",
+        "to": "reference/new-work.md",
+        "line": 3,
+        "kind": "link"
+      },
+      {
+        "from": "reference/visualize.md",
+        "to": "scripts/impeccable",
+        "line": 43,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/visualize.md",
+        "to": "reference/new-work.md",
+        "line": 47,
+        "kind": "link"
+      },
+      {
+        "from": "reference/degraded/asset-producer.md",
+        "to": "reference/component-review.md",
+        "line": 18,
+        "kind": "link"
+      },
+      {
+        "from": "reference/degraded/asset-producer.md",
+        "to": "scripts/impeccable",
+        "line": 32,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/degraded/asset-producer.md",
+        "to": "scripts/impeccable",
+        "line": 33,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/degraded/asset-producer.md",
+        "to": "scripts/impeccable",
+        "line": 34,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/degraded/documenter.md",
+        "to": "reference/document.md",
+        "line": 8,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/degraded/documenter.md",
+        "to": "reference/document.md",
+        "line": 12,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/degraded/documenter.md",
+        "to": "reference/document.md",
+        "line": 16,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/degraded/finish-reviewer.md",
+        "to": "reference/craft-floor.md",
+        "line": 14,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/degraded/finish-reviewer.md",
+        "to": "reference/ios.md",
+        "line": 14,
+        "kind": "mention"
+      },
+      {
+        "from": "reference/degraded/finish-reviewer.md",
+        "to": "reference/android.md",
+        "line": 14,
+        "kind": "mention"
+      }
+    ],
+    "orphans": [
+      "reference/degraded/asset-producer.md",
+      "reference/degraded/manual-edit-applier.md"
+    ],
+    "commands": [
+      {
+        "name": "craft",
+        "signature": "craft [feature]",
+        "cells": [
+          "Build",
+          "Deprecated alias for an ordinary new-work request",
+          "[reference/craft.md](reference/craft.md)"
+        ],
+        "refs": [
+          "reference/craft.md"
+        ],
+        "line": 47,
+        "source": "table"
+      },
+      {
+        "name": "shape",
+        "signature": "shape [feature]",
+        "cells": [
+          "Build",
+          "Plan UX/UI before writing code",
+          "[reference/shape.md](reference/shape.md)"
+        ],
+        "refs": [
+          "reference/shape.md"
+        ],
+        "line": 48,
+        "source": "table"
+      },
+      {
+        "name": "init",
+        "signature": "init",
+        "cells": [
+          "Build",
+          "Capture durable product context in PRODUCT.md",
+          "[reference/init.md](reference/init.md)"
+        ],
+        "refs": [
+          "reference/init.md"
+        ],
+        "line": 49,
+        "source": "table"
+      },
+      {
+        "name": "document",
+        "signature": "document",
+        "cells": [
+          "Build",
+          "Generate DESIGN.md from existing project code",
+          "[reference/document.md](reference/document.md)"
+        ],
+        "refs": [
+          "reference/document.md"
+        ],
+        "line": 50,
+        "source": "table"
+      },
+      {
+        "name": "extract",
+        "signature": "extract [target]",
+        "cells": [
+          "Build",
+          "Pull reusable tokens and components into design system",
+          "[reference/extract.md](reference/extract.md)"
+        ],
+        "refs": [
+          "reference/extract.md"
+        ],
+        "line": 51,
+        "source": "table"
+      },
+      {
+        "name": "critique",
+        "signature": "critique [target]",
+        "cells": [
+          "Evaluate",
+          "UX design review with heuristic scoring",
+          "[reference/critique.md](reference/critique.md)"
+        ],
+        "refs": [
+          "reference/critique.md"
+        ],
+        "line": 52,
+        "source": "table"
+      },
+      {
+        "name": "audit",
+        "signature": "audit [target]",
+        "cells": [
+          "Evaluate",
+          "Technical quality checks (a11y, perf, responsive)",
+          "[reference/audit.md](reference/audit.md) · native: [reference/audit.native.md](reference/audit.native.md)"
+        ],
+        "refs": [
+          "reference/audit.md",
+          "reference/audit.native.md"
+        ],
+        "line": 53,
+        "source": "table"
+      },
+      {
+        "name": "polish",
+        "signature": "polish [target]",
+        "cells": [
+          "Refine",
+          "Final quality pass before shipping",
+          "[reference/polish.md](reference/polish.md)"
+        ],
+        "refs": [
+          "reference/polish.md"
+        ],
+        "line": 54,
+        "source": "table"
+      },
+      {
+        "name": "bolder",
+        "signature": "bolder [target]",
+        "cells": [
+          "Refine",
+          "Amplify safe or bland designs",
+          "[reference/bolder.md](reference/bolder.md)"
+        ],
+        "refs": [
+          "reference/bolder.md"
+        ],
+        "line": 55,
+        "source": "table"
+      },
+      {
+        "name": "quieter",
+        "signature": "quieter [target]",
+        "cells": [
+          "Refine",
+          "Tone down aggressive or overstimulating designs",
+          "[reference/quieter.md](reference/quieter.md)"
+        ],
+        "refs": [
+          "reference/quieter.md"
+        ],
+        "line": 56,
+        "source": "table"
+      },
+      {
+        "name": "distill",
+        "signature": "distill [target]",
+        "cells": [
+          "Refine",
+          "Strip to essence, remove complexity",
+          "[reference/distill.md](reference/distill.md)"
+        ],
+        "refs": [
+          "reference/distill.md"
+        ],
+        "line": 57,
+        "source": "table"
+      },
+      {
+        "name": "harden",
+        "signature": "harden [target]",
+        "cells": [
+          "Refine",
+          "Production-ready: errors, i18n, edge cases",
+          "[reference/harden.md](reference/harden.md)"
+        ],
+        "refs": [
+          "reference/harden.md"
+        ],
+        "line": 58,
+        "source": "table"
+      },
+      {
+        "name": "onboard",
+        "signature": "onboard [target]",
+        "cells": [
+          "Refine",
+          "Design first-run flows, empty states, activation",
+          "[reference/onboard.md](reference/onboard.md)"
+        ],
+        "refs": [
+          "reference/onboard.md"
+        ],
+        "line": 59,
+        "source": "table"
+      },
+      {
+        "name": "animate",
+        "signature": "animate [target]",
+        "cells": [
+          "Enhance",
+          "Add purposeful animations and motion",
+          "[reference/animate.md](reference/animate.md)"
+        ],
+        "refs": [
+          "reference/animate.md"
+        ],
+        "line": 60,
+        "source": "table"
+      },
+      {
+        "name": "colorize",
+        "signature": "colorize [target]",
+        "cells": [
+          "Enhance",
+          "Add strategic color to monochromatic UIs",
+          "[reference/colorize.md](reference/colorize.md)"
+        ],
+        "refs": [
+          "reference/colorize.md"
+        ],
+        "line": 61,
+        "source": "table"
+      },
+      {
+        "name": "typeset",
+        "signature": "typeset [target]",
+        "cells": [
+          "Enhance",
+          "Improve typography hierarchy and fonts",
+          "[reference/typeset.md](reference/typeset.md)"
+        ],
+        "refs": [
+          "reference/typeset.md"
+        ],
+        "line": 62,
+        "source": "table"
+      },
+      {
+        "name": "layout",
+        "signature": "layout [target]",
+        "cells": [
+          "Enhance",
+          "Fix spacing, rhythm, and visual hierarchy",
+          "[reference/layout.md](reference/layout.md)"
+        ],
+        "refs": [
+          "reference/layout.md"
+        ],
+        "line": 63,
+        "source": "table"
+      },
+      {
+        "name": "delight",
+        "signature": "delight [target]",
+        "cells": [
+          "Enhance",
+          "Add personality and memorable touches",
+          "[reference/delight.md](reference/delight.md)"
+        ],
+        "refs": [
+          "reference/delight.md"
+        ],
+        "line": 64,
+        "source": "table"
+      },
+      {
+        "name": "overdrive",
+        "signature": "overdrive [target]",
+        "cells": [
+          "Enhance",
+          "Push past conventional limits",
+          "[reference/overdrive.md](reference/overdrive.md)"
+        ],
+        "refs": [
+          "reference/overdrive.md"
+        ],
+        "line": 65,
+        "source": "table"
+      },
+      {
+        "name": "clarify",
+        "signature": "clarify [target]",
+        "cells": [
+          "Fix",
+          "Improve UX copy, labels, and error messages",
+          "[reference/clarify.md](reference/clarify.md)"
+        ],
+        "refs": [
+          "reference/clarify.md"
+        ],
+        "line": 66,
+        "source": "table"
+      },
+      {
+        "name": "adapt",
+        "signature": "adapt [target]",
+        "cells": [
+          "Fix",
+          "Adapt for different devices and screen sizes",
+          "[reference/adapt.md](reference/adapt.md) · native: [reference/adapt.native.md](reference/adapt.native.md)"
+        ],
+        "refs": [
+          "reference/adapt.md",
+          "reference/adapt.native.md"
+        ],
+        "line": 67,
+        "source": "table"
+      },
+      {
+        "name": "optimize",
+        "signature": "optimize [target]",
+        "cells": [
+          "Fix",
+          "Diagnose and fix UI performance",
+          "[reference/optimize.md](reference/optimize.md)"
+        ],
+        "refs": [
+          "reference/optimize.md"
+        ],
+        "line": 68,
+        "source": "table"
+      },
+      {
+        "name": "live",
+        "signature": "live",
+        "cells": [
+          "Iterate",
+          "Visual variant mode: pick elements in the browser, iterate on alternatives",
+          "[reference/live.md](reference/live.md)"
+        ],
+        "refs": [
+          "reference/live.md"
+        ],
+        "line": 69,
+        "source": "table"
+      },
+      {
+        "name": "generate",
+        "signature": "generate [n] [action] [element]",
+        "cells": [
+          "Iterate",
+          "Variants, versions, or alternatives of a named element to choose from in the live browser; no manual picking",
+          "[reference/generate.md](reference/generate.md)"
+        ],
+        "refs": [
+          "reference/generate.md"
+        ],
+        "line": 70,
+        "source": "table"
+      }
+    ],
+    "scripts": [
+      {
+        "language": "shell",
+        "shebang": "#!/bin/sh",
+        "doc": "Impeccable launcher. Runs the platform binary shipped next to this script:   <this dir>/bin/<os>-<arch>/impeccable Order: $IMPECCABLE_BIN, the sibling binary, ~/.impeccable/bin/impeccable, the version-pinned cache, then `impeccable` on PATH. Never needs Node.",
+        "args": [],
+        "functions": 0,
+        "imports": [],
+        "capabilities": {
+          "network": [
+            147,
+            148,
+            149,
+            150,
+            172
+          ],
+          "filesystem-write": [
+            3,
+            13,
+            18,
+            187
+          ],
+          "filesystem-delete": [
+            162,
+            183,
+            214,
+            219,
+            226
+          ]
+        },
+        "entrypoint": true,
+        "path": "scripts/impeccable"
+      },
+      {
+        "language": "batch",
+        "shebang": null,
+        "doc": null,
+        "args": [],
+        "functions": 0,
+        "imports": [],
+        "capabilities": {
+          "network": [
+            87,
+            89,
+            118,
+            125,
+            262
+          ],
+          "filesystem-write": [
+            91,
+            96,
+            100,
+            110
+          ]
+        },
+        "entrypoint": false,
+        "path": "scripts/impeccable.cmd"
+      },
+      {
+        "language": "javascript",
+        "shebang": null,
+        "doc": null,
+        "args": [],
+        "functions": 22,
+        "imports": [],
+        "capabilities": {},
+        "entrypoint": true,
+        "path": "scripts/live-browser-dom.js"
+      },
+      {
+        "language": "javascript",
+        "shebang": null,
+        "doc": null,
+        "args": [],
+        "functions": 6,
+        "imports": [],
+        "capabilities": {},
+        "entrypoint": false,
+        "path": "scripts/live-browser-ignores.js"
+      },
+      {
+        "language": "javascript",
+        "shebang": null,
+        "doc": "crypto.randomUUID() exists only in secure contexts (HTTPS, localhost), so a dev site on a LAN IP, a Tailscale address, or a custom hostname over plain HTTP has no randomUUID at all (issue #1055). getRandomValues() is available in every context; Math.random() covers runtimes with no crypto. Live ids",
+        "args": [],
+        "functions": 19,
+        "imports": [],
+        "capabilities": {},
+        "entrypoint": false,
+        "path": "scripts/live-browser-session.js"
+      },
+      {
+        "language": "javascript",
+        "shebang": null,
+        "doc": null,
+        "args": [],
+        "functions": 0,
+        "imports": [],
+        "capabilities": {
+          "network": [
+            1,
+            7
+          ]
+        },
+        "entrypoint": true,
+        "path": "scripts/modern-screenshot.umd.js"
+      },
+      {
+        "path": "scripts/bin/darwin-arm64/impeccable",
+        "language": "binary",
+        "doc": null,
+        "args": [],
+        "functions": 0,
+        "imports": [],
+        "capabilities": {},
+        "entrypoint": true
+      }
+    ],
+    "externalLoads": [],
+    "tools": {
+      "AskUserQuestion": {
+        "count": 9,
+        "files": [
+          "reference/bolder.md",
+          "reference/critique.md",
+          "reference/distill.md",
+          "reference/document.md",
+          "reference/extract.md",
+          "reference/generate.md",
+          "reference/init.md",
+          "reference/overdrive.md",
+          "reference/quieter.md"
+        ]
+      },
+      "Task": {
+        "count": 3,
+        "files": [
+          "reference/critique.md"
+        ]
+      },
+      "Write": {
+        "count": 1,
+        "files": [
+          "reference/hooks.md"
+        ]
+      }
+    },
+    "imperatives": {
+      "MUST": 6,
+      "NEVER": 1,
+      "CRITICAL": 2
+    },
+    "risks": [
+      {
+        "level": "low",
+        "id": "downloads-binary",
+        "file": "scripts/impeccable",
+        "line": 138,
+        "snippet": "# Last resort: fetch this version's binary for the current platform from the"
+      },
+      {
+        "level": "low",
+        "id": "downloads-binary",
+        "file": "scripts/impeccable.cmd",
+        "line": 4,
+        "snippet": "rem to this file, else a cached or freshly downloaded engine binary."
+      }
+    ],
+    "warnings": [
+      "reference/degraded/asset-producer.md is never referenced from SKILL.md or its references",
+      "reference/degraded/manual-edit-applier.md is never referenced from SKILL.md or its references"
+    ]
+  },
+  "summary": {
+    "headline": "A design director that runs a launcher binary, then loads one playbook per request",
+    "oneLiner": "A frontend design skill whose short instructions file routes 24 commands to their own playbooks, while a bundled engine binary loads project context, rolls dice for visual directions, serves a choice page and gates the build with measurements.",
+    "archetype": "router",
+    "plain": [
+      "Impeccable makes an AI agent work like a demanding design director on websites, app screens and native mobile UI. Ask it to build a landing page, polish a form, critique a dashboard or make a bland page bolder, and it picks one of 24 playbooks for the job. Before any edit it reads a short quality floor: contrast, spacing, real states, and a list of looks it treats as lazy defaults.",
+      "On a new page it first interviews you about the product and writes PRODUCT.md. It then offers several visual directions, one of them chosen partly by a dice roll so it does not repeat the same look every time, on a local web page where you pick. Builds are checked against measurements, reviewed by a separate reviewer agent, and documented in DESIGN.md. Its working files live in an `.impeccable/` folder in your project.",
+      "It runs a bundled program on your machine for nearly every step. That program contacts impeccable.style when it rolls directions and sends an anonymous usage ping unless you set DO_NOT_TRACK=1 or IMPECCABLE_NO_TELEMETRY=1. It can also call an image API if you have a key set, and `/impeccable hooks on` installs an edit hook in your agent's settings. None of this network use is described in the markdown files."
+    ],
+    "forAuthors": [
+      "The instructions file (SKILL.md, 88 lines, ~2.8k tokens) is a pure router: three setup steps, four rules, four modes, a 24-row Commands table and a five-case routing list (SKILL.md:72-78). The weight sits in 45 references (~111k tokens) and a 17.7 MB engine binary behind a checksum-verifying shell launcher. Read in full for this analysis: SKILL.md, routing.md, init.md, new-work.md, craft-floor.md, craft.md, polish.md, audit.md, mode-persuade.md, visualize.md, shape.md, the launcher and command-metadata.json, plus critique.md lines 1-300. Everything else was read by its headings or, for live.md, hooks.md, live-setup.md and doctor.md, by excerpts.",
+      "Its distinctive engineering moves are mechanical answers to model failure modes: a seeded roll against convergence (concept-seed), named lists of the model's own aesthetic priors, a build state machine whose gates measure the render against an approved comp, fingerprinted critique snapshots that polish consumes, and a fresh-context finish reviewer with exactly four disposition words. Fallbacks are declared, never silent: no launcher, no subagents, no network, no image generation, native platforms.",
+      "The price is opacity and density. A large share of behaviour (boot directives, MODE RULES, PRESENTATION and TELEMETRY blocks, the roll API and its privacy wording) exists only as text inside the compiled binary. I read it with `strings`, never by running it. new-work.md packs its protocol into paragraphs of 3-5k characters. Two fallback agent files are orphaned, and critique.md still points at a CLAUDE.md section the current init no longer writes."
+    ],
+    "touches": [
+      {
+        "kind": "read",
+        "what": "PRODUCT.md, DESIGN.md, surface briefs, source code, tokens and assets in your project"
+      },
+      {
+        "kind": "exec",
+        "what": "a bundled 17.7 MB engine binary via scripts/impeccable on almost every step"
+      },
+      {
+        "kind": "write",
+        "what": "PRODUCT.md, DESIGN.md, `.impeccable/` (config, critique snapshots, build state, mocks, review captures) and your UI source"
+      },
+      {
+        "kind": "ask",
+        "what": "product interview, stack and build-path questions, direction choice, comp approval, critique follow-ups"
+      },
+      {
+        "kind": "browser",
+        "what": "a local decision page, and in live mode an overlay injected into your dev page via a localhost helper"
+      },
+      {
+        "kind": "spawn",
+        "what": "finish reviewer, documenter, asset producer and manual-edit applier agents; two isolated assessors for critique"
+      },
+      {
+        "kind": "network",
+        "what": "GET to impeccable.style/api/roll on each direction roll, plus a choice ping unless DO_NOT_TRACK or IMPECCABLE_NO_TELEMETRY is set"
+      },
+      {
+        "kind": "network",
+        "what": "first-run engine download from GitHub releases when no local binary exists (not on this macOS arm64 install)"
+      },
+      {
+        "kind": "network",
+        "what": "optional image generation through api.openai.com when OPENAI_API_KEY is set and the harness has no image tool"
+      },
+      {
+        "kind": "write",
+        "what": "harness hook settings (for example ~/.claude/settings.json) when you run `/impeccable hooks on`"
+      }
+    ]
+  },
+  "trigger": {
+    "explanation": "The description is one long `Use when` sentence that lists verbs (design, redesign, shape, critique, audit, polish...), then a catalogue of surfaces (websites to native iOS or Android screens), then the design concerns it handles, then two tonal fixes (bolder, quieter), and closes with a single boundary: not backend-only or non-UI work. Almost any request that touches what a user sees will match, which is the point and also the risk: it claims the whole frontend design domain.",
+    "phrases": [
+      {
+        "text": "Use when the user wants to",
+        "role": "when"
+      },
+      {
+        "text": "design, redesign, shape, critique, audit, polish, simplify, harden, animate, or otherwise improve",
+        "role": "verbs"
+      },
+      {
+        "text": "a frontend interface",
+        "role": "domain"
+      },
+      {
+        "text": "websites, landing pages, dashboards, product UI, components, forms, settings, onboarding, empty states, and native iOS or Android screens",
+        "role": "objects"
+      },
+      {
+        "text": "Handles UX review, hierarchy, layout, typography, color, motion, UX copy, accessibility, responsive behavior, edge cases",
+        "role": "what"
+      },
+      {
+        "text": "capturing or documenting design systems (DESIGN.md, tokens)",
+        "role": "what"
+      },
+      {
+        "text": "Also for making bland UI bolder, loud UI quieter, or ambitious visual effects",
+        "role": "when"
+      },
+      {
+        "text": "Not for backend-only or non-UI tasks",
+        "role": "negative"
+      }
+    ],
+    "fires": [
+      "Build a landing page for our coffee subscription",
+      "/impeccable polish the checkout flow",
+      "The dashboard looks bland, can you make it bolder?",
+      "Critique the settings screen and tell me what to fix first",
+      "Our onboarding has no empty states, fix that",
+      "Write a DESIGN.md for this repo's existing styles",
+      "Make the iOS profile screen feel properly native",
+      "/impeccable"
+    ],
+    "nearMiss": [
+      {
+        "prompt": "Optimize this SQL query",
+        "why": "Backend-only work is excluded by the closing `Not for backend-only or non-UI tasks`."
+      },
+      {
+        "prompt": "Design a database schema for orders",
+        "why": "Uses the verb `design`, but the object is not a frontend interface; the boundary should keep it quiet, though the verb overlap makes it a real near miss."
+      },
+      {
+        "prompt": "Make me a slide deck for the board meeting",
+        "why": "A presentation is not a website, app screen or component; deck and document tools own it."
+      },
+      {
+        "prompt": "Check the color contrast of this button",
+        "why": "Fires, but competes with narrower installed skills (better-accessibility, better-colors) that a precise prompt arguably belongs to; impeccable has no hand-off rule for them."
+      },
+      {
+        "prompt": "Write the API docs for the payments service",
+        "why": "Documentation content, not interface design; the `Read` mode exists for docs pages, so a request to style a docs site would fire but writing the docs should not."
+      }
+    ],
+    "invocation": {
+      "model": true,
+      "user": true,
+      "argumentHint": "[shape · audit|critique · animate|bolder|colorize|delight|layout|overdrive|quieter|typeset · adapt|clarify|distill · harden|onboard|optimize|polish · init|document|extract|live|generate] [target]"
+    },
+    "notes": [
+      "589 characters, well under the ~1024 limit, with an explicit negative clause (scanner: `negativeClauses`).",
+      "The verb list mirrors the sub-command names (shape, critique, audit, polish, harden, animate), so natural phrasing and slash commands land on the same skill.",
+      "No hand-off rules to adjacent skills: on this machine better-interface, better-layout, better-typography, better-colors, better-accessibility, better-writing and frontend-design all claim parts of the same territory. Overlap is inferred from the installed skill list, not from impeccable's files.",
+      "`argument-hint` groups the 23 advertised verbs with middots (shape · audit|critique · ...) but omits `craft`, the deprecated alias that is still in the Commands table (SKILL.md:47)."
+    ]
+  },
+  "loadTiers": [
+    {
+      "tier": "always",
+      "label": "Always in context",
+      "tokens": 150,
+      "files": [
+        "SKILL.md"
+      ],
+      "explanation": "Only the name and the 589-character description sit in the skill index of every session (~150 tokens)."
+    },
+    {
+      "tier": "trigger",
+      "label": "When it fires",
+      "tokens": 2774,
+      "files": [
+        "SKILL.md"
+      ],
+      "explanation": "The 88-line SKILL.md body (~2.8k tokens): core principles, setup, four design rules, the four modes and the 24-row Commands table. Then the launcher's `context` output joins it; that output is not counted here because it is generated at run time (PRODUCT.md, DESIGN.md, the surface brief and, on native projects, ios.md or android.md inlined)."
+    },
+    {
+      "tier": "demand",
+      "label": "When a route needs it",
+      "tokens": 111115,
+      "files": [
+        "reference/adapt.md",
+        "reference/adapt.native.md",
+        "reference/android.md",
+        "reference/animate.md",
+        "reference/audit.md",
+        "reference/audit.native.md",
+        "reference/bolder.md",
+        "reference/clarify.md",
+        "reference/colorize.md",
+        "reference/component-review.md",
+        "reference/craft-floor.md",
+        "reference/craft.md",
+        "reference/critique.md",
+        "reference/delight.md",
+        "reference/distill.md",
+        "reference/doctor.md",
+        "reference/document.md",
+        "reference/extract.md",
+        "reference/generate.md",
+        "reference/harden.md",
+        "reference/hooks.md",
+        "reference/init.md",
+        "reference/ios.md",
+        "reference/layout.md",
+        "reference/live-setup.md",
+        "reference/live.md",
+        "reference/mode-operate.md",
+        "reference/mode-persuade.md",
+        "reference/mode-read.md",
+        "reference/new-work.md",
+        "reference/onboard.md",
+        "reference/operate.md",
+        "reference/optimize.md",
+        "reference/overdrive.md",
+        "reference/polish.md",
+        "reference/quieter.md",
+        "reference/region-map.md",
+        "reference/routing.md",
+        "reference/shape.md",
+        "reference/typeset.md",
+        "reference/visualize.md",
+        "reference/degraded/asset-producer.md",
+        "reference/degraded/documenter.md",
+        "reference/degraded/finish-reviewer.md",
+        "reference/degraded/manual-edit-applier.md"
+      ],
+      "explanation": "45 reference files (~111k tokens) load one playbook at a time. The heaviest are new-work.md (~15.8k), critique.md (~11.4k), live.md (~9.2k) and document.md (~6.9k). A new landing page pulls init, new-work, a mode file, visualize, region-map and craft-floor: roughly 25k tokens on top of SKILL.md, before launcher output. A polish pass adds about 1.7k for its playbook plus 1.1k for the craft floor."
+    },
+    {
+      "tier": "execute",
+      "label": "Run, never read",
+      "bytes": 18354573,
+      "files": [
+        "scripts/impeccable",
+        "scripts/impeccable.cmd",
+        "scripts/bin/darwin-arm64/impeccable",
+        "scripts/live-browser.js",
+        "scripts/live-browser-dom.js",
+        "scripts/live-browser-session.js",
+        "scripts/live-browser-ignores.js",
+        "scripts/modern-screenshot.umd.js"
+      ],
+      "explanation": "A POSIX shell launcher (and a Windows .cmd twin) that execs a 17.7 MB self-contained engine binary, plus browser scripts injected into the user's dev page in live mode (live-browser.js is a 554 KB bundle) and a vendored screenshot library. Every `impeccable <verb>` in the playbooks (context, concept-seed, serve-question, build-phase, comp-spec, detect, critique-storage, live, hooks...) is a sub-command of that one binary."
+    }
+  ],
+  "routes": [
+    {
+      "id": "new-landing",
+      "label": "New landing page (no PRODUCT.md yet)",
+      "when": "Build a landing page for our coffee subscription",
+      "stops": [
+        "SKILL.md",
+        "scripts/impeccable",
+        "reference/init.md",
+        "reference/new-work.md",
+        "reference/mode-persuade.md",
+        "reference/visualize.md",
+        "reference/region-map.md",
+        "reference/craft-floor.md"
+      ],
+      "explanation": "Setup runs the launcher (SKILL.md:19), whose NO_PRODUCT_MD directive and the Otherwise rule (SKILL.md:77) send a new surface through init first; init hands off to new-work (init.md:3, 131); new-work's concept-seed prints mode-persuade.md's rules as its MODE RULES block, or the file is read directly when the direction was pinned (new-work.md:61, mode-persuade.md:3); visualize.md loads before the first comp prompt (new-work.md:53, 91); region-map.md joins in the spec phase (new-work.md:110); craft-floor.md is read immediately before the first UI edit (SKILL.md:21). The finish reviewer and documenter then run as subagents with their own context (new-work.md:144, 152)."
+    },
+    {
+      "id": "polish",
+      "label": "Polish an existing screen",
+      "when": "/impeccable polish the checkout flow",
+      "stops": [
+        "SKILL.md",
+        "scripts/impeccable",
+        "reference/polish.md",
+        "reference/craft-floor.md"
+      ],
+      "explanation": "The Commands table maps polish to polish.md (SKILL.md:54); polish asks the launcher for the latest critique snapshot as its backlog (polish.md:32) and closes it when cleared (polish.md:102); craft-floor.md is read before the edits (SKILL.md:21). The cheapest editing route, about 6k tokens including SKILL.md."
+    },
+    {
+      "id": "critique",
+      "label": "Critique a surface",
+      "when": "Critique the settings screen",
+      "stops": [
+        "SKILL.md",
+        "scripts/impeccable",
+        "reference/critique.md"
+      ],
+      "explanation": "SKILL.md:52 routes to critique.md, which spawns two isolated sub-agents, a design review and a detector run via `impeccable detect` (critique.md:8, 65), writes the report to chat, persists a snapshot with `critique-storage write` (critique.md:211) and ends on targeted questions (critique.md:258). No craft-floor: critique edits nothing."
+    },
+    {
+      "id": "menu",
+      "label": "Bare /impeccable: the context-aware menu",
+      "when": "/impeccable",
+      "stops": [
+        "SKILL.md",
+        "scripts/impeccable",
+        "reference/routing.md"
+      ],
+      "explanation": "No argument reads routing.md (SKILL.md:74), which runs `impeccable signals` and, on web projects with scan targets, `impeccable detect --json` once (routing.md:11, 22), then recommends 2-3 commands and never auto-runs one."
+    },
+    {
+      "id": "live",
+      "label": "Live variant mode in the browser",
+      "when": "/impeccable live",
+      "stops": [
+        "SKILL.md",
+        "scripts/impeccable",
+        "reference/live.md",
+        "reference/live-setup.md",
+        "scripts/live-browser.js",
+        "reference/bolder.md",
+        "reference/craft-floor.md"
+      ],
+      "explanation": "SKILL.md:69 routes to live.md; a missing config sends it to live-setup.md (live.md:64); the helper serves live-browser.js into the page (its header: injected via a localhost script tag); each generate event loads the chosen action's playbook, bolder.md here as an example (live.md:133), and applies craft-floor's floors by construction (live.md:16)."
+    },
+    {
+      "id": "native-audit",
+      "label": "Audit a native iOS app",
+      "when": "/impeccable audit the profile screen (iOS project)",
+      "stops": [
+        "SKILL.md",
+        "scripts/impeccable",
+        "reference/ios.md",
+        "reference/audit.native.md"
+      ],
+      "explanation": "On a native platform the command loads its native variant (SKILL.md:53, 75); the launcher already inlines the platform reference into its context output (SKILL.md:19; scripts/impeccable:73-75 explain why it exports IMPECCABLE_SKILL_DIR for this), and audit.native.md scores against ios.md (audit.native.md:3). No detector, no browser."
+    }
+  ],
+  "commands": [
+    {
+      "name": "craft",
+      "group": "Build",
+      "does": "Deprecated alias for an ordinary new-work request; adds no behaviour and users should not be told to type it.",
+      "loads": [
+        "reference/craft.md",
+        "reference/init.md",
+        "reference/new-work.md"
+      ],
+      "example": "/impeccable craft a pricing page"
+    },
+    {
+      "name": "shape",
+      "group": "Build",
+      "does": "Runs a one-round discovery interview, resolves direction through new-work, then returns a confirmed design brief and stops without writing code.",
+      "loads": [
+        "reference/shape.md",
+        "reference/new-work.md"
+      ],
+      "example": "/impeccable shape the team invite flow"
+    },
+    {
+      "name": "init",
+      "group": "Build",
+      "does": "Explores the repo, interviews for product truth (at most three questions a round) and writes PRODUCT.md; also records the comp-first or code-first build path and can set up live mode. `teach` is an alias.",
+      "loads": [
+        "reference/init.md"
+      ],
+      "example": "/impeccable init"
+    },
+    {
+      "name": "document",
+      "group": "Build",
+      "does": "Extracts colors, type, spacing, radii and components from code, asks for descriptive language, and writes DESIGN.md plus the `.impeccable/design.json` sidecar.",
+      "loads": [
+        "reference/document.md"
+      ],
+      "example": "/impeccable document"
+    },
+    {
+      "name": "extract",
+      "group": "Build",
+      "does": "Pulls repeated patterns and hard-coded values into reusable tokens and components.",
+      "loads": [
+        "reference/extract.md"
+      ],
+      "example": "/impeccable extract the card styles"
+    },
+    {
+      "name": "critique",
+      "group": "Evaluate",
+      "does": "UX review with Nielsen heuristic scores, persona red flags and a detector pass, run as two isolated sub-agents; persists a snapshot that polish later consumes.",
+      "loads": [
+        "reference/critique.md"
+      ],
+      "example": "/impeccable critique the homepage"
+    },
+    {
+      "name": "audit",
+      "group": "Evaluate",
+      "does": "Technical checks across accessibility, performance, theming, responsive design and implementation integrity, scored /20 with P0-P3 findings; documents, never fixes.",
+      "loads": [
+        "reference/audit.md",
+        "reference/audit.native.md"
+      ],
+      "example": "/impeccable audit the signup form"
+    },
+    {
+      "name": "polish",
+      "group": "Refine",
+      "does": "Final quality pass that preserves the incumbent design, triages functional before cosmetic defects, and closes the critique snapshot it worked from.",
+      "loads": [
+        "reference/polish.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable polish the checkout"
+    },
+    {
+      "name": "bolder",
+      "group": "Refine",
+      "does": "Amplifies safe or bland designs while keeping usability.",
+      "loads": [
+        "reference/bolder.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable bolder the hero section"
+    },
+    {
+      "name": "quieter",
+      "group": "Refine",
+      "does": "Tones down loud, overstimulating designs while keeping quality.",
+      "loads": [
+        "reference/quieter.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable quieter the pricing cards"
+    },
+    {
+      "name": "distill",
+      "group": "Refine",
+      "does": "Strips a design to its essence by removing complexity and noise.",
+      "loads": [
+        "reference/distill.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable distill the settings page"
+    },
+    {
+      "name": "harden",
+      "group": "Refine",
+      "does": "Production readiness: error handling, i18n, text overflow and edge cases under real data.",
+      "loads": [
+        "reference/harden.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable harden the account form"
+    },
+    {
+      "name": "onboard",
+      "group": "Refine",
+      "does": "Designs first-run flows, empty states and activation moments.",
+      "loads": [
+        "reference/onboard.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable onboard the empty project list"
+    },
+    {
+      "name": "animate",
+      "group": "Enhance",
+      "does": "Adds purposeful motion and micro-interactions, with native motion references on iOS and Android.",
+      "loads": [
+        "reference/animate.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable animate the menu open"
+    },
+    {
+      "name": "colorize",
+      "group": "Enhance",
+      "does": "Adds strategic color to monochrome or gray interfaces.",
+      "loads": [
+        "reference/colorize.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable colorize the dashboard"
+    },
+    {
+      "name": "typeset",
+      "group": "Enhance",
+      "does": "Fixes font choice, hierarchy, sizing, weight and readability.",
+      "loads": [
+        "reference/typeset.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable typeset the article page"
+    },
+    {
+      "name": "layout",
+      "group": "Enhance",
+      "does": "Fixes spacing, rhythm, alignment and visual hierarchy.",
+      "loads": [
+        "reference/layout.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable layout the feature grid"
+    },
+    {
+      "name": "delight",
+      "group": "Enhance",
+      "does": "Adds personality and memorable touches, borrowing from animate for motion.",
+      "loads": [
+        "reference/delight.md",
+        "reference/animate.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable delight the success screen"
+    },
+    {
+      "name": "overdrive",
+      "group": "Enhance",
+      "does": "Technically ambitious effects: shaders, spring physics, scroll-driven reveals at 60fps.",
+      "loads": [
+        "reference/overdrive.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable overdrive the landing hero"
+    },
+    {
+      "name": "clarify",
+      "group": "Fix",
+      "does": "Rewrites unclear UX copy, labels, instructions and error messages.",
+      "loads": [
+        "reference/clarify.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable clarify the payment errors"
+    },
+    {
+      "name": "adapt",
+      "group": "Fix",
+      "does": "Adapts layouts to screen sizes, devices and contexts (breakpoints, fluid layout, touch targets); native variant on iOS and Android.",
+      "loads": [
+        "reference/adapt.md",
+        "reference/adapt.native.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable adapt the table for mobile"
+    },
+    {
+      "name": "optimize",
+      "group": "Fix",
+      "does": "Diagnoses and fixes UI performance: loading, rendering, animation, images, bundle size.",
+      "loads": [
+        "reference/optimize.md"
+      ],
+      "example": "/impeccable optimize the product gallery"
+    },
+    {
+      "name": "live",
+      "group": "Iterate",
+      "does": "Boots a localhost helper, injects an overlay into the running dev page, and generates HTML+CSS variants of elements the user picks, hot-swapped via HMR. Web only.",
+      "loads": [
+        "reference/live.md",
+        "reference/live-setup.md",
+        "reference/craft-floor.md"
+      ],
+      "example": "/impeccable live"
+    },
+    {
+      "name": "generate",
+      "group": "Iterate",
+      "does": "The fast lane into live mode: given a count, a direction and a named element, delivers variants in the browser without manual picking. Web only.",
+      "loads": [
+        "reference/generate.md",
+        "reference/live.md",
+        "reference/live-setup.md"
+      ],
+      "example": "/impeccable generate 3 bold variants of the pricing cards"
+    }
+  ],
+  "lifecycle": [
+    {
+      "n": 1,
+      "kind": "exec",
+      "title": "Run the launcher once",
+      "what": "Runs `<skill-base-dir>/scripts/impeccable context` from the project root. It loads PRODUCT.md, DESIGN.md, the matching surface brief and native guidance, and prints directives the model must follow without rerunning it. On an empty project it prints NO_PRODUCT_MD.",
+      "files": [
+        "SKILL.md",
+        "scripts/impeccable"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 19
+        },
+        {
+          "file": "scripts/impeccable",
+          "line": 67,
+          "end": 79
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "kind": "decide",
+      "title": "Route the request",
+      "what": "A landing page is general design work, not a named command. With PRODUCT.md missing, a new surface routes through init, then new-work. The surface is a Persuade page, chosen from the surface, not the product.",
+      "files": [
+        "SKILL.md"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 77
+        },
+        {
+          "file": "SKILL.md",
+          "line": 36
+        },
+        {
+          "file": "SKILL.md",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "kind": "read",
+      "title": "Explore before asking",
+      "what": "init.md has the model scan docs, config, routes, brand assets and platform signals so the user is not asked what the repo already answers, and form a platform hypothesis (web, ios, android, adaptive).",
+      "files": [
+        "reference/init.md"
+      ],
+      "evidence": [
+        {
+          "file": "reference/init.md",
+          "line": 17,
+          "end": 23
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "kind": "ask",
+      "title": "Interview for product truth",
+      "what": "Up to three focused questions per round through the structured question tool (users and job, unique mechanism, constraints), plus the stack question on a greenfield project and, when image generation exists, comp-first or code-first. No aesthetic questions here.",
+      "files": [
+        "reference/init.md"
+      ],
+      "evidence": [
+        {
+          "file": "reference/init.md",
+          "line": 27,
+          "end": 31
+        },
+        {
+          "file": "reference/init.md",
+          "line": 39
+        },
+        {
+          "file": "reference/init.md",
+          "line": 41
+        },
+        {
+          "file": "reference/init.md",
+          "line": 112
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "kind": "write",
+      "title": "Write PRODUCT.md and config",
+      "what": "Writes only confirmed facts under a versioned schema comment, then `.impeccable/config.json` with `buildPath` only if the user actually answered. A completion gate checks the file exists before new-work may load.",
+      "files": [
+        "reference/init.md"
+      ],
+      "evidence": [
+        {
+          "file": "reference/init.md",
+          "line": 56,
+          "end": 63
+        },
+        {
+          "file": "reference/init.md",
+          "line": 106,
+          "end": 108
+        },
+        {
+          "file": "reference/init.md",
+          "line": 114
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "kind": "ask",
+      "title": "Ask what will change the work",
+      "what": "new-work.md decides what visual authority already exists (redesign, established, incomplete, none), then asks 2-3 mode-specific questions: for Persuade, who must act, what they should believe, and which real proof earns it.",
+      "files": [
+        "reference/new-work.md"
+      ],
+      "evidence": [
+        {
+          "file": "reference/new-work.md",
+          "line": 7,
+          "end": 16
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 20,
+          "end": 27
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "kind": "exec",
+      "title": "Roll the dice for a direction",
+      "what": "After listing seven culturally grounded candidates, the model must run `impeccable concept-seed --scope direction --mode persuade`. The script assigns the direction to build, deals catalog challengers and prints MODE RULES and a PRESENTATION block. Writing artifact code first is called a contract violation. The script contacts impeccable.style's roll API (found by reading the binary's strings).",
+      "files": [
+        "reference/new-work.md",
+        "scripts/impeccable",
+        "reference/mode-persuade.md"
+      ],
+      "evidence": [
+        {
+          "file": "reference/new-work.md",
+          "line": 45,
+          "end": 48
+        },
+        {
+          "file": "reference/mode-persuade.md",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "kind": "ask",
+      "title": "Decision page in the browser",
+      "what": "`impeccable serve-question --start` serves a local page with the assigned direction, the model's own pick, challengers, the standing canon exit, re-roll registers and a build-path toggle; comps are generated after serving. `--wait` collects the answer; exit 4 (closed unanswered) falls back to the structured tool, then proceeds unattended with stated assumptions.",
+      "files": [
+        "reference/new-work.md",
+        "reference/visualize.md"
+      ],
+      "evidence": [
+        {
+          "file": "reference/new-work.md",
+          "line": 51
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "kind": "write",
+      "title": "Record the direction contract",
+      "what": "Six short blocks (THESIS, OWN-WORLD, STORY, FIRST VIEWPORT, FORM with the seed reference, FINISH) go into the surface brief via `impeccable surface-brief write`, and are re-read to verify before building. They must never leak into shipped source.",
+      "files": [
+        "reference/new-work.md"
+      ],
+      "evidence": [
+        {
+          "file": "reference/new-work.md",
+          "line": 75,
+          "end": 77
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 83,
+          "end": 87
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "kind": "verify",
+      "title": "Build through gated phases",
+      "what": "Comp-led: `impeccable build-phase start`, then comps, spec (comp-spec grid, font-match), plates, hero, sections, motion, responsive, each closed by `build-phase advance`, which exits 2 when its gate fails. craft-floor.md is read just before the first UI edit. Code-led skips comps; the contract carries the ambition.",
+      "files": [
+        "reference/new-work.md",
+        "reference/region-map.md",
+        "reference/craft-floor.md"
+      ],
+      "evidence": [
+        {
+          "file": "reference/new-work.md",
+          "line": 101,
+          "end": 118
+        },
+        {
+          "file": "SKILL.md",
+          "line": 21
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "kind": "spawn",
+      "title": "Fresh-context finish review",
+      "what": "After at most two batched screenshot rounds and one `impeccable detect --json` pass, the model spawns the shipped `impeccable-finish-reviewer` with the request, screenshots, contract and diffs, then acts on one of four dispositions: ship, fix, rebuild, recapture.",
+      "files": [
+        "reference/new-work.md"
+      ],
+      "evidence": [
+        {
+          "file": "reference/new-work.md",
+          "line": 138
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 142,
+          "end": 146
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "kind": "spawn",
+      "title": "Document the built world",
+      "what": "The shipped `impeccable-documenter` writes DESIGN.md and `.impeccable/design.json` from what was actually built (or degraded/documenter.md inline without subagents), and `build-phase finish --disposition ship` records the end. Unreviewed and undocumented counts as unfinished.",
+      "files": [
+        "reference/new-work.md",
+        "reference/document.md",
+        "reference/degraded/documenter.md"
+      ],
+      "evidence": [
+        {
+          "file": "reference/new-work.md",
+          "line": 152,
+          "end": 154
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 79
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "path": "SKILL.md",
+      "role": "router",
+      "explains": "88 lines: three core principles, a three-step Setup (launcher, playbook, craft floor), a launcher-failure fallback, four design rules, four visitor modes, the 24-row Commands table and a five-case routing list."
+    },
+    {
+      "path": "reference/new-work.md",
+      "role": "playbook",
+      "explains": "The engine room for new surfaces and replacement worlds (~15.8k tokens, 155 lines, seven lines over 2.5k characters): visual authority, the ask round, concept-seed and the decision page, colour and type commitment, the direction contract, the gated build, finish review and documentation."
+    },
+    {
+      "path": "reference/init.md",
+      "role": "playbook",
+      "explains": "Product-truth interview and PRODUCT.md template with a schema-version comment; owns the stack and build-path questions and a completion gate."
+    },
+    {
+      "path": "reference/craft-floor.md",
+      "role": "quality floor",
+      "explains": "45 lines read before every UI edit: nine verify checks (contrast, depth, spacing, type, motion, states, browser surfaces, copy, coverage) and a Refuse list of category defaults, one of them an absolute ban (eyebrows)."
+    },
+    {
+      "path": "reference/routing.md",
+      "role": "router",
+      "explains": "The no-argument menu: reasons over `impeccable signals` JSON and an optional detector pass to recommend 2-3 next commands."
+    },
+    {
+      "path": "reference/critique.md",
+      "role": "playbook",
+      "explains": "820 lines: an orchestration contract (two isolated assessments, degraded banner, final-question gate, snapshot persistence) followed by inlined reference material: cognitive load, Nielsen heuristics, personas."
+    },
+    {
+      "path": "reference/polish.md",
+      "role": "playbook",
+      "explains": "Drift classification, triage order and a critique-snapshot backlog read and closed through `critique-storage`."
+    },
+    {
+      "path": "reference/audit.md",
+      "role": "playbook",
+      "explains": "Five scored dimensions (/20), P0-P3 findings, command recommendations; web only, with audit.native.md as its twin."
+    },
+    {
+      "path": "reference/visualize.md",
+      "role": "playbook",
+      "explains": "Comp discipline: prompt shape, three compositional options, one approval point with no skip condition, and provenance for every raster."
+    },
+    {
+      "path": "reference/mode-persuade.md",
+      "role": "mode rules",
+      "explains": "Printed by concept-seed as the MODE RULES block for Persuade and Experience surfaces; read directly only when the direction was pinned. mode-operate.md and mode-read.md are its siblings."
+    },
+    {
+      "path": "reference/live.md",
+      "role": "playbook",
+      "explains": "Live variant mode: a poll-loop protocol with per-harness policy (Claude Code, Cursor, Codex) where each tool output's `_instructions` field overrides the document."
+    },
+    {
+      "path": "reference/hooks.md",
+      "role": "admin",
+      "explains": "Turns the per-edit design detector hook on or off; installs hook entries in Claude Code, Codex, Cursor, Grok, Copilot and Gemini settings files."
+    },
+    {
+      "path": "reference/degraded/finish-reviewer.md",
+      "role": "fallback agent",
+      "explains": "Build-generated inline copy of the finish reviewer agent for harnesses without subagents (header: Generated from skill/agents/ at build time)."
+    },
+    {
+      "path": "scripts/command-metadata.json",
+      "role": "metadata",
+      "explains": "Description and argument hint for each of the 24 commands; the binary reads it, and `pin` uses it to create standalone shortcuts (inferred from scripts/impeccable:70-71)."
+    },
+    {
+      "path": "scripts/engine-checksums.txt",
+      "role": "integrity",
+      "explains": "SHA-256 per platform for engine 0.1.18; the launcher refuses any cached or downloaded binary that does not match."
+    },
+    {
+      "path": "scripts/data/font-index.json",
+      "role": "data",
+      "explains": "A 1.1 MB fingerprint index of the Google Fonts catalogue used by `impeccable font-match --rank` (new-work.md:110). Described by purpose, not read."
+    }
+  ],
+  "scripts": [
+    {
+      "path": "scripts/impeccable",
+      "does": "POSIX launcher. Exports IMPECCABLE_SKILL_DIR, then execs the first engine it trusts: $IMPECCABLE_BIN, the sibling bin/<os>-<arch> binary, a probed ~/.impeccable/bin binary, a checksum-verified version cache, a probed `impeccable` on PATH; as a last resort downloads the pinned version from GitHub releases.",
+      "invokedAs": "<skill-base-dir>/scripts/impeccable context (and every other `impeccable <verb>` in the playbooks)",
+      "touches": [
+        "exec: engine binary",
+        "network: first-run download from github.com/pbakaus/impeccable releases only when no local binary exists",
+        "write: ~/.impeccable/bin/<version>/ cache and .verified stamp"
+      ],
+      "safety": "Fails closed: no checksum line means no network traffic (lines 175-179); a hash mismatch or missing sha256 tool deletes the download (210-222). On this install the darwin-arm64 binary ships next to it, so the sibling path at line 100 wins and nothing is downloaded."
+    },
+    {
+      "path": "scripts/impeccable.cmd",
+      "does": "Windows twin of the launcher with the same candidate order and certutil checksum verification.",
+      "invokedAs": ".claude/skills/impeccable/scripts/impeccable.cmd <verb> (when no `sh` exists)",
+      "touches": [
+        "exec: engine binary",
+        "network: first-run download",
+        "write: user cache"
+      ],
+      "safety": "Its own header says it is exercised by dry parsing and string tests, not yet on a real Windows machine (impeccable.cmd:6-7)."
+    },
+    {
+      "path": "scripts/bin/darwin-arm64/impeccable",
+      "does": "The 17.7 MB engine (its strings show a Rust build) that implements context, signals, concept-seed, serve-question, surface-brief, build-phase, comp-spec, font-match, comp-diff, generate-image, embed-prompt, detect, critique-storage, live, hooks, doctor, pin and telemetry.",
+      "invokedAs": "via the launcher only",
+      "touches": [
+        "read: PRODUCT.md, DESIGN.md, surface briefs, .impeccable/ state",
+        "write: .impeccable/ (config, critique snapshots, build state, mocks, review captures)",
+        "network: GET https://impeccable.style/api/roll from concept-seed, plus a choice ping unless telemetry is off",
+        "network: api.openai.com when generate-image is used with OPENAI_API_KEY",
+        "write: harness hook settings on `hooks on`"
+      ],
+      "safety": "Opaque to review from the markdown. Network endpoints and telemetry wording above come from reading its embedded strings, never from running it."
+    },
+    {
+      "path": "scripts/live-browser.js",
+      "does": "The live-mode overlay bundle (554 KB) injected into the user's page via a script tag served from the localhost helper; draws the floating picker bar and cycles variants.",
+      "invokedAs": "served by `impeccable live` as /live.js",
+      "touches": [
+        "browser: runs inside the user's dev page",
+        "network: talks to the localhost helper (SSE, /poll)"
+      ],
+      "safety": "Development only; live.md:7 forbids weakening production CSP, and CSP patches need a y/n consent (live-setup.md:60-71)."
+    },
+    {
+      "path": "scripts/modern-screenshot.umd.js",
+      "does": "Vendored DOM-to-image library used by the browser side to capture elements. Described by purpose, not read.",
+      "invokedAs": "loaded in the page by the live overlay (inferred)",
+      "touches": [
+        "browser"
+      ],
+      "safety": "Third-party minified code."
+    }
+  ],
+  "patterns": [
+    {
+      "id": "router-skill",
+      "name": "Router SKILL.md",
+      "what": "An 88-line SKILL.md routes each request to one playbook through a Commands table and an explicit Routing list; 45 reference files hold ~111k tokens behind it.",
+      "where": [
+        {
+          "file": "SKILL.md",
+          "line": 45,
+          "end": 70
+        },
+        {
+          "file": "SKILL.md",
+          "line": 72,
+          "end": 78
+        }
+      ],
+      "steal": "Put the table in SKILL.md and keep each playbook self-contained; add a no-argument row and an `Otherwise` row so the model never has to guess."
+    },
+    {
+      "id": "launcher-script",
+      "name": "Context launcher",
+      "what": "The first instruction runs `scripts/impeccable context`, which gathers PRODUCT.md, DESIGN.md, the surface brief and native guidance and prints directives (NO_PRODUCT_MD, CONTEXT_STALE, MANUAL_DETECTOR_REQUIRED, IMAGE_GEN_AVAILABLE).",
+      "where": [
+        {
+          "file": "SKILL.md",
+          "line": 19
+        },
+        {
+          "file": "reference/routing.md",
+          "line": 11
+        },
+        {
+          "file": "reference/hooks.md",
+          "line": 9
+        }
+      ],
+      "steal": "Have one deterministic command assemble project state, and write a fallback for when it cannot run (SKILL.md:23 shows how)."
+    },
+    {
+      "id": "hidden-instructions",
+      "name": "Instructions that live in script output",
+      "what": "SKILL.md says follow the launcher's directives; concept-seed prints MODE RULES, PRESENTATION and TELEMETRY blocks; live mode's `_instructions` field beats the document. Much of the behaviour, including its network disclosure text, can only be read in a compiled binary.",
+      "where": [
+        {
+          "file": "SKILL.md",
+          "line": 19
+        },
+        {
+          "file": "reference/live.md",
+          "line": 11
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 61
+        }
+      ],
+      "steal": "If you do this, mirror every directive in a markdown file the user can read; impeccable does this for the mode rules (mode-persuade.md:3) but not for the launcher directives."
+    },
+    {
+      "id": "state-on-disk",
+      "name": "Gated build state machine",
+      "what": "A comp-led build runs as `build-phase start` then `advance` through comps, spec, plates, hero, sections, motion and responsive; exit 2 means the gate failed and printed why, and nothing for a later phase may be written while an earlier gate is open.",
+      "where": [
+        {
+          "file": "reference/new-work.md",
+          "line": 101,
+          "end": 118
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 154
+        }
+      ],
+      "steal": "When models reliably overrate their own output, move the check out of the model: measure the render against the target in a script and refuse to advance."
+    },
+    {
+      "id": "deterministic-core",
+      "name": "Measure, do not eyeball",
+      "what": "Typography is matched by `font-match --measure/--rank` against a fingerprint index; layout is measured with `comp-spec --grid`; fidelity is checked with `comp-diff`; critique snapshots carry content fingerprints so polish knows when a backlog is stale.",
+      "where": [
+        {
+          "file": "reference/new-work.md",
+          "line": 110
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 138
+        },
+        {
+          "file": "reference/polish.md",
+          "line": 35
+        }
+      ],
+      "steal": "Give every claim a model tends to fake (this font matches, this matches the comp) a script that produces numbers."
+    },
+    {
+      "id": "anti-convergence-roll",
+      "name": "Dice against the category default",
+      "what": "New pattern. The model ranks its own grounded directions, then a seeded roll (`concept-seed`) assigns which one leads and deals catalog challengers, so runs stop converging on the same look. The user keeps the choice; a pinned brief always beats the roll.",
+      "where": [
+        {
+          "file": "reference/new-work.md",
+          "line": 41
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 48
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 51
+        }
+      ],
+      "steal": "When your outputs cluster, inject controlled randomness at the choice point instead of writing ever longer 'be original' prose, and keep the user's override absolute."
+    },
+    {
+      "id": "named-model-priors",
+      "name": "Name the model's own rut",
+      "what": "New pattern. The playbooks list the specific looks and fonts models default to (cream ground plus serif plus terracotta, Fraunces, Space Grotesk...) and the model's measured rendition prior, and treat landing in one as a failed self-check unless the brief asked for it.",
+      "where": [
+        {
+          "file": "reference/new-work.md",
+          "line": 67
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 69,
+          "end": 71
+        },
+        {
+          "file": "reference/craft-floor.md",
+          "line": 21,
+          "end": 42
+        }
+      ],
+      "steal": "Concrete blacklists of your model's habits beat adjectives like 'distinctive'; always pair them with the exception (the brief may earn it)."
+    },
+    {
+      "id": "decision-page",
+      "name": "Decision page",
+      "what": "`impeccable serve-question` daemonizes a local page of direction cards with comps, re-roll registers, a canon exit and a build-path toggle; `--wait` returns the ANSWER as JSON, with exit codes for re-roll (keep the server), closed unanswered (exit 4) and cannot-start (exit 2).",
+      "where": [
+        {
+          "file": "reference/new-work.md",
+          "line": 51
+        },
+        {
+          "file": "reference/visualize.md",
+          "line": 27
+        }
+      ],
+      "steal": "Give visual choices a visual surface, and define what each exit code means for the model so the fallback is mechanical."
+    },
+    {
+      "id": "interview-gate",
+      "name": "Interview with an attendance probe",
+      "what": "init asks at most three questions per round through the structured tool and requires one real answer round before writing PRODUCT.md; whether anyone is there is tested by actually asking, not by a system-prompt claim, and inferred facts are labelled.",
+      "where": [
+        {
+          "file": "reference/init.md",
+          "line": 27,
+          "end": 31
+        }
+      ],
+      "steal": "Make 'is the user here?' an observable test and say exactly what the model writes when nobody answers."
+    },
+    {
+      "id": "shipped-subagents",
+      "name": "Shipped subagents with build-generated fallbacks",
+      "what": "Four agents (finish reviewer, documenter, asset producer, manual-edit applier) are installed for the harness; `reference/degraded/` holds generated inline copies for harnesses without subagents.",
+      "where": [
+        {
+          "file": "reference/new-work.md",
+          "line": 144
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 152
+        },
+        {
+          "file": "reference/degraded/finish-reviewer.md",
+          "line": 1,
+          "end": 2
+        }
+      ],
+      "steal": "Generate the no-subagent fallback from the agent definition at build time so the two never drift."
+    },
+    {
+      "id": "fresh-context-review",
+      "name": "Fresh-context finish review",
+      "what": "The builder may not polish forever: after two inspection rounds it hands screenshots, contract and diffs to a reviewer with no browser and no build transcript, and must act on its disposition word.",
+      "where": [
+        {
+          "file": "reference/new-work.md",
+          "line": 142,
+          "end": 146
+        },
+        {
+          "file": "reference/degraded/finish-reviewer.md",
+          "line": 6
+        }
+      ],
+      "steal": "Cap the builder's self-review and hand judgment to a context that only sees evidence."
+    },
+    {
+      "id": "artifact-handoff",
+      "name": "Commands that hand work to each other",
+      "what": "New pattern. critique persists a fingerprinted snapshot; polish reads it as its backlog and closes it when every priority issue is cleared, so the two commands cooperate without copy-paste.",
+      "where": [
+        {
+          "file": "reference/critique.md",
+          "line": 200,
+          "end": 213
+        },
+        {
+          "file": "reference/polish.md",
+          "line": 99,
+          "end": 105
+        }
+      ],
+      "steal": "Let an evaluating command write a small, versioned artifact that the fixing command consumes and retires."
+    },
+    {
+      "id": "degraded-mode",
+      "name": "Declared degraded modes",
+      "what": "Launcher failure has a scripted announcement; critique without sub-agents must print a DEGRADED banner; native projects skip the detector and say so; sandboxed shells get exact approval wording for the roll API.",
+      "where": [
+        {
+          "file": "SKILL.md",
+          "line": 23
+        },
+        {
+          "file": "reference/critique.md",
+          "line": 9
+        },
+        {
+          "file": "reference/critique.md",
+          "line": 33
+        }
+      ],
+      "steal": "Never let a fallback be silent: require a visible marker in the output."
+    },
+    {
+      "id": "explicit-negative-trigger",
+      "name": "Negative trigger",
+      "what": "The description ends with `Not for backend-only or non-UI tasks`.",
+      "where": [
+        {
+          "file": "SKILL.md",
+          "line": 3
+        }
+      ],
+      "steal": "One sentence of boundary costs a few tokens and removes a class of false fires."
+    },
+    {
+      "id": "telemetry-opt-out",
+      "name": "Telemetry with opt-out",
+      "what": "The roll request and a choice ping carry seed key, scope, mode, round, winning card kind and catalog id; DO_NOT_TRACK, IMPECCABLE_NO_TELEMETRY or `impeccable telemetry off` disable recording. Visible only in the binary's strings; the markdown mentions only a TELEMETRY line.",
+      "where": [
+        {
+          "file": "reference/new-work.md",
+          "line": 103
+        }
+      ],
+      "steal": "Honour DO_NOT_TRACK, but also document the endpoint and payload in a markdown file the user can read before installing."
+    }
+  ],
+  "guardrails": [
+    {
+      "rule": "Never auto-run a command from the bare menu",
+      "quote": "present its context-aware menu; never auto-run a command.",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 74
+      }
+    },
+    {
+      "rule": "The user's brief beats the skill's taste",
+      "quote": "Redirecting a clear brief toward your taste is failure.",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 27
+      }
+    },
+    {
+      "rule": "Refinement may not smuggle in a redesign",
+      "quote": "Polish is refinement, never concealed redesign.",
+      "evidence": {
+        "file": "reference/polish.md",
+        "line": 3
+      }
+    },
+    {
+      "rule": "No drift repair during design work",
+      "quote": "**Never repair drift as a side effect of a design task.**",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 88
+      }
+    },
+    {
+      "rule": "Announce a launcher failure before continuing",
+      "quote": "“Context loading did not run; I’ll read the existing project context directly.”",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 23
+      }
+    },
+    {
+      "rule": "init never overwrites or invents a visual world",
+      "quote": "Never silently overwrite an existing file or offer DESIGN.md during init.",
+      "evidence": {
+        "file": "reference/init.md",
+        "line": 15
+      }
+    },
+    {
+      "rule": "Silence is not an answer",
+      "quote": "A recommendation you made is not an answer you received",
+      "evidence": {
+        "file": "reference/init.md",
+        "line": 114
+      }
+    },
+    {
+      "rule": "The roll is mandatory on a new world",
+      "quote": "No substitute, no skip: on a new or replacement world, writing artifact code before this script has run and its assignment is acknowledged is a contract violation",
+      "evidence": {
+        "file": "reference/new-work.md",
+        "line": 48
+      }
+    },
+    {
+      "rule": "Claims stay uninventable",
+      "quote": "What stays uninventable are commercial and factual claims: prices, customers, benchmarks, endpoints, capabilities the product does not have.",
+      "evidence": {
+        "file": "reference/new-work.md",
+        "line": 59
+      }
+    },
+    {
+      "rule": "The direction contract never ships",
+      "quote": "Never copy the direction contract into implementation source or any browser-delivered artifact.",
+      "evidence": {
+        "file": "reference/new-work.md",
+        "line": 77
+      }
+    },
+    {
+      "rule": "No code before comp approval",
+      "quote": "Do not begin code until the user approves a direction or explicitly delegates the choice.",
+      "evidence": {
+        "file": "reference/visualize.md",
+        "line": 29
+      }
+    },
+    {
+      "rule": "Degraded critiques must say so",
+      "quote": "A silent degraded critique is a failed critique.",
+      "evidence": {
+        "file": "reference/critique.md",
+        "line": 9
+      }
+    },
+    {
+      "rule": "Audit documents, it does not fix",
+      "quote": "Don't fix issues; document them for other commands to address.",
+      "evidence": {
+        "file": "reference/audit.md",
+        "line": 1
+      }
+    },
+    {
+      "rule": "Never ignore a real finding",
+      "quote": "Never add an ignore to skip a fix or to push a blocked write through.",
+      "evidence": {
+        "file": "reference/hooks.md",
+        "line": 57
+      }
+    },
+    {
+      "rule": "Never weaken production security for live mode",
+      "quote": "Do not disable browser security or weaken production CSP to enable live mode.",
+      "evidence": {
+        "file": "reference/live.md",
+        "line": 7
+      }
+    },
+    {
+      "rule": "The one absolute visual ban",
+      "quote": "This one is a ban, not a default: no brief earns it back.",
+      "evidence": {
+        "file": "reference/craft-floor.md",
+        "line": 27
+      }
+    }
+  ],
+  "risks": [
+    {
+      "level": "medium",
+      "title": "A network call on every new visual world, disclosed only in binary output",
+      "detail": "new-work.md makes `concept-seed` mandatory for any new or replacement world. Reading the binary's strings (not running it) shows its 'only network contact is one GET to https://impeccable.style/api/roll' carrying scope, mode, an eight-hex seed key and a re-roll counter, plus a choice ping (the `concept-seed --kind` rerun named at new-work.md:103; the binary's schema text says the page sends it from the card fields). Neither SKILL.md nor any reference names the endpoint; the markdown only mentions 'the roll's TELEMETRY line' (new-work.md:103). With no network the roll degrades to grounded candidates only.",
+      "evidence": {
+        "file": "reference/new-work.md",
+        "line": 48
+      }
+    },
+    {
+      "level": "medium",
+      "title": "Telemetry appears to be on by default, with an environment opt-out",
+      "detail": "The binary's status string reads 'telemetry: on. The roll request and the choice ping carry the seed key, scope, mode, round, pool revision, the card kind and catalog id that won, and the client version; never your project's names or code. Turn it off with `impeccable telemetry off`, DO_NOT_TRACK=1, or IMPECCABLE_NO_TELEMETRY=1.' Off, rolls still go out but the API is told not to record them and no choice is sent. That it is on by default is inferred from the wording; none of this is in the markdown.",
+      "evidence": {
+        "file": "reference/new-work.md",
+        "line": 103
+      }
+    },
+    {
+      "level": "medium",
+      "title": "Hidden instructions steer the model from launcher output",
+      "detail": "SKILL.md tells the model to 'follow its directives and do not rerun it'; live.md says a tool output's `_instructions` field 'wins' over the document; concept-seed prints MODE RULES and PRESENTATION blocks that govern the round. A reader of the markdown cannot see the full instruction set, and the 17.7 MB binary that writes it cannot be reviewed as text. The mode rules are mirrored in mode-*.md; the boot directives are not.",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 19
+      }
+    },
+    {
+      "level": "low",
+      "title": "First-run binary download (not triggered on this install)",
+      "detail": "Scanner risk confirmed but bounded: the launcher downloads from GitHub releases only after five local candidates fail, and only when engine-checksums.txt has a digest for this version and platform; a mismatch, an empty file or a missing sha256 tool deletes the download. Here the darwin-arm64 binary ships beside the launcher, so line 100 execs it and no download happens. Linux and Windows users download on first run.",
+      "evidence": {
+        "file": "scripts/impeccable",
+        "line": 138
+      }
+    },
+    {
+      "level": "medium",
+      "title": "`hooks on` writes to harness settings, including user-scope ~/.claude/settings.json",
+      "detail": "The hook runs the engine after every edit to a UI file and pushes reminders into the agent's context. Installing it edits .claude/settings.local.json or ~/.claude/settings.json, .codex/hooks.json, .cursor/hooks.json, .grok/hooks, Copilot files and .gemini/settings.json. It is gated by the user typing `/impeccable hooks on`, and `reset` removes the entries.",
+      "evidence": {
+        "file": "reference/hooks.md",
+        "line": 17
+      }
+    },
+    {
+      "level": "low",
+      "title": "Live mode serves a localhost helper and edits the project",
+      "detail": "live injects an overlay script into the page's entry file, may patch dev-only CSP after an explicit y/n consent, and runs a long poll loop. critique notes that a bare `live-server stop` also runs `live-inject --remove` against the entry file, an edit a read-only critique must avoid.",
+      "evidence": {
+        "file": "reference/critique.md",
+        "line": 79
+      }
+    },
+    {
+      "level": "low",
+      "title": "Image generation can spend API credit",
+      "detail": "Comps and plates use the harness image tool first, then an API fallback (`impeccable generate-image`). The binary's strings show it targets api.openai.com and needs OPENAI_API_KEY. A comp-led landing page can generate up to six decision comps (assigned, pick, up to three challengers, canon; new-work.md:49-53), two more compositional comps (visualize.md:11) and one plate per raster region; there is no stated cost warning.",
+      "evidence": {
+        "file": "reference/new-work.md",
+        "line": 113
+      }
+    },
+    {
+      "level": "low",
+      "title": "Very dense playbook prose",
+      "detail": "new-work.md packs single paragraphs of 3-5k characters (line 51 is about 5,000) holding many conditional rules each; it loads whole on every new surface (~15.8k tokens). Rules this dense are hard for a model to weigh against each other and hard for an author to edit safely.",
+      "evidence": {
+        "file": "reference/new-work.md",
+        "line": 51
+      }
+    },
+    {
+      "level": "info",
+      "title": "Two orphaned fallback files",
+      "detail": "Scanner warning confirmed. degraded/asset-producer.md and degraded/manual-edit-applier.md are never linked: new-work.md:113 says 'without subagents, produce them here' and live.md:305 says 'apply inline with the same contract', so the inline copies those lines would need are never loaded.",
+      "evidence": {
+        "file": "reference/new-work.md",
+        "line": 113
+      }
+    },
+    {
+      "level": "info",
+      "title": "Stale cross-reference in critique",
+      "detail": "critique.md tells the model to read a `## Design Context` section in CLAUDE.md 'from `impeccable init`', but init now writes PRODUCT.md (init.md:3, 100). Project-specific personas will usually find nothing there.",
+      "evidence": {
+        "file": "reference/critique.md",
+        "line": 163
+      }
+    },
+    {
+      "level": "info",
+      "title": "Broad trigger overlaps other installed design skills",
+      "detail": "The description claims every frontend design verb. On this machine the better-* skills and frontend-design cover parts of the same ground, and impeccable has no hand-off rule for them, so which one fires on 'check this contrast' depends on the model.",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 3
+      }
+    }
+  ],
+  "scorecard": [
+    {
+      "id": "trigger-precision",
+      "score": 4,
+      "note": "What, when and an explicit boundary in 589 characters, with vocabulary users really type (polish, bolder, empty states, DESIGN.md). It loses a point for claiming the whole frontend domain with no hand-off to narrower skills.",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "id": "progressive-disclosure",
+      "score": 4,
+      "note": "SKILL.md is ~2.8k tokens and each route loads its own playbook (polish ~6k including SKILL.md, a new landing page ~28k). Two costs keep it from 5: new-work.md loads ~15.8k tokens whole even for a small surface, and critique.md inlines its cognitive-load, heuristics and persona reference material (critique.md:292) instead of splitting it.",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 20,
+          "end": 21
+        },
+        {
+          "file": "reference/critique.md",
+          "line": 292
+        }
+      ]
+    },
+    {
+      "id": "routing-clarity",
+      "score": 5,
+      "note": "A Commands table plus an explicit five-case routing list: no argument, explicit command (ask once if two fit), workflow question, otherwise, and aliases. Even the boundary between doctor and the cheap CONTEXT_STALE subset is stated.",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 72,
+          "end": 78
+        },
+        {
+          "file": "SKILL.md",
+          "line": 86
+        }
+      ]
+    },
+    {
+      "id": "instruction-quality",
+      "score": 3,
+      "note": "Unusually well reasoned: rules carry their why (init.md:102, new-work.md:79), counterexamples are concrete (the font list at new-work.md:67), and the one absolute ban is marked as such. But the core playbook is written as 3-5k-character paragraphs stacking many conditionals, and there is drift (critique.md:163 points at a CLAUDE.md section init no longer writes).",
+      "evidence": [
+        {
+          "file": "reference/new-work.md",
+          "line": 51
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 67
+        },
+        {
+          "file": "reference/critique.md",
+          "line": 163
+        }
+      ],
+      "fix": "Split new-work.md's long paragraphs (lines 49-55, 110-115) into numbered sub-steps with one condition each, and move the decision-page protocol into its own reference."
+    },
+    {
+      "id": "determinism",
+      "score": 5,
+      "note": "Fragile steps are scripts with stated invocations and exit codes: build-phase gates, comp-spec measurement, font-match, comp-diff, embed-prompt provenance scans, critique-storage fingerprints, the detector, checksum-verified downloads.",
+      "evidence": [
+        {
+          "file": "reference/new-work.md",
+          "line": 105
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 110
+        },
+        {
+          "file": "reference/polish.md",
+          "line": 35
+        },
+        {
+          "file": "scripts/impeccable",
+          "line": 171,
+          "end": 179
+        }
+      ]
+    },
+    {
+      "id": "safety",
+      "score": 3,
+      "note": "Much is careful: fail-closed checksums, CSP patches behind an explicit y/n, the DevTools port kept on 127.0.0.1, read-only critique avoiding project edits, a ban on weakening production CSP. But the mandatory roll API call, default-on telemetry and the OpenAI image fallback are disclosed only inside the binary, and `hooks on` writes user-scope harness settings.",
+      "evidence": [
+        {
+          "file": "scripts/impeccable",
+          "line": 175,
+          "end": 179
+        },
+        {
+          "file": "reference/live-setup.md",
+          "line": 60,
+          "end": 71
+        },
+        {
+          "file": "reference/audit.md",
+          "line": 62
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 48
+        },
+        {
+          "file": "reference/hooks.md",
+          "line": 17
+        }
+      ],
+      "fix": "Add a short 'What this touches' section to SKILL.md that names impeccable.style/api/roll and its payload, the telemetry default and opt-outs, the image API fallback, and the files `hooks on` edits."
+    },
+    {
+      "id": "user-control",
+      "score": 5,
+      "note": "Asks only decisions that are the user's (product truth, stack, build path, direction, comp approval), through the structured tool or a decision page, batched to 2-3 questions, and says exactly what happens unattended: probe once, label inferences, never store a value taken from silence.",
+      "evidence": [
+        {
+          "file": "reference/init.md",
+          "line": 29,
+          "end": 31
+        },
+        {
+          "file": "reference/init.md",
+          "line": 114
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 51
+        },
+        {
+          "file": "reference/visualize.md",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "id": "maintainability",
+      "score": 3,
+      "note": "Versioned (4.8.0, engine 0.1.18), command metadata in JSON, degraded agents generated at build time, and a schema-version comment in PRODUCT.md. Against that: two orphaned fallbacks, a stale CLAUDE.md reference, the 19-command recommendation list duplicated verbatim in audit.md and critique.md, and much behaviour defined only inside a compiled binary.",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 4
+        },
+        {
+          "file": "reference/init.md",
+          "line": 102
+        },
+        {
+          "file": "reference/audit.md",
+          "line": 124
+        },
+        {
+          "file": "reference/critique.md",
+          "line": 273
+        },
+        {
+          "file": "reference/degraded/finish-reviewer.md",
+          "line": 1
+        }
+      ],
+      "fix": "Link degraded/asset-producer.md from new-work.md:113 and degraded/manual-edit-applier.md from live.md:305, fix critique.md:163, and generate the recommendation lists from command-metadata.json."
+    },
+    {
+      "id": "portability",
+      "score": 4,
+      "note": "Resolves its own base directory, ships a Windows launcher, pins per-platform binaries by checksum, names its agents for Claude Code, Codex, Cursor and Copilot, and has fallbacks for no launcher, no subagents, no network and no image generation. Held back by binaries downloaded on first run for most platforms, a .cmd never run on real Windows, and comp-led builds it calls a frontier-model job.",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 19
+        },
+        {
+          "file": "scripts/impeccable.cmd",
+          "line": 6,
+          "end": 7
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 108
+        },
+        {
+          "file": "reference/new-work.md",
+          "line": 144
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "PRODUCT.md",
+      "meaning": "The project's durable product truth (users, purpose, positioning, constraints, evidence), written by init after an interview. Never holds visual decisions."
+    },
+    {
+      "term": "DESIGN.md",
+      "meaning": "The durable visual system (colors, type, spacing, components, do's and don'ts), with a machine-readable sidecar `.impeccable/design.json`. On a new world it is written last, from what was built."
+    },
+    {
+      "term": "surface brief",
+      "meaning": "A small per-route or per-artifact file holding strategy that belongs to one surface: its mode, audience, chosen direction and the direction contract. Read and written with `impeccable surface-brief`."
+    },
+    {
+      "term": "mode",
+      "meaning": "What the visitor's success looks like on a surface: Persuade (decide and act), Operate (complete a task), Read (understand), Experience (be inside the work). Chosen from the surface, not the product."
+    },
+    {
+      "term": "visual world",
+      "meaning": "A whole visual identity (palette, materials, type voices, composition, controls) drawn from the audience's culture. New work either inherits, expands or replaces one."
+    },
+    {
+      "term": "concept-seed / the roll",
+      "meaning": "A launcher command that, seeded by dice, assigns which of the model's directions leads and deals catalog challengers, so runs do not all land on the category default."
+    },
+    {
+      "term": "challenger",
+      "meaning": "A direction from impeccable's catalog dealt by the roll, fused with the product's facts and judged against the assigned direction: wins, competitive or declined."
+    },
+    {
+      "term": "raise",
+      "meaning": "A discipline borrowed from a declined challenger (never its surface styling) and written into the presented direction as a named line."
+    },
+    {
+      "term": "standing exit / canon card",
+      "meaning": "The always-available option to build the category standard played straight; the user's door, which the model may never recommend."
+    },
+    {
+      "term": "decision page",
+      "meaning": "A local web page served by `impeccable serve-question` showing direction cards, comps, re-roll and a build-path toggle, returning the user's choice as JSON."
+    },
+    {
+      "term": "comp",
+      "meaning": "A generated high-fidelity image of the surface used as a north star. A decision comp illustrates a card in the direction round; the approved comp becomes a measured spatial contract on a comp-led build."
+    },
+    {
+      "term": "comp-led / code-led",
+      "meaning": "The two build paths, stored as `buildPath` in `.impeccable/config.json`. Comp-led sets the bar with an image and audits the build against it; code-led builds directly and puts the ambition in the written contract. Operate and Read surfaces are always code-led."
+    },
+    {
+      "term": "direction contract",
+      "meaning": "Six short blocks (THESIS, OWN-WORLD, STORY, FIRST VIEWPORT, FORM, FINISH) recorded in the surface brief before code; the finish reviewer audits the render against it. Must never appear in shipped code."
+    },
+    {
+      "term": "seed reference",
+      "meaning": "A `seed:` plus 16-hex identifier printed by concept-seed and written into the FORM block in place of the raw seed key."
+    },
+    {
+      "term": "build-phase",
+      "meaning": "The comp-led state machine on disk (comps, spec, plates, hero, sections, motion, responsive) whose gates measure the screen and refuse to advance on failure."
+    },
+    {
+      "term": "region map / spec",
+      "meaning": "The comp divided into named regions with boxes, sampled palettes and a medium (plate, image, texture, text, control, chrome), produced with `impeccable comp-spec`."
+    },
+    {
+      "term": "plate",
+      "meaning": "A raster asset regenerated at full resolution from a comp region, UI text removed, placed at its measured box."
+    },
+    {
+      "term": "provenance",
+      "meaning": "The generation prompt or origin embedded in every shipping raster, checked with `impeccable embed-prompt --scan`."
+    },
+    {
+      "term": "QUALITY BAR",
+      "meaning": "Reference board and hero images for a catalog world that set the finish level a build must reach, never its composition."
+    },
+    {
+      "term": "MODE RULES",
+      "meaning": "The DIRECTIONS and COMPS rules for the surface's mode, printed by concept-seed from mode-persuade.md, mode-operate.md or mode-read.md."
+    },
+    {
+      "term": "craft floor",
+      "meaning": "The mechanical quality checks and refused category defaults read immediately before any UI edit."
+    },
+    {
+      "term": "disposition",
+      "meaning": "The finish reviewer's verdict word, one of four: ship, fix, rebuild, recapture. The builder acts on it and reports it at its real scope."
+    },
+    {
+      "term": "detector / design hook",
+      "meaning": "`impeccable detect`, a bundled HTML and CSS rule engine; the hook runs it after each UI file edit and pushes findings into the agent's context. Web only."
+    },
+    {
+      "term": "critique snapshot",
+      "meaning": "A fingerprinted copy of a critique report under `.impeccable/critique/` that polish reads as its backlog and closes when cleared."
+    },
+    {
+      "term": "CONTEXT_STALE / doctor",
+      "meaning": "A boot directive reporting drift between project files and what this version reads; `/impeccable doctor` is the full report and repair, run only when asked."
+    },
+    {
+      "term": "incumbent",
+      "meaning": "The design already in the code. Refinement preserves it; redesign treats it as evidence and anti-reference."
+    },
+    {
+      "term": "pin",
+      "meaning": "`impeccable pin <command>` creates a standalone `/<command>` shortcut for one sub-command."
+    }
+  ],
+  "verdict": {
+    "strengths": [
+      "Routing is explicit down to the no-argument and ambiguous cases, and each command loads one playbook.",
+      "It turns the model's known failure modes (sameness, overrating its own render, endless polishing, silent fallbacks) into scripts, gates and required banners.",
+      "It asks only the user's decisions, batches them, uses a structured tool or visual page, and says what happens unattended.",
+      "The launcher is careful: pinned versions, fail-closed checksums, no download when a local binary exists."
+    ],
+    "weaknesses": [
+      "Network contact and telemetry are disclosed only in binary output, not in any file a user reads before installing.",
+      "Much behaviour lives in a compiled binary's printed directives, so the markdown is not the full specification.",
+      "new-work.md is very dense; one paragraph can carry a dozen conditional rules.",
+      "Small drift: two orphaned fallbacks, a stale CLAUDE.md pointer, duplicated command lists."
+    ],
+    "bestFor": "Developers using a frontier model who want opinionated, finished frontend work and are comfortable with a bundled binary, an `.impeccable/` folder in the repo and an anonymous roll API (with DO_NOT_TRACK as the off switch). Overkill for a one-line CSS fix. Teams with strict egress or review rules should read the binary's network behaviour first.",
+    "lessons": [
+      "When a model overrates its own output, measure it in a script and refuse to advance.",
+      "Name your model's specific default looks; 'be distinctive' does nothing, a list of fonts and palettes does.",
+      "Controlled randomness at the choice point beats longer originality prose, provided the user's pin always wins.",
+      "Require a visible banner for every degraded path.",
+      "If a script prints instructions, mirror them in markdown, including what it sends over the network."
+    ]
+  },
+  "sourceUrl": "https://github.com/pbakaus/impeccable"
+}

@@ -1,0 +1,3000 @@
+{
+  "schema": "skills-plainer/analysis@1",
+  "id": "skill-creator",
+  "analyzedAt": "2026-11-07",
+  "analyzer": "skills-plainer 1.0.0 · claude-opus-5-5",
+  "source": {
+    "path": "~/.claude/plugins/marketplaces/anthropic-agent-skills/skills/skill-creator",
+    "origin": "plugin:anthropic-agent-skills"
+  },
+  "readInFull": [
+    "SKILL.md",
+    "agents/grader.md",
+    "agents/comparator.md",
+    "agents/analyzer.md",
+    "references/schemas.md",
+    "scripts/run_eval.py",
+    "scripts/improve_description.py",
+    "scripts/run_loop.py",
+    "scripts/utils.py",
+    "scripts/package_skill.py",
+    "scripts/quick_validate.py",
+    "eval-viewer/generate_review.py"
+  ],
+  "inventory": {
+    "schema": "skills-plainer/inventory@1",
+    "scannedAt": "2026-11-07T19:47:21+00:00",
+    "root": "skill-creator",
+    "folder": "skill-creator",
+    "frontmatter": {
+      "name": "skill-creator",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy."
+    },
+    "frontmatterUnknownKeys": [],
+    "description": {
+      "chars": 319,
+      "words": 46,
+      "tokens": 80,
+      "hasWhen": true,
+      "whenClauses": [
+        "Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy"
+      ],
+      "negativeClauses": [],
+      "quotedTriggers": [],
+      "firstPerson": false,
+      "secondPerson": false,
+      "over1024": false
+    },
+    "skillMd": {
+      "lines": 486,
+      "tokens": 8247,
+      "bodyTokens": 8156,
+      "bodyStartLine": 6,
+      "outline": [
+        {
+          "level": 1,
+          "text": "Skill Creator",
+          "line": 6
+        },
+        {
+          "level": 2,
+          "text": "Communicating with the user",
+          "line": 32
+        },
+        {
+          "level": 2,
+          "text": "Creating a skill",
+          "line": 45
+        },
+        {
+          "level": 3,
+          "text": "Capture Intent",
+          "line": 47
+        },
+        {
+          "level": 3,
+          "text": "Interview and Research",
+          "line": 56
+        },
+        {
+          "level": 3,
+          "text": "Write the SKILL.md",
+          "line": 62
+        },
+        {
+          "level": 3,
+          "text": "Skill Writing Guide",
+          "line": 71
+        },
+        {
+          "level": 4,
+          "text": "Anatomy of a Skill",
+          "line": 73
+        },
+        {
+          "level": 4,
+          "text": "Progressive Disclosure",
+          "line": 86
+        },
+        {
+          "level": 4,
+          "text": "Principle of Lack of Surprise",
+          "line": 111
+        },
+        {
+          "level": 4,
+          "text": "Writing Patterns",
+          "line": 115
+        },
+        {
+          "level": 3,
+          "text": "Writing Style",
+          "line": 137
+        },
+        {
+          "level": 3,
+          "text": "Test Cases",
+          "line": 141
+        },
+        {
+          "level": 2,
+          "text": "Running and evaluating test cases",
+          "line": 163
+        },
+        {
+          "level": 3,
+          "text": "Step 1: Spawn all runs (with-skill AND baseline) in the same turn",
+          "line": 169
+        },
+        {
+          "level": 3,
+          "text": "Step 2: While runs are in progress, draft assertions",
+          "line": 199
+        },
+        {
+          "level": 3,
+          "text": "Step 3: As runs complete, capture timing data",
+          "line": 207
+        },
+        {
+          "level": 3,
+          "text": "Step 4: Grade, aggregate, and launch the viewer",
+          "line": 221
+        },
+        {
+          "level": 3,
+          "text": "What the user sees in the viewer",
+          "line": 253
+        },
+        {
+          "level": 3,
+          "text": "Step 5: Read the feedback",
+          "line": 267
+        },
+        {
+          "level": 2,
+          "text": "Improving the skill",
+          "line": 292
+        },
+        {
+          "level": 3,
+          "text": "How to think about improvements",
+          "line": 296
+        },
+        {
+          "level": 3,
+          "text": "The iteration loop",
+          "line": 308
+        },
+        {
+          "level": 2,
+          "text": "Advanced: Blind comparison",
+          "line": 325
+        },
+        {
+          "level": 2,
+          "text": "Description Optimization",
+          "line": 333
+        },
+        {
+          "level": 3,
+          "text": "Step 1: Generate trigger eval queries",
+          "line": 337
+        },
+        {
+          "level": 3,
+          "text": "Step 2: Review with user",
+          "line": 360
+        },
+        {
+          "level": 3,
+          "text": "Step 3: Run the optimization loop",
+          "line": 375
+        },
+        {
+          "level": 3,
+          "text": "How skill triggering works",
+          "line": 396
+        },
+        {
+          "level": 3,
+          "text": "Step 4: Apply the result",
+          "line": 402
+        },
+        {
+          "level": 3,
+          "text": "Package and Present (only if `present_files` tool is available)",
+          "line": 408
+        },
+        {
+          "level": 2,
+          "text": "Claude.ai-specific instructions",
+          "line": 420
+        },
+        {
+          "level": 2,
+          "text": "Cowork-Specific Instructions",
+          "line": 445
+        },
+        {
+          "level": 2,
+          "text": "Reference files",
+          "line": 459
+        }
+      ],
+      "sections": [
+        {
+          "heading": "Skill Creator",
+          "line": 6,
+          "tokens": 494,
+          "lines": 26
+        },
+        {
+          "heading": "Communicating with the user",
+          "line": 32,
+          "tokens": 237,
+          "lines": 13
+        },
+        {
+          "heading": "Creating a skill",
+          "line": 45,
+          "tokens": 1497,
+          "lines": 118
+        },
+        {
+          "heading": "Running and evaluating test cases",
+          "line": 163,
+          "tokens": 1888,
+          "lines": 129
+        },
+        {
+          "heading": "Improving the skill",
+          "line": 292,
+          "tokens": 959,
+          "lines": 33
+        },
+        {
+          "heading": "Advanced: Blind comparison",
+          "line": 325,
+          "tokens": 140,
+          "lines": 8
+        },
+        {
+          "heading": "Description Optimization",
+          "line": 333,
+          "tokens": 1499,
+          "lines": 87
+        },
+        {
+          "heading": "Claude.ai-specific instructions",
+          "line": 420,
+          "tokens": 667,
+          "lines": 25
+        },
+        {
+          "heading": "Cowork-Specific Instructions",
+          "line": 445,
+          "tokens": 468,
+          "lines": 14
+        },
+        {
+          "heading": "Reference files",
+          "line": 459,
+          "tokens": 306,
+          "lines": 28
+        }
+      ]
+    },
+    "budget": {
+      "always": 84,
+      "onTrigger": 8156,
+      "onDemand": 9686,
+      "executedBytes": 89650,
+      "note": "tokens estimated at ~4 chars/token; 'always' is name+description in the skill index"
+    },
+    "totals": {
+      "bytes": 224992,
+      "tokens": 56137,
+      "lines": 5672,
+      "files": 18
+    },
+    "roles": {
+      "license": {
+        "files": 1,
+        "tokens": 2836,
+        "bytes": 11345
+      },
+      "skill": {
+        "files": 1,
+        "tokens": 8247,
+        "bytes": 33168
+      },
+      "agent": {
+        "files": 3,
+        "tokens": 6672,
+        "bytes": 26712
+      },
+      "asset": {
+        "files": 2,
+        "tokens": 13008,
+        "bytes": 52056
+      },
+      "script": {
+        "files": 10,
+        "tokens": 22360,
+        "bytes": 89650
+      },
+      "reference": {
+        "files": 1,
+        "tokens": 3014,
+        "bytes": 12061
+      }
+    },
+    "files": [
+      {
+        "path": "LICENSE.txt",
+        "role": "license",
+        "bytes": 11345,
+        "ext": ".txt",
+        "executable": false,
+        "lines": 202,
+        "tokens": 2836,
+        "sha1": "d2e37f6556",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "SKILL.md",
+        "role": "skill",
+        "bytes": 33168,
+        "ext": ".md",
+        "executable": false,
+        "lines": 486,
+        "tokens": 8247,
+        "sha1": "17e4755b39",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Skill Creator",
+            "line": 6
+          },
+          {
+            "level": 2,
+            "text": "Communicating with the user",
+            "line": 32
+          },
+          {
+            "level": 2,
+            "text": "Creating a skill",
+            "line": 45
+          },
+          {
+            "level": 3,
+            "text": "Capture Intent",
+            "line": 47
+          },
+          {
+            "level": 3,
+            "text": "Interview and Research",
+            "line": 56
+          },
+          {
+            "level": 3,
+            "text": "Write the SKILL.md",
+            "line": 62
+          },
+          {
+            "level": 3,
+            "text": "Skill Writing Guide",
+            "line": 71
+          },
+          {
+            "level": 3,
+            "text": "Writing Style",
+            "line": 137
+          },
+          {
+            "level": 3,
+            "text": "Test Cases",
+            "line": 141
+          },
+          {
+            "level": 2,
+            "text": "Running and evaluating test cases",
+            "line": 163
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Spawn all runs (with-skill AND baseline) in the same turn",
+            "line": 169
+          },
+          {
+            "level": 3,
+            "text": "Step 2: While runs are in progress, draft assertions",
+            "line": 199
+          },
+          {
+            "level": 3,
+            "text": "Step 3: As runs complete, capture timing data",
+            "line": 207
+          },
+          {
+            "level": 3,
+            "text": "Step 4: Grade, aggregate, and launch the viewer",
+            "line": 221
+          },
+          {
+            "level": 3,
+            "text": "What the user sees in the viewer",
+            "line": 253
+          },
+          {
+            "level": 3,
+            "text": "Step 5: Read the feedback",
+            "line": 267
+          },
+          {
+            "level": 2,
+            "text": "Improving the skill",
+            "line": 292
+          },
+          {
+            "level": 3,
+            "text": "How to think about improvements",
+            "line": 296
+          },
+          {
+            "level": 3,
+            "text": "The iteration loop",
+            "line": 308
+          },
+          {
+            "level": 2,
+            "text": "Advanced: Blind comparison",
+            "line": 325
+          },
+          {
+            "level": 2,
+            "text": "Description Optimization",
+            "line": 333
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Generate trigger eval queries",
+            "line": 337
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Review with user",
+            "line": 360
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Run the optimization loop",
+            "line": 375
+          },
+          {
+            "level": 3,
+            "text": "How skill triggering works",
+            "line": 396
+          },
+          {
+            "level": 3,
+            "text": "Step 4: Apply the result",
+            "line": 402
+          },
+          {
+            "level": 3,
+            "text": "Package and Present (only if `present_files` tool is available)",
+            "line": 408
+          },
+          {
+            "level": 2,
+            "text": "Claude.ai-specific instructions",
+            "line": 420
+          },
+          {
+            "level": 2,
+            "text": "Cowork-Specific Instructions",
+            "line": 445
+          },
+          {
+            "level": 2,
+            "text": "Reference files",
+            "line": 459
+          }
+        ],
+        "title": "Skill Creator",
+        "inbound": 0,
+        "outbound": 20,
+        "depth": 0
+      },
+      {
+        "path": "agents/analyzer.md",
+        "role": "agent",
+        "bytes": 10376,
+        "ext": ".md",
+        "executable": false,
+        "lines": 275,
+        "tokens": 2594,
+        "sha1": "d301e0ba25",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Post-hoc Analyzer Agent",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Role",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Inputs",
+            "line": 9
+          },
+          {
+            "level": 2,
+            "text": "Process",
+            "line": 21
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Read Comparison Result",
+            "line": 23
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Read Both Skills",
+            "line": 29
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Read Both Transcripts",
+            "line": 39
+          },
+          {
+            "level": 3,
+            "text": "Step 4: Analyze Instruction Following",
+            "line": 49
+          },
+          {
+            "level": 3,
+            "text": "Step 5: Identify Winner Strengths",
+            "line": 59
+          },
+          {
+            "level": 3,
+            "text": "Step 6: Identify Loser Weaknesses",
+            "line": 69
+          },
+          {
+            "level": 3,
+            "text": "Step 7: Generate Improvement Suggestions",
+            "line": 77
+          },
+          {
+            "level": 3,
+            "text": "Step 8: Write Analysis Results",
+            "line": 87
+          },
+          {
+            "level": 2,
+            "text": "Output Format",
+            "line": 91
+          },
+          {
+            "level": 2,
+            "text": "Guidelines",
+            "line": 156
+          },
+          {
+            "level": 2,
+            "text": "Categories for Suggestions",
+            "line": 166
+          },
+          {
+            "level": 2,
+            "text": "Priority Levels",
+            "line": 179
+          },
+          {
+            "level": 1,
+            "text": "Analyzing Benchmark Results",
+            "line": 187
+          },
+          {
+            "level": 2,
+            "text": "Role",
+            "line": 191
+          },
+          {
+            "level": 2,
+            "text": "Inputs",
+            "line": 195
+          },
+          {
+            "level": 2,
+            "text": "Process",
+            "line": 203
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Read Benchmark Data",
+            "line": 205
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Analyze Per-Assertion Patterns",
+            "line": 211
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Analyze Cross-Eval Patterns",
+            "line": 220
+          },
+          {
+            "level": 3,
+            "text": "Step 4: Analyze Metrics Patterns",
+            "line": 227
+          },
+          {
+            "level": 3,
+            "text": "Step 5: Generate Notes",
+            "line": 234
+          },
+          {
+            "level": 3,
+            "text": "Step 6: Write Notes",
+            "line": 249
+          },
+          {
+            "level": 2,
+            "text": "Guidelines",
+            "line": 262
+          }
+        ],
+        "title": "Post-hoc Analyzer Agent",
+        "inbound": 3,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "agents/comparator.md",
+        "role": "agent",
+        "bytes": 7287,
+        "ext": ".md",
+        "executable": false,
+        "lines": 203,
+        "tokens": 1820,
+        "sha1": "acc949f15a",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Blind Comparator Agent",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Role",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Inputs",
+            "line": 11
+          },
+          {
+            "level": 2,
+            "text": "Process",
+            "line": 20
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Read Both Outputs",
+            "line": 22
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Understand the Task",
+            "line": 29
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Generate Evaluation Rubric",
+            "line": 37
+          },
+          {
+            "level": 3,
+            "text": "Step 4: Evaluate Each Output Against the Rubric",
+            "line": 60
+          },
+          {
+            "level": 3,
+            "text": "Step 5: Check Assertions (if provided)",
+            "line": 68
+          },
+          {
+            "level": 3,
+            "text": "Step 6: Determine the Winner",
+            "line": 77
+          },
+          {
+            "level": 3,
+            "text": "Step 7: Write Comparison Results",
+            "line": 87
+          },
+          {
+            "level": 2,
+            "text": "Output Format",
+            "line": 91
+          },
+          {
+            "level": 2,
+            "text": "Field Descriptions",
+            "line": 174
+          },
+          {
+            "level": 2,
+            "text": "Guidelines",
+            "line": 194
+          }
+        ],
+        "title": "Blind Comparator Agent",
+        "inbound": 2,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "agents/grader.md",
+        "role": "agent",
+        "bytes": 9049,
+        "ext": ".md",
+        "executable": false,
+        "lines": 224,
+        "tokens": 2258,
+        "sha1": "53ecc3331c",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "Grader Agent",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "Role",
+            "line": 5
+          },
+          {
+            "level": 2,
+            "text": "Inputs",
+            "line": 11
+          },
+          {
+            "level": 2,
+            "text": "Process",
+            "line": 19
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Read the Transcript",
+            "line": 21
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Examine Output Files",
+            "line": 27
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Evaluate Each Assertion",
+            "line": 33
+          },
+          {
+            "level": 3,
+            "text": "Step 4: Extract and Verify Claims",
+            "line": 43
+          },
+          {
+            "level": 3,
+            "text": "Step 5: Read User Notes",
+            "line": 61
+          },
+          {
+            "level": 3,
+            "text": "Step 6: Critique the Evals",
+            "line": 68
+          },
+          {
+            "level": 3,
+            "text": "Step 7: Write Grading Results",
+            "line": 81
+          },
+          {
+            "level": 2,
+            "text": "Grading Criteria",
+            "line": 85
+          },
+          {
+            "level": 3,
+            "text": "Step 8: Read Executor Metrics and Timing",
+            "line": 101
+          },
+          {
+            "level": 2,
+            "text": "Output Format",
+            "line": 106
+          },
+          {
+            "level": 2,
+            "text": "Field Descriptions",
+            "line": 186
+          },
+          {
+            "level": 2,
+            "text": "Guidelines",
+            "line": 216
+          }
+        ],
+        "title": "Grader Agent",
+        "inbound": 2,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "assets/eval_review.html",
+        "role": "asset",
+        "bytes": 7058,
+        "ext": ".html",
+        "executable": false,
+        "lines": 147,
+        "tokens": 1764,
+        "sha1": "4184a5128a",
+        "parsed": true,
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "eval-viewer/generate_review.py",
+        "role": "script",
+        "bytes": 16365,
+        "ext": ".py",
+        "executable": false,
+        "lines": 472,
+        "tokens": 4074,
+        "sha1": "24c4bb583b",
+        "parsed": true,
+        "inbound": 5,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "eval-viewer/viewer.html",
+        "role": "asset",
+        "bytes": 44998,
+        "ext": ".html",
+        "executable": false,
+        "lines": 1326,
+        "tokens": 11244,
+        "sha1": "dbfb50f91f",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "references/schemas.md",
+        "role": "reference",
+        "bytes": 12061,
+        "ext": ".md",
+        "executable": false,
+        "lines": 431,
+        "tokens": 3014,
+        "sha1": "c49b7446c4",
+        "parsed": true,
+        "headings": [
+          {
+            "level": 1,
+            "text": "JSON Schemas",
+            "line": 1
+          },
+          {
+            "level": 2,
+            "text": "evals.json",
+            "line": 7
+          },
+          {
+            "level": 2,
+            "text": "history.json",
+            "line": 39
+          },
+          {
+            "level": 2,
+            "text": "grading.json",
+            "line": 86
+          },
+          {
+            "level": 2,
+            "text": "metrics.json",
+            "line": 163
+          },
+          {
+            "level": 2,
+            "text": "timing.json",
+            "line": 197
+          },
+          {
+            "level": 2,
+            "text": "benchmark.json",
+            "line": 219
+          },
+          {
+            "level": 2,
+            "text": "comparison.json",
+            "line": 309
+          },
+          {
+            "level": 2,
+            "text": "analysis.json",
+            "line": 384
+          }
+        ],
+        "title": "JSON Schemas",
+        "inbound": 3,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "scripts/__init__.py",
+        "role": "script",
+        "bytes": 0,
+        "ext": ".py",
+        "executable": false,
+        "lines": 1,
+        "tokens": 0,
+        "sha1": "da39a3ee5e",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/aggregate_benchmark.py",
+        "role": "script",
+        "bytes": 14386,
+        "ext": ".py",
+        "executable": true,
+        "lines": 402,
+        "tokens": 3571,
+        "sha1": "69f5d596b3",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/generate_report.py",
+        "role": "script",
+        "bytes": 12847,
+        "ext": ".py",
+        "executable": true,
+        "lines": 327,
+        "tokens": 3209,
+        "sha1": "3e690dab47",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/improve_description.py",
+        "role": "script",
+        "bytes": 11116,
+        "ext": ".py",
+        "executable": true,
+        "lines": 248,
+        "tokens": 2777,
+        "sha1": "8eabb4756d",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/package_skill.py",
+        "role": "script",
+        "bytes": 4234,
+        "ext": ".py",
+        "executable": true,
+        "lines": 137,
+        "tokens": 1054,
+        "sha1": "a1d94b3d38",
+        "parsed": true,
+        "inbound": 2,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "scripts/quick_validate.py",
+        "role": "script",
+        "bytes": 3972,
+        "ext": ".py",
+        "executable": true,
+        "lines": 103,
+        "tokens": 993,
+        "sha1": "26ba67ccfe",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      },
+      {
+        "path": "scripts/run_eval.py",
+        "role": "script",
+        "bytes": 11464,
+        "ext": ".py",
+        "executable": true,
+        "lines": 311,
+        "tokens": 2866,
+        "sha1": "3bdf96e4e8",
+        "parsed": true,
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "scripts/run_loop.py",
+        "role": "script",
+        "bytes": 13605,
+        "ext": ".py",
+        "executable": true,
+        "lines": 329,
+        "tokens": 3401,
+        "sha1": "a4b40709be",
+        "parsed": true,
+        "inbound": 1,
+        "outbound": 0,
+        "depth": 1
+      },
+      {
+        "path": "scripts/utils.py",
+        "role": "script",
+        "bytes": 1661,
+        "ext": ".py",
+        "executable": false,
+        "lines": 48,
+        "tokens": 415,
+        "sha1": "81fa84ebe6",
+        "parsed": true,
+        "inbound": 0,
+        "outbound": 0,
+        "depth": null
+      }
+    ],
+    "references": [
+      {
+        "from": "SKILL.md",
+        "to": "eval-viewer/generate_review.py",
+        "line": 17,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "references/schemas.md",
+        "line": 161,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "agents/grader.md",
+        "line": 225,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "references/schemas.md",
+        "line": 231,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "agents/analyzer.md",
+        "line": 234,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "eval-viewer/generate_review.py",
+        "line": 238,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "agents/comparator.md",
+        "line": 327,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "agents/analyzer.md",
+        "line": 327,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "assets/eval_review.html",
+        "line": 364,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "scripts/package_skill.py",
+        "line": 436,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "eval-viewer/generate_review.py",
+        "line": 451,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "scripts/package_skill.py",
+        "line": 453,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "scripts/run_loop.py",
+        "line": 454,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "scripts/run_eval.py",
+        "line": 454,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "agents/grader.md",
+        "line": 463,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "agents/comparator.md",
+        "line": 464,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "agents/analyzer.md",
+        "line": 465,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "references/schemas.md",
+        "line": 468,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "eval-viewer/generate_review.py",
+        "line": 478,
+        "kind": "mention"
+      },
+      {
+        "from": "SKILL.md",
+        "to": "eval-viewer/generate_review.py",
+        "line": 483,
+        "kind": "mention"
+      }
+    ],
+    "orphans": [],
+    "commands": [],
+    "scripts": [
+      {
+        "language": "python",
+        "shebang": "#!/usr/bin/env python3",
+        "doc": "Generate and serve a review page for eval results.",
+        "args": [
+          "--benchmark",
+          "--port",
+          "--previous-workspace",
+          "--skill-name",
+          "--static",
+          "workspace"
+        ],
+        "functions": 13,
+        "imports": [
+          "argparse",
+          "base64",
+          "functools",
+          "http.server",
+          "json",
+          "mimetypes",
+          "os",
+          "pathlib",
+          "re",
+          "signal",
+          "subprocess",
+          "sys",
+          "time",
+          "webbrowser"
+        ],
+        "capabilities": {
+          "subprocess": [
+            22,
+            291,
+            303
+          ],
+          "filesystem-write": [
+            369,
+            433,
+            434
+          ],
+          "browser": [
+            461
+          ],
+          "server": [
+            27
+          ]
+        },
+        "entrypoint": true,
+        "path": "eval-viewer/generate_review.py"
+      },
+      {
+        "language": "python",
+        "shebang": null,
+        "doc": null,
+        "args": [],
+        "functions": 0,
+        "imports": [],
+        "capabilities": {},
+        "entrypoint": false,
+        "path": "scripts/__init__.py"
+      },
+      {
+        "language": "python",
+        "shebang": "#!/usr/bin/env python3",
+        "doc": "Aggregate individual run results into benchmark summary statistics.",
+        "args": [
+          "--output",
+          "--skill-name",
+          "--skill-path",
+          "benchmark_dir"
+        ],
+        "functions": 6,
+        "imports": [
+          "argparse",
+          "datetime",
+          "json",
+          "math",
+          "pathlib",
+          "sys"
+        ],
+        "capabilities": {
+          "filesystem-write": [
+            377,
+            383
+          ]
+        },
+        "entrypoint": true,
+        "path": "scripts/aggregate_benchmark.py"
+      },
+      {
+        "language": "python",
+        "shebang": "#!/usr/bin/env python3",
+        "doc": "Generate an HTML report from run_loop.py output.",
+        "args": [
+          "--skill-name",
+          "-o",
+          "input"
+        ],
+        "functions": 4,
+        "imports": [
+          "argparse",
+          "html",
+          "json",
+          "pathlib",
+          "sys"
+        ],
+        "capabilities": {
+          "network": [
+            39,
+            40,
+            41
+          ],
+          "filesystem-write": [
+            319
+          ]
+        },
+        "entrypoint": true,
+        "path": "scripts/generate_report.py"
+      },
+      {
+        "language": "python",
+        "shebang": "#!/usr/bin/env python3",
+        "doc": "Improve a skill description based on eval results.",
+        "args": [
+          "--eval-results",
+          "--history",
+          "--model",
+          "--skill-path",
+          "--verbose"
+        ],
+        "functions": 3,
+        "imports": [
+          "argparse",
+          "json",
+          "os",
+          "pathlib",
+          "re",
+          "scripts.utils",
+          "subprocess",
+          "sys"
+        ],
+        "capabilities": {
+          "subprocess": [
+            5,
+            13,
+            32,
+            35
+          ],
+          "filesystem-write": [
+            187,
+            189
+          ],
+          "env-secrets": [
+            33
+          ],
+          "llm-api": [
+            5,
+            21,
+            30,
+            45,
+            161
+          ]
+        },
+        "entrypoint": true,
+        "path": "scripts/improve_description.py"
+      },
+      {
+        "language": "python",
+        "shebang": "#!/usr/bin/env python3",
+        "doc": "Skill Packager - Creates a distributable .skill file of a skill folder",
+        "args": [],
+        "functions": 3,
+        "imports": [
+          "fnmatch",
+          "pathlib",
+          "scripts.quick_validate",
+          "sys",
+          "zipfile"
+        ],
+        "capabilities": {
+          "filesystem-write": [
+            83
+          ]
+        },
+        "entrypoint": true,
+        "path": "scripts/package_skill.py"
+      },
+      {
+        "language": "python",
+        "shebang": "#!/usr/bin/env python3",
+        "doc": "Quick validation script for skills - minimal version",
+        "args": [],
+        "functions": 1,
+        "imports": [
+          "os",
+          "pathlib",
+          "re",
+          "sys",
+          "yaml"
+        ],
+        "capabilities": {},
+        "entrypoint": true,
+        "path": "scripts/quick_validate.py"
+      },
+      {
+        "language": "python",
+        "shebang": "#!/usr/bin/env python3",
+        "doc": "Run trigger evaluation for a skill description.",
+        "args": [
+          "--description",
+          "--eval-set",
+          "--model",
+          "--num-workers",
+          "--runs-per-query",
+          "--skill-path",
+          "--timeout",
+          "--trigger-threshold",
+          "--verbose"
+        ],
+        "functions": 4,
+        "imports": [
+          "argparse",
+          "concurrent.futures",
+          "json",
+          "os",
+          "pathlib",
+          "scripts.utils",
+          "select",
+          "subprocess",
+          "sys",
+          "time",
+          "uuid"
+        ],
+        "capabilities": {
+          "subprocess": [
+            12,
+            82,
+            85,
+            87,
+            88
+          ],
+          "filesystem-write": [
+            57,
+            68
+          ],
+          "filesystem-delete": [
+            181
+          ],
+          "env-secrets": [
+            83
+          ],
+          "llm-api": [
+            26,
+            46,
+            80,
+            268
+          ]
+        },
+        "entrypoint": true,
+        "path": "scripts/run_eval.py"
+      },
+      {
+        "language": "python",
+        "shebang": "#!/usr/bin/env python3",
+        "doc": "Run the eval + improve loop until all pass or max iterations reached.",
+        "args": [
+          "--description",
+          "--eval-set",
+          "--holdout",
+          "--max-iterations",
+          "--model",
+          "--num-workers",
+          "--report",
+          "--results-dir",
+          "--runs-per-query",
+          "--skill-path",
+          "--timeout",
+          "--trigger-threshold",
+          "--verbose"
+        ],
+        "functions": 4,
+        "imports": [
+          "argparse",
+          "json",
+          "pathlib",
+          "random",
+          "scripts.generate_report",
+          "scripts.improve_description",
+          "scripts.run_eval",
+          "scripts.utils",
+          "sys",
+          "tempfile",
+          "time",
+          "webbrowser"
+        ],
+        "capabilities": {
+          "filesystem-write": [
+            151,
+            278,
+            287,
+            313,
+            317
+          ],
+          "browser": [
+            279
+          ]
+        },
+        "entrypoint": true,
+        "path": "scripts/run_loop.py"
+      },
+      {
+        "language": "python",
+        "shebang": null,
+        "doc": "Shared utilities for skill-creator scripts.",
+        "args": [],
+        "functions": 1,
+        "imports": [
+          "pathlib"
+        ],
+        "capabilities": {},
+        "entrypoint": false,
+        "path": "scripts/utils.py"
+      }
+    ],
+    "externalLoads": [
+      {
+        "path": "assets/eval_review.html",
+        "hosts": [
+          "https://fonts.googleapis.com",
+          "https://fonts.gstatic.com"
+        ]
+      },
+      {
+        "path": "eval-viewer/viewer.html",
+        "hosts": [
+          "https://cdn.sheetjs.com",
+          "https://fonts.googleapis.com",
+          "https://fonts.gstatic.com"
+        ]
+      }
+    ],
+    "tools": {},
+    "imperatives": {
+      "NEVER": 1,
+      "ALWAYS": 2,
+      "DO NOT": 2
+    },
+    "risks": [
+      {
+        "level": "low",
+        "id": "secret-env",
+        "file": "scripts/improve_description.py",
+        "line": 6,
+        "snippet": "uses the session's Claude Code auth, no separate ANTHROPIC_API_KEY needed)."
+      }
+    ],
+    "warnings": []
+  },
+  "summary": {
+    "headline": "A test lab for skills: draft, A/B against a baseline, grade, review in a browser, repeat",
+    "oneLiner": "Anthropic's skill for writing skills: it interviews you, drafts a SKILL.md, runs it against test prompts with and without the skill in parallel subagents, grades and benchmarks the runs, shows them to you in a local review page, and iterates; a separate loop tunes the trigger description by running hundreds of headless `claude -p` sessions.",
+    "archetype": "workflow",
+    "plain": [
+      "skill-creator helps you make a new skill, or improve one you already have. It starts by asking what the skill should do, when it should kick in and what the output looks like, drafts the instructions file (SKILL.md), and then proposes two or three realistic test requests for you to approve.",
+      "Then it tests the draft the way a scientist would: for every test request it starts two helpers at once, one that has the new skill and one that does not (or that has the old version), so you can see what the skill actually changes. A grading helper checks each result against pass/fail checks, a script turns the grades into a benchmark (pass rate, time, tokens, with averages and spread), and a small page opens in your browser where you click through every output and type feedback. It reads your feedback, rewrites the skill, and runs the whole round again into a new numbered folder until you are happy.",
+      "Optionally it also tunes the one-paragraph description that decides when the skill fires. You review 20 sample requests in a browser page, then a script runs each request three times through headless copies of Claude Code, asks Claude to rewrite the description based on the misses, and repeats up to five times, keeping the version that scores best on requests it was not tuned on. This uses your Claude account and can mean around 300 short Claude sessions, and it briefly writes temporary command files into a `.claude/commands/` folder."
+    ],
+    "forAuthors": [
+      "Archetype: a workflow with orchestrator traits. SKILL.md (486 lines, ~8.2k tokens) is one long ordered procedure (draft, test, grade, review, improve, optimize description, package) with no command table; the entry instruction is to \"figure out where the user is in this process\" (SKILL.md:22). Fresh-context work is pushed into three shipped subagent prompts (agents/grader.md, comparator.md, analyzer.md, ~6.7k tokens together) that are read only when spawned (SKILL.md:461), and all on-disk formats are pinned in references/schemas.md, which also warns that the viewer reads field names exactly (references/schemas.md:305). On-demand reading totals ~9.7k tokens.",
+      "The engineering center is the measurement loop. Every test case gets a with-skill and a baseline run spawned in the same turn (SKILL.md:169-186); timing is captured from task notifications because it \"isn't persisted elsewhere\" (SKILL.md:219); grading.json uses fixed field names the viewer depends on (SKILL.md:225); scripts/aggregate_benchmark.py computes mean, sample stddev, min and max per configuration and a delta (aggregate_benchmark.py:45-64, 206-222); eval-viewer/generate_review.py embeds all outputs (text, images, PDFs, xlsx as base64) into one HTML page and serves it on 127.0.0.1:3117 with a POST endpoint that writes feedback.json (generate_review.py:149-210, 361-369, 443). Description optimization is the most technical part: run_eval.py installs the candidate description as a temporary command file and watches `claude -p --output-format stream-json --include-partial-messages` for a Skill or Read tool call naming it, killing the session at the first unrelated tool call (run_eval.py:51-91, 128-154). run_loop.py does a stratified 60/40 split, hides test scores from the improver, and picks the winner by held-out score (run_loop.py:24-44, 194-198, 216-219). improve_description.py calls `claude -p` as a subprocess, not the Anthropic API, piping a large prompt on stdin and reusing the session's Claude Code auth (improve_description.py:2-6, 20-47).",
+      "Drift worth knowing (inferred from reading; nothing was run): SKILL.md lays out runs as `iteration-N/eval-<name>/with_skill/outputs/` and the grader writes `outputs/../grading.json` (SKILL.md:180, 188; agents/grader.md:83), but aggregate_benchmark.py only globs `eval-*` directories and only counts config directories that contain `run-*` subfolders (aggregate_benchmark.py:78, 105, 111-113), so the documented layout looks like it would aggregate nothing; SKILL.md half-admits this by pointing at manual benchmark.json generation (SKILL.md:231). The viewer, by contrast, discovers any directory with `outputs/` (generate_review.py:60-82). Other drift: SKILL.md calls the evals.json field `assertions` while schemas.md calls it `expectations` (SKILL.md:161, references/schemas.md:20); schemas.md speaks of an \"Improve mode\" and \"Benchmark mode\" that no longer exist (references/schemas.md:41, 221); package_skill.py's usage text points at `utils/package_skill.py` (package_skill.py:6). Scanner note: the filesystem-write hits in quick_validate.py and in aggregate_benchmark.py lines 53/207/288 are `>` comparisons, not writes."
+    ],
+    "touches": [
+      {
+        "kind": "ask",
+        "what": "interview questions about intent, triggers, output format and whether to test; approval of test prompts; review of the trigger eval set; feedback in the viewer"
+      },
+      {
+        "kind": "read",
+        "what": "your conversation history (to capture an existing workflow) and the skill folder you are improving"
+      },
+      {
+        "kind": "write",
+        "what": "the skill itself, plus a `<skill-name>-workspace/` folder next to it with `iteration-N/` runs, eval_metadata.json, timing.json, grading.json, benchmark.json/.md and feedback.json"
+      },
+      {
+        "kind": "spawn",
+        "what": "two subagents per test case (with skill and baseline) in one turn, plus grader, analyzer and blind-comparator subagents"
+      },
+      {
+        "kind": "exec",
+        "what": "bundled Python scripts run as `python -m scripts.<name>` from the skill-creator folder; PyYAML is needed for validation and packaging"
+      },
+      {
+        "kind": "exec",
+        "what": "up to ~300 headless `claude -p` sessions per description-optimization run (20 queries x 3 runs x 5 iterations, 10 at a time) plus one improver call per iteration, with the CLAUDECODE guard variable removed"
+      },
+      {
+        "kind": "write",
+        "what": "temporary `<name>-skill-<id>.md` command files in the nearest `.claude/commands/` above the working directory, deleted after each query"
+      },
+      {
+        "kind": "exec",
+        "what": "sends SIGTERM to whatever process is already listening on port 3117 before starting the viewer (uses `lsof`)"
+      },
+      {
+        "kind": "browser",
+        "what": "opens the eval viewer at http://localhost:3117, the eval-set review page (`open /tmp/eval_review_<name>.html`) and the optimization report from the temp folder"
+      },
+      {
+        "kind": "network",
+        "what": "`claude -p` sessions use your Claude account and quota; the HTML pages load Google Fonts, and the viewer loads SheetJS from cdn.sheetjs.com for spreadsheet previews"
+      },
+      {
+        "kind": "write",
+        "what": "a `.skill` zip of the finished skill, written to the current directory (when packaging is available)"
+      }
+    ]
+  },
+  "trigger": {
+    "explanation": "The 319-character description is two sentences: a three-verb summary (create, modify/improve, measure) and a `Use when` clause listing five concrete jobs: create from scratch, edit or optimize, run evals, benchmark with variance analysis, and optimize the description for triggering. Everything hangs on the noun \"skill\", which keeps it out of general coding and writing prompts. There is no `Not for` clause, so prompts that are about skills but are not authoring (explaining, installing, auditing) can still land here.",
+    "phrases": [
+      {
+        "text": "Create new skills",
+        "role": "what"
+      },
+      {
+        "text": "modify and improve existing skills",
+        "role": "verbs"
+      },
+      {
+        "text": "and measure skill performance",
+        "role": "what"
+      },
+      {
+        "text": "Use when users want to create a skill from scratch",
+        "role": "when"
+      },
+      {
+        "text": "edit, or optimize an existing skill",
+        "role": "verbs"
+      },
+      {
+        "text": "run evals to test a skill",
+        "role": "verbs"
+      },
+      {
+        "text": "benchmark skill performance with variance analysis",
+        "role": "objects"
+      },
+      {
+        "text": "or optimize a skill's description for better triggering accuracy",
+        "role": "objects"
+      }
+    ],
+    "fires": [
+      "I want to make a skill that turns our weekly sales CSVs into a formatted summary deck",
+      "turn what we just did into a skill so I don't have to explain the steps again",
+      "my pdf-forms skill keeps missing checkbox fields, can you test it and improve it?",
+      "run evals on my changelog skill and show me with-skill vs without-skill numbers",
+      "my invoice skill never triggers when people ask about receipts, fix the description",
+      "is v2 of my skill actually better than v1? do a blind comparison",
+      "benchmark my skill with 3 runs per eval and tell me how noisy it is"
+    ],
+    "nearMiss": [
+      {
+        "prompt": "What does the impeccable skill do and when does it trigger?",
+        "why": "Understanding or auditing a skill is not authoring it; with no `Not for` clause, though, the word \"skill\" may still pull it here."
+      },
+      {
+        "prompt": "Write unit tests for my Python package",
+        "why": "Testing, but not of a skill; the description only talks about evals for skills."
+      },
+      {
+        "prompt": "Create a slash command that runs my lint script",
+        "why": "A command file, not a skill folder; close enough in vocabulary that it could misfire."
+      },
+      {
+        "prompt": "Find and install a skill for working with spreadsheets",
+        "why": "Discovering and installing is find-skills' job, not creation."
+      },
+      {
+        "prompt": "Benchmark this SQL query and tell me why it is slow",
+        "why": "Shares \"benchmark ... performance\" but has nothing to do with skills."
+      },
+      {
+        "prompt": "Improve the system prompt for our support chatbot",
+        "why": "Prompt engineering outside the skill format; the improver loop and evals do not apply."
+      }
+    ],
+    "invocation": {
+      "model": true,
+      "user": true
+    },
+    "notes": [
+      "No negative clause. Ironically, SKILL.md tells authors to make descriptions \"a little bit pushy\" to fight undertriggering (SKILL.md:67), but its own description is short and plain; the bundled optimizer (scripts/run_loop.py) could tune it.",
+      "319 characters, about 80 tokens, well under the 1024-character limit that quick_validate.py and the improver both enforce (quick_validate.py:83, improve_description.py:132).",
+      "Overlap risk is with any skill about skills (reviewers, explainers, installers) and with plugin or command authoring helpers.",
+      "No frontmatter beyond `name` and `description`: no version, no argument-hint, no allowed-tools. It is invocable by model and user by default."
+    ]
+  },
+  "loadTiers": [
+    {
+      "tier": "always",
+      "label": "Always in context",
+      "tokens": 84,
+      "files": [
+        "SKILL.md"
+      ],
+      "explanation": "Only the name and the 319-character description sit in the skill index."
+    },
+    {
+      "tier": "trigger",
+      "label": "When it fires",
+      "tokens": 8156,
+      "files": [
+        "SKILL.md"
+      ],
+      "explanation": "The whole 486-line SKILL.md body loads, including the Claude.ai and Cowork sections, description optimization and blind comparison, whether or not this request needs them."
+    },
+    {
+      "tier": "demand",
+      "label": "When a route needs it",
+      "tokens": 9686,
+      "files": [
+        "agents/grader.md",
+        "agents/analyzer.md",
+        "agents/comparator.md",
+        "references/schemas.md",
+        "assets/eval_review.html"
+      ],
+      "explanation": "The three subagent prompts are read when that subagent is spawned (SKILL.md:461); schemas.md when writing evals.json, grading.json or benchmark.json by hand. The model also reads and fills in assets/eval_review.html (~1.8k tokens) during description optimization (SKILL.md:364-369); the scanner counts it as an asset, so it is not in this total."
+    },
+    {
+      "tier": "execute",
+      "label": "Run, never read",
+      "bytes": 89650,
+      "files": [
+        "scripts/aggregate_benchmark.py",
+        "eval-viewer/generate_review.py",
+        "scripts/run_loop.py",
+        "scripts/run_eval.py",
+        "scripts/improve_description.py",
+        "scripts/generate_report.py",
+        "scripts/package_skill.py",
+        "scripts/quick_validate.py",
+        "scripts/utils.py",
+        "scripts/__init__.py",
+        "eval-viewer/viewer.html"
+      ],
+      "explanation": "Ten Python files (~90 KB) are executed, never loaded into context. eval-viewer/viewer.html (~45 KB) is a template that generate_review.py fills with data; it is not counted in the byte total."
+    }
+  ],
+  "routes": [
+    {
+      "id": "create",
+      "label": "Create a new skill",
+      "when": "I want to make a skill that turns meeting notes into Jira tickets",
+      "stops": [
+        "SKILL.md",
+        "references/schemas.md",
+        "agents/grader.md",
+        "scripts/aggregate_benchmark.py",
+        "agents/analyzer.md",
+        "eval-viewer/generate_review.py",
+        "eval-viewer/viewer.html",
+        "scripts/package_skill.py",
+        "scripts/quick_validate.py"
+      ],
+      "explanation": "Interview, draft, run test prompts with and without the skill, grade, benchmark, review in the browser, iterate, then package if `present_files` exists."
+    },
+    {
+      "id": "eval-existing",
+      "label": "Test and improve an existing skill",
+      "when": "my pdf skill keeps missing checkbox fields, test it and fix it",
+      "stops": [
+        "SKILL.md",
+        "references/schemas.md",
+        "agents/grader.md",
+        "scripts/aggregate_benchmark.py",
+        "agents/analyzer.md",
+        "eval-viewer/generate_review.py",
+        "eval-viewer/viewer.html"
+      ],
+      "explanation": "Skips the interview, snapshots the current skill as the `old_skill` baseline (SKILL.md:186), and enters the eval loop with `--previous-workspace` on later rounds."
+    },
+    {
+      "id": "vibe",
+      "label": "Just draft it with me",
+      "when": "I don't need evals, just help me write a quick skill for my commit messages",
+      "stops": [
+        "SKILL.md"
+      ],
+      "explanation": "The user opts out of evaluation (SKILL.md:26), so only SKILL.md's writing guide is used; nothing is spawned or run."
+    },
+    {
+      "id": "optimize-description",
+      "label": "Optimize the trigger description",
+      "when": "my skill never triggers when people ask about receipts, fix the description",
+      "stops": [
+        "SKILL.md",
+        "assets/eval_review.html",
+        "scripts/run_loop.py",
+        "scripts/utils.py",
+        "scripts/run_eval.py",
+        "scripts/improve_description.py",
+        "scripts/generate_report.py"
+      ],
+      "explanation": "20 should and should-not trigger queries are reviewed in a browser page, then run_loop.py runs each query 3 times through `claude -p` and has Claude rewrite the description up to 5 times, choosing the best version by held-out score."
+    },
+    {
+      "id": "blind-compare",
+      "label": "Blind comparison of two versions",
+      "when": "is the new version of my skill actually better than the old one?",
+      "stops": [
+        "SKILL.md",
+        "agents/comparator.md",
+        "agents/analyzer.md",
+        "references/schemas.md"
+      ],
+      "explanation": "An independent subagent scores outputs A and B without knowing which skill made them; an analyzer then opens up the result and explains why the winner won."
+    },
+    {
+      "id": "package",
+      "label": "Package the finished skill",
+      "when": "package my skill so I can install it",
+      "stops": [
+        "SKILL.md",
+        "scripts/package_skill.py",
+        "scripts/quick_validate.py"
+      ],
+      "explanation": "Validates frontmatter and zips the folder (skipping evals/, __pycache__ and similar) into `<name>.skill`; SKILL.md only does this when the `present_files` tool exists (SKILL.md:410)."
+    }
+  ],
+  "commands": [],
+  "lifecycle": [
+    {
+      "n": 1,
+      "kind": "decide",
+      "title": "Work out where the user is",
+      "what": "Decides whether to start from intent, jump into the eval loop for an existing draft, or skip evals entirely because the user just wants to draft together.",
+      "files": [
+        "SKILL.md"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 22,
+          "end": 26
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "kind": "ask",
+      "title": "Capture intent and interview",
+      "what": "Pulls answers from the conversation first if the user says \"turn this into a skill\", then asks what the skill should do, when it should trigger, the output format and whether to set up test cases, plus edge cases and dependencies. Research goes to subagents if MCPs help.",
+      "files": [
+        "SKILL.md"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 47,
+          "end": 60
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "kind": "write",
+      "title": "Draft SKILL.md",
+      "what": "Writes name, a deliberately \"pushy\" description and the body, following the in-file guide on progressive disclosure, the under-500-lines rule and explaining why instead of shouting MUST.",
+      "files": [
+        "SKILL.md"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 62,
+          "end": 69
+        },
+        {
+          "file": "SKILL.md",
+          "line": 96
+        },
+        {
+          "file": "SKILL.md",
+          "line": 139
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "kind": "ask",
+      "title": "Agree on 2-3 test prompts",
+      "what": "Proposes realistic test prompts, asks whether they look right, and saves them to `evals/evals.json` without assertions yet.",
+      "files": [
+        "SKILL.md",
+        "references/schemas.md"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 143,
+          "end": 145
+        },
+        {
+          "file": "references/schemas.md",
+          "line": 7,
+          "end": 35
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "kind": "spawn",
+      "title": "Spawn with-skill and baseline runs together",
+      "what": "For each test case, spawns two subagents in the same turn: one pointed at the skill and one with no skill (or the snapshotted old version). Outputs go to `<skill>-workspace/iteration-1/<eval>/with_skill|without_skill/outputs/` and each eval gets an eval_metadata.json.",
+      "files": [
+        "SKILL.md"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 167,
+          "end": 188
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "kind": "write",
+      "title": "Draft assertions and capture timing while runs go",
+      "what": "Uses the waiting time to write objectively checkable assertions and explain them, and saves `total_tokens` and `duration_ms` from each task notification into timing.json as soon as it arrives, because that data is lost otherwise.",
+      "files": [
+        "SKILL.md"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 199,
+          "end": 205
+        },
+        {
+          "file": "SKILL.md",
+          "line": 209,
+          "end": 219
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "kind": "spawn",
+      "title": "Grade every run",
+      "what": "A grader subagent (or the model inline) follows agents/grader.md: reads transcript and outputs, marks each expectation PASS or FAIL with evidence, checks implicit claims, critiques weak assertions, and writes grading.json with the exact `text`/`passed`/`evidence` fields.",
+      "files": [
+        "agents/grader.md"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 225
+        },
+        {
+          "file": "agents/grader.md",
+          "line": 9
+        },
+        {
+          "file": "agents/grader.md",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "kind": "exec",
+      "title": "Aggregate the benchmark and read it like an analyst",
+      "what": "Runs `python -m scripts.aggregate_benchmark <workspace>/iteration-N --skill-name <name>` to get benchmark.json/.md (pass rate, time, tokens as mean, stddev and delta), then looks for non-discriminating assertions, flaky evals and cost tradeoffs per the analyzer's benchmark section.",
+      "files": [
+        "scripts/aggregate_benchmark.py",
+        "agents/analyzer.md"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 227,
+          "end": 234
+        },
+        {
+          "file": "agents/analyzer.md",
+          "line": 187,
+          "end": 233
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "kind": "exec",
+      "title": "Open the review page",
+      "what": "Starts eval-viewer/generate_review.py in the background with `nohup`, which kills anything on port 3117, serves an Outputs tab and a Benchmark tab, and opens the browser. Headless or Cowork setups use `--static` to write a file instead.",
+      "files": [
+        "eval-viewer/generate_review.py",
+        "eval-viewer/viewer.html"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 236,
+          "end": 251
+        },
+        {
+          "file": "eval-viewer/generate_review.py",
+          "line": 438,
+          "end": 461
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "kind": "ask",
+      "title": "Wait for the human review",
+      "what": "Tells the user what the two tabs are and waits. The user clicks through outputs, types feedback that auto-saves, and presses \"Submit All Reviews\", which writes feedback.json (or downloads it in static mode).",
+      "files": [
+        "eval-viewer/viewer.html"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 251,
+          "end": 265
+        },
+        {
+          "file": "SKILL.md",
+          "line": 452
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "kind": "write",
+      "title": "Improve and run the next iteration",
+      "what": "Reads feedback.json (empty means fine), kills the viewer, generalizes from complaints rather than overfitting, trims what does not pull its weight, bundles scripts that every run reinvented, and reruns everything into `iteration-<N+1>/` with `--previous-workspace`. Stops when the user is happy, feedback is empty, or progress stalls.",
+      "files": [
+        "SKILL.md"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 269,
+          "end": 288
+        },
+        {
+          "file": "SKILL.md",
+          "line": 298,
+          "end": 304
+        },
+        {
+          "file": "SKILL.md",
+          "line": 310,
+          "end": 321
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "kind": "verify",
+      "title": "Offer description tuning, then package",
+      "what": "Offers the description optimization loop once the skill is done, applies `best_description` with a before/after, and, only if the `present_files` tool exists, validates and zips the skill into a `.skill` file.",
+      "files": [
+        "scripts/run_loop.py",
+        "scripts/package_skill.py",
+        "scripts/quick_validate.py"
+      ],
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 335
+        },
+        {
+          "file": "SKILL.md",
+          "line": 402,
+          "end": 416
+        },
+        {
+          "file": "scripts/package_skill.py",
+          "line": 70,
+          "end": 77
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "path": "SKILL.md",
+      "role": "workflow",
+      "explains": "The whole procedure in one 486-line file: user communication, the writing guide, the eval loop, improvement philosophy, blind comparison, description optimization, packaging, and platform-specific overrides for Claude.ai and Cowork."
+    },
+    {
+      "path": "agents/grader.md",
+      "role": "subagent prompt",
+      "explains": "Grades expectations against a transcript and outputs, PASS only with substantive evidence, extracts and verifies implicit claims, critiques weak assertions, and writes grading.json next to the outputs folder."
+    },
+    {
+      "path": "agents/comparator.md",
+      "role": "subagent prompt",
+      "explains": "Blind A/B judge: builds a content and structure rubric for the task, scores both outputs 1-5 per criterion, uses assertions only as secondary evidence, and is told to be decisive about the winner."
+    },
+    {
+      "path": "agents/analyzer.md",
+      "role": "subagent prompt",
+      "explains": "Two jobs in one file: a post-hoc analyzer that reveals which skill won a blind comparison and turns that into prioritized suggestions, and a benchmark analyst that writes data-grounded notes and is forbidden from suggesting improvements."
+    },
+    {
+      "path": "references/schemas.md",
+      "role": "schema reference",
+      "explains": "JSON shapes for evals.json, history.json, grading.json, metrics.json, timing.json, benchmark.json, comparison.json and analysis.json, with a warning that the viewer reads field names exactly."
+    },
+    {
+      "path": "assets/eval_review.html",
+      "role": "decision page template",
+      "explains": "A page for reviewing the trigger eval set. The model replaces three placeholders; the user edits queries, toggles should-trigger and exports `eval_set.json` to Downloads."
+    },
+    {
+      "path": "eval-viewer/viewer.html",
+      "role": "viewer template",
+      "explains": "Single-page review app (Outputs and Benchmark tabs, prev/next with arrow keys, auto-saving feedback) filled in by generate_review.py; previews xlsx with SheetJS from a CDN."
+    },
+    {
+      "path": "LICENSE.txt",
+      "role": "license",
+      "explains": "Apache License 2.0. Nothing points at it and it is never loaded."
+    }
+  ],
+  "scripts": [
+    {
+      "path": "eval-viewer/generate_review.py",
+      "does": "Finds every directory with an `outputs/` folder in a workspace, embeds prompts, outputs (base64 for binaries), grading and optional benchmark into viewer.html, and either writes a static file or serves it with a feedback API.",
+      "invokedAs": "nohup python <skill-creator-path>/eval-viewer/generate_review.py <workspace>/iteration-N --skill-name \"my-skill\" --benchmark <workspace>/iteration-N/benchmark.json [--previous-workspace <prev>] [--static <file>] &",
+      "touches": [
+        "exec: `lsof -ti :3117` then SIGTERM to every PID found",
+        "server: HTTP on 127.0.0.1:3117 (a random port if still busy)",
+        "write: feedback.json in the workspace",
+        "browser: webbrowser.open on start"
+      ],
+      "safety": "Binds to localhost only and needs only the standard library. The port-clearing step kills any process on 3117 without asking, which SKILL.md never mentions. The page loads Google Fonts and SheetJS from public CDNs (SheetJS pinned with an SRI hash)."
+    },
+    {
+      "path": "scripts/aggregate_benchmark.py",
+      "does": "Reads `grading.json` files from `eval-*/<config>/run-*/` folders and writes benchmark.json and benchmark.md with mean, sample stddev, min, max and a delta between the first two configurations.",
+      "invokedAs": "python -m scripts.aggregate_benchmark <workspace>/iteration-N --skill-name <name>",
+      "touches": [
+        "write: benchmark.json and benchmark.md in the given folder"
+      ],
+      "safety": "Local and read-mostly. It expects `run-*` subfolders and `eval-*` names that the SKILL.md layout does not produce, and the delta takes the configs in alphabetical order, so `old_skill` vs `with_skill` comes out with the sign flipped. The scanner's write hits at lines 53, 207 and 288 are comparisons."
+    },
+    {
+      "path": "scripts/run_loop.py",
+      "does": "The description optimizer: stratified train/test split, evaluate, improve, repeat up to --max-iterations, then pick the best description by held-out score. Writes a live auto-refreshing HTML report.",
+      "invokedAs": "python -m scripts.run_loop --eval-set <trigger-eval.json> --skill-path <skill> --model <session-model-id> --max-iterations 5 --verbose",
+      "touches": [
+        "exec: run_eval.py and improve_description.py in-process",
+        "write: report HTML in the system temp folder, optional --results-dir",
+        "browser: opens the report immediately"
+      ],
+      "safety": "No cap on cost besides iterations and queries; defaults give 10 parallel workers and 3 runs per query. Prints the final JSON to stdout; nothing changes SKILL.md, the model applies `best_description` by hand."
+    },
+    {
+      "path": "scripts/run_eval.py",
+      "does": "For each query, writes the candidate description as a temporary command file, runs `claude -p <query>` with stream-json output, and records whether Claude's first tool call is a Skill or Read naming that file.",
+      "invokedAs": "python -m scripts.run_eval --eval-set <file> --skill-path <skill> [--description ...] (normally called by run_loop.py)",
+      "touches": [
+        "write/delete: `<project-root>/.claude/commands/<name>-skill-<id>.md`",
+        "exec: `claude -p` subprocesses with CLAUDECODE removed from the environment",
+        "network: Claude sessions on the user's account"
+      ],
+      "safety": "The project root is the first parent of the current directory that contains `.claude/`; run from the installed skill-creator folder, that is the home directory, so files land in `~/.claude/commands/` (inferred). Files are removed in a `finally` block; a SIGKILL would leave them behind. Sessions are killed at the first tool call that is not Skill or Read."
+    },
+    {
+      "path": "scripts/improve_description.py",
+      "does": "Builds a long prompt with failed and false triggers, previous attempts and the full SKILL.md, sends it to `claude -p --output-format text` on stdin, extracts `<new_description>`, and retries once if the result is over 1024 characters.",
+      "invokedAs": "called by run_loop.py; standalone: python -m scripts.improve_description --eval-results <file> --skill-path <skill> --model <id>",
+      "touches": [
+        "exec: `claude -p` subprocess (300 s timeout)",
+        "write: improve_iter_N.json logs when a log dir is given"
+      ],
+      "safety": "Uses Claude Code's own auth, not ANTHROPIC_API_KEY; the scanner's secret-env hit is the docstring saying so. The guidance for how to write a description lives only in this Python string."
+    },
+    {
+      "path": "scripts/generate_report.py",
+      "does": "Renders run_loop.py history as an HTML table of description attempts with a pass or fail mark per train and test query.",
+      "invokedAs": "imported by run_loop.py; standalone: python -m scripts.generate_report <results.json> -o report.html",
+      "touches": [
+        "write: the report file",
+        "network: Google Fonts link in the generated page"
+      ],
+      "safety": "Escapes text with `html.escape`; harmless."
+    },
+    {
+      "path": "scripts/package_skill.py",
+      "does": "Runs quick_validate, then zips the skill folder into `<folder-name>.skill`, skipping __pycache__, node_modules, *.pyc, .DS_Store and a root-level evals/.",
+      "invokedAs": "python -m scripts.package_skill <path/to/skill-folder> [output-dir]",
+      "touches": [
+        "write: `<name>.skill` in the output dir, or the current directory"
+      ],
+      "safety": "Without an output dir the zip lands in the current directory, which per SKILL.md's `python -m` usage is the skill-creator folder itself. Its usage text still says `utils/package_skill.py`."
+    },
+    {
+      "path": "scripts/quick_validate.py",
+      "does": "Checks frontmatter: YAML parses, only allowed keys, kebab-case name up to 64 characters, description up to 1024 characters with no angle brackets, compatibility up to 500 characters.",
+      "invokedAs": "python -m scripts.quick_validate <skill_directory> (also imported by package_skill.py)",
+      "touches": [
+        "read: SKILL.md"
+      ],
+      "safety": "Read-only; the scanner's write hits are `>` comparisons. Needs PyYAML, which nothing declares. It rejects keys such as `version`, `argument-hint` or `user-invocable` that Claude Code skills commonly use."
+    },
+    {
+      "path": "scripts/utils.py",
+      "does": "parse_skill_md: a small hand-rolled frontmatter reader that returns name, description and full content, handling `>` and `|` block scalars.",
+      "invokedAs": "imported by run_eval.py, improve_description.py and run_loop.py",
+      "touches": [
+        "read: SKILL.md"
+      ],
+      "safety": "Read-only."
+    },
+    {
+      "path": "scripts/__init__.py",
+      "does": "Empty package marker so the scripts can be run as `python -m scripts.<name>`.",
+      "invokedAs": "n/a",
+      "touches": [],
+      "safety": "Empty."
+    }
+  ],
+  "patterns": [
+    {
+      "id": "eval-loop",
+      "name": "Eval loop",
+      "what": "Test prompts, paired runs, grading, a benchmark, human review and a new numbered iteration, repeated until the user is happy, feedback is empty, or progress stalls.",
+      "where": [
+        {
+          "file": "SKILL.md",
+          "line": 163,
+          "end": 288
+        },
+        {
+          "file": "SKILL.md",
+          "line": 308,
+          "end": 321
+        }
+      ],
+      "steal": "Keep each round in its own `iteration-N/` folder and pass the previous one to the viewer, so the reviewer sees last round's output and feedback next to this one."
+    },
+    {
+      "id": "baseline-ab-runs",
+      "name": "With and without baseline in one turn",
+      "what": "Every test case runs twice at once: with the skill and without it (or against a snapshot of the old version), so the benchmark measures what the skill adds rather than how good the model already is.",
+      "where": [
+        {
+          "file": "SKILL.md",
+          "line": 169,
+          "end": 186
+        }
+      ],
+      "steal": "Snapshot with `cp -r` before editing and point the baseline at the snapshot; spawn both arms in the same turn so they finish together and see the same conditions."
+    },
+    {
+      "id": "shipped-subagents",
+      "name": "Shipped subagents",
+      "what": "Grader, blind comparator and analyzer prompts ship in agents/ and are read only when the matching subagent is spawned.",
+      "where": [
+        {
+          "file": "SKILL.md",
+          "line": 459,
+          "end": 465
+        },
+        {
+          "file": "agents/grader.md",
+          "line": 1,
+          "end": 17
+        }
+      ],
+      "steal": "Give each subagent prompt an Inputs section listing the parameters it gets, so the spawning model knows exactly what to pass."
+    },
+    {
+      "id": "fresh-context-review",
+      "name": "Blind comparison",
+      "what": "The comparator gets outputs labelled A and B and is told not to guess which skill made them; only afterwards does the analyzer reveal which was which and explain the win.",
+      "where": [
+        {
+          "file": "agents/comparator.md",
+          "line": 5,
+          "end": 9
+        },
+        {
+          "file": "agents/comparator.md",
+          "line": 196
+        },
+        {
+          "file": "agents/analyzer.md",
+          "line": 7
+        }
+      ],
+      "steal": "Separate judging from explaining: one blind agent picks a winner, a second one with full context explains why."
+    },
+    {
+      "id": "eval-critique",
+      "name": "Grader that critiques the evals",
+      "what": "The grader has a second job: flag assertions that would pass for a wrong output, and outcomes nothing checks. Superficial evidence counts as FAIL.",
+      "where": [
+        {
+          "file": "agents/grader.md",
+          "line": 9
+        },
+        {
+          "file": "agents/grader.md",
+          "line": 68,
+          "end": 79
+        },
+        {
+          "file": "agents/grader.md",
+          "line": 99
+        }
+      ],
+      "steal": "Ask your grader for `eval_feedback` alongside verdicts, with a high bar (\"things the eval author would say good catch about\") so it does not nitpick."
+    },
+    {
+      "id": "schema-first-output",
+      "name": "Schema-first output",
+      "what": "Every artifact (evals.json, grading.json, timing.json, benchmark.json, comparison.json, analysis.json) has a pinned shape in references/schemas.md, because the viewer reads field names exactly.",
+      "where": [
+        {
+          "file": "references/schemas.md",
+          "line": 3
+        },
+        {
+          "file": "references/schemas.md",
+          "line": 305
+        },
+        {
+          "file": "SKILL.md",
+          "line": 225
+        }
+      ],
+      "steal": "Name the wrong variants explicitly (\"not name/met/details\"); models drift to plausible synonyms otherwise."
+    },
+    {
+      "id": "viewer",
+      "name": "Generated review page",
+      "what": "A stdlib Python server embeds all outputs and grades into one HTML page with Outputs and Benchmark tabs, auto-saving feedback that the model reads back as feedback.json.",
+      "where": [
+        {
+          "file": "SKILL.md",
+          "line": 236,
+          "end": 265
+        },
+        {
+          "file": "eval-viewer/generate_review.py",
+          "line": 1,
+          "end": 13
+        },
+        {
+          "file": "eval-viewer/generate_review.py",
+          "line": 361,
+          "end": 369
+        }
+      ],
+      "steal": "Regenerate the page on every GET so refreshing picks up new runs, and have the submit button fall back to a file download when there is no server."
+    },
+    {
+      "id": "decision-page",
+      "name": "Eval-set review page",
+      "what": "Before the expensive optimization loop, the user edits the 20 trigger queries in a local HTML page and exports the approved set as JSON.",
+      "where": [
+        {
+          "file": "SKILL.md",
+          "line": 360,
+          "end": 373
+        },
+        {
+          "file": "assets/eval_review.html",
+          "line": 63
+        }
+      ],
+      "steal": "Put a cheap human check right before an expensive automated loop; \"bad eval queries lead to bad descriptions\"."
+    },
+    {
+      "id": "train-test-holdout",
+      "name": "Held-out description tuning",
+      "what": "The trigger eval set is split 60/40 by should-trigger, the improver never sees test scores, and the winner is chosen by held-out score, so the description generalizes instead of memorizing the queries.",
+      "where": [
+        {
+          "file": "scripts/run_loop.py",
+          "line": 24,
+          "end": 44
+        },
+        {
+          "file": "scripts/run_loop.py",
+          "line": 194,
+          "end": 198
+        },
+        {
+          "file": "scripts/run_loop.py",
+          "line": 216,
+          "end": 219
+        }
+      ],
+      "steal": "Strip test fields from the history you feed an optimizer, and keep iteration 1 (the original) as a candidate so the result cannot regress below where you started."
+    },
+    {
+      "id": "headless-trigger-probe",
+      "name": "Headless trigger probe",
+      "what": "Triggering is measured, not guessed: the candidate description is installed as a throwaway command and `claude -p` stream events are watched for a Skill or Read call naming it, killing the session early.",
+      "where": [
+        {
+          "file": "scripts/run_eval.py",
+          "line": 43,
+          "end": 91
+        },
+        {
+          "file": "scripts/run_eval.py",
+          "line": 128,
+          "end": 154
+        }
+      ],
+      "steal": "Use `--include-partial-messages` and decide on the first `content_block_start`, which saves most of each session's cost; give each probe a unique name so parallel runs do not collide."
+    },
+    {
+      "id": "deterministic-core",
+      "name": "Scripts for the measurable",
+      "what": "Aggregation, run discovery, trigger testing, validation and packaging are scripts; the prose even tells the model to script any assertion that can be checked programmatically.",
+      "where": [
+        {
+          "file": "SKILL.md",
+          "line": 225
+        },
+        {
+          "file": "SKILL.md",
+          "line": 304
+        }
+      ],
+      "steal": "Watch the test transcripts for helper scripts every run writes again, and promote them into scripts/."
+    },
+    {
+      "id": "degraded-mode",
+      "name": "Per-platform fallbacks",
+      "what": "Separate sections say what changes on Claude.ai (no subagents: run serially, skip baselines, benchmarks and blind comparison, review inline) and in Cowork (static viewer, downloaded feedback), plus a `--static` flag for headless setups.",
+      "where": [
+        {
+          "file": "SKILL.md",
+          "line": 420,
+          "end": 441
+        },
+        {
+          "file": "SKILL.md",
+          "line": 445,
+          "end": 455
+        },
+        {
+          "file": "SKILL.md",
+          "line": 247
+        }
+      ],
+      "steal": "List, capability by capability, what to skip and why it stops being meaningful (\"baseline comparisons ... aren't meaningful without subagents\")."
+    },
+    {
+      "id": "hidden-instructions",
+      "name": "Smell: guidance inside a Python string",
+      "what": "The best advice on writing descriptions (imperative phrasing, focus on intent, 100-200 words, do not list queries) lives only in improve_description.py's prompt, invisible to anyone reading the markdown.",
+      "where": [
+        {
+          "file": "scripts/improve_description.py",
+          "line": 127,
+          "end": 142
+        }
+      ],
+      "steal": "If a script's prompt holds rules worth knowing, move them to a reference file and have both the script and SKILL.md point at it."
+    }
+  ],
+  "guardrails": [
+    {
+      "rule": "No malicious or misleading skills",
+      "quote": "skills must not contain malware, exploit code, or any content that could compromise system security",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 113
+      }
+    },
+    {
+      "rule": "Do not hand off testing to another skill",
+      "quote": "Do NOT use `/skill-test` or any other testing skill.",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 165
+      }
+    },
+    {
+      "rule": "Spawn both arms together",
+      "quote": "don't spawn the with-skill runs first and then come back for baselines later",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 171
+      }
+    },
+    {
+      "rule": "Snapshot before editing an existing skill",
+      "quote": "Before editing, snapshot the skill (`cp -r <skill-path> <workspace>/skill-snapshot/`)",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 186
+      }
+    },
+    {
+      "rule": "Exact grading field names",
+      "quote": "The grading.json expectations array must use the fields `text`, `passed`, and `evidence` (not `name`/`met`/`details` or other variants)",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 225
+      }
+    },
+    {
+      "rule": "Use the bundled viewer, not custom HTML",
+      "quote": "please use generate_review.py to create the viewer; there's no need to write custom HTML.",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 249
+      }
+    },
+    {
+      "rule": "Human review comes before self-review",
+      "quote": "GENERATE THE EVAL VIEWER *BEFORE* evaluating inputs yourself.",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 451
+      }
+    },
+    {
+      "rule": "Defer description tuning until the user signs off",
+      "quote": "please save it until you've fully finished making the skill and the user agrees it's in good shape.",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 454
+      }
+    },
+    {
+      "rule": "Package only where it can be delivered",
+      "quote": "Check whether you have access to the `present_files` tool. If you don't, skip this step.",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 410
+      }
+    },
+    {
+      "rule": "Failing is the default for the grader",
+      "quote": "The burden of proof to pass is on the expectation.",
+      "evidence": {
+        "file": "agents/grader.md",
+        "line": 99
+      }
+    },
+    {
+      "rule": "The comparator stays blind",
+      "quote": "DO NOT try to infer which skill produced which output.",
+      "evidence": {
+        "file": "agents/comparator.md",
+        "line": 196
+      }
+    },
+    {
+      "rule": "Benchmark notes describe, they do not prescribe",
+      "quote": "Suggest improvements to the skill (that's for the improvement step, not benchmarking)",
+      "evidence": {
+        "file": "agents/analyzer.md",
+        "line": 271
+      }
+    },
+    {
+      "rule": "The improver cannot see the test set",
+      "quote": "# Strip test scores from history so improvement model can't see them",
+      "evidence": {
+        "file": "scripts/run_loop.py",
+        "line": 194
+      }
+    }
+  ],
+  "risks": [
+    {
+      "level": "medium",
+      "title": "Kills whatever is on port 3117",
+      "detail": "Before starting the viewer, generate_review.py runs `lsof -ti :3117` and sends SIGTERM to every PID it finds, with no prompt and no mention in SKILL.md. Usually that is an old viewer, but it can be any local dev server that happens to use that port.",
+      "evidence": {
+        "file": "eval-viewer/generate_review.py",
+        "line": 288,
+        "end": 306
+      }
+    },
+    {
+      "level": "medium",
+      "title": "Hundreds of headless Claude sessions on your account",
+      "detail": "A default optimization run is 20 queries x 3 runs x up to 5 iterations, so up to ~300 `claude -p` sessions, 10 at a time, plus improver calls with the full SKILL.md. SKILL.md says it \"will take some time\" but never mentions cost or quota. The script removes the CLAUDECODE variable to get past Claude Code's nesting guard, and each session inherits your full environment, settings and MCP servers.",
+      "evidence": {
+        "file": "scripts/run_eval.py",
+        "line": 80,
+        "end": 91
+      }
+    },
+    {
+      "level": "medium",
+      "title": "Temporary command files in a shared `.claude/commands/`",
+      "detail": "run_eval.py writes `<name>-skill-<id>.md` into the first `.claude/` found walking up from the current directory. SKILL.md has you run from the skill-creator folder, which under this install resolves to the home directory, so the files land in `~/.claude/commands/`, where other Claude sessions running at the same time can see them (inferred from the code and the folder layout, not run). They are deleted in a `finally` block, but a hard kill leaves them behind.",
+      "evidence": {
+        "file": "scripts/run_eval.py",
+        "line": 22,
+        "end": 32
+      }
+    },
+    {
+      "level": "medium",
+      "title": "Documented workspace layout does not match the aggregator",
+      "detail": "SKILL.md puts outputs at `iteration-N/<descriptive-eval-name>/with_skill/outputs/` and the grader writes `with_skill/grading.json`, but aggregate_benchmark.py only looks at `eval-*` folders and only counts config folders that contain `run-*` subfolders. Following SKILL.md literally likely yields an empty benchmark, pushing the model to write benchmark.json by hand (inferred from reading, not run).",
+      "evidence": {
+        "file": "scripts/aggregate_benchmark.py",
+        "line": 100,
+        "end": 113
+      }
+    },
+    {
+      "level": "low",
+      "title": "Benchmark delta can flip sign",
+      "detail": "The delta is the first config minus the second in alphabetical folder order. `with_skill` sorts before `without_skill`, so new skills come out right; when improving an existing skill, `old_skill` sorts first and the delta is reported backwards. schemas.md also says configuration must be `with_skill` or `without_skill`, which contradicts SKILL.md's `old_skill`.",
+      "evidence": {
+        "file": "scripts/aggregate_benchmark.py",
+        "line": 206,
+        "end": 216
+      }
+    },
+    {
+      "level": "low",
+      "title": "Browser windows open on their own",
+      "detail": "The viewer, the eval-set page (`open /tmp/...`, macOS only) and the optimization report (opened at loop start, auto-refreshing every 5 s) all launch a browser without asking. That is expected for the workflow, but there is no way to opt out of the viewer launch except `--static`.",
+      "evidence": {
+        "file": "scripts/run_loop.py",
+        "line": 277,
+        "end": 279
+      }
+    },
+    {
+      "level": "low",
+      "title": "Third-party CDN loads in local pages",
+      "detail": "The viewer, eval review page and report pull Google Fonts, and the viewer loads SheetJS from cdn.sheetjs.com (with an SRI hash). Offline, the pages still work but spreadsheet previews do not. The scanner caught only the report's font links.",
+      "evidence": {
+        "file": "eval-viewer/viewer.html",
+        "line": 7,
+        "end": 10
+      }
+    },
+    {
+      "level": "low",
+      "title": "Validator rejects common Claude Code frontmatter",
+      "detail": "quick_validate.py allows only name, description, license, allowed-tools, metadata and compatibility, so packaging fails for skills that use `version`, `argument-hint`, `user-invocable` or `disable-model-invocation`. It also imports PyYAML, which nothing declares.",
+      "evidence": {
+        "file": "scripts/quick_validate.py",
+        "line": 42,
+        "end": 50
+      }
+    },
+    {
+      "level": "low",
+      "title": "Heavy always-on SKILL.md",
+      "detail": "All 8.2k tokens load on every trigger, including Claude.ai and Cowork sections, blind comparison and the full description-optimization procedure, which most requests never reach.",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 420,
+        "end": 455
+      }
+    },
+    {
+      "level": "info",
+      "title": "Scanner secret-env hit dismissed",
+      "detail": "The flagged line is a docstring saying the script needs no separate ANTHROPIC_API_KEY. The real environment handling copies everything except CLAUDECODE into the child process; no secrets are read or logged by the script itself.",
+      "evidence": {
+        "file": "scripts/improve_description.py",
+        "line": 6
+      }
+    },
+    {
+      "level": "info",
+      "title": "No negative trigger",
+      "detail": "The description never says what it is not for, so prompts about explaining, auditing or installing skills can be claimed by it.",
+      "evidence": {
+        "file": "SKILL.md",
+        "line": 3
+      }
+    }
+  ],
+  "scorecard": [
+    {
+      "id": "trigger-precision",
+      "score": 3,
+      "note": "Clear what and when, with the concrete vocabulary authors actually use (evals, benchmark, triggering accuracy), and only 319 characters. But there is no boundary clause, and \"edit ... an existing skill\" plus the bare noun \"skill\" can claim review, explanation or installation prompts.",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 3
+        }
+      ],
+      "fix": "Append a boundary: \"Not for explaining, auditing or installing existing skills, or for writing slash commands or plugins.\""
+    },
+    {
+      "id": "progressive-disclosure",
+      "score": 3,
+      "note": "Agents and schemas are well deferred (\"Read them when you need to spawn the relevant subagent\"), and scripts execute without loading. But SKILL.md is 486 lines, right at its own 500-line limit, and carries blind comparison, the full description-optimization procedure and two platform sections inline.",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 461
+        },
+        {
+          "file": "SKILL.md",
+          "line": 96
+        },
+        {
+          "file": "SKILL.md",
+          "line": 333,
+          "end": 455
+        }
+      ],
+      "fix": "Move Description Optimization and the Claude.ai/Cowork sections into references/ with one-line pointers saying when to load them; that would cut the trigger cost by roughly a third."
+    },
+    {
+      "id": "routing-clarity",
+      "score": 3,
+      "note": "The entry rule is to figure out where the user is in the process, with good examples for a new skill, an existing draft and \"just vibe with me\". Branches are otherwise implicit: new vs existing changes the baseline (line 185-186), and platform sections at the end override steps described earlier without saying so where those steps are.",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 22,
+          "end": 28
+        },
+        {
+          "file": "SKILL.md",
+          "line": 184,
+          "end": 186
+        },
+        {
+          "file": "SKILL.md",
+          "line": 420,
+          "end": 424
+        }
+      ],
+      "fix": "Add a short decision list at the top: new skill, existing skill, no evals, description only, blind comparison, package, each with its section and the platform caveat."
+    },
+    {
+      "id": "instruction-quality",
+      "score": 4,
+      "note": "Unusually good at explaining why: why spawn both arms together, why timing must be saved immediately, why to generalize instead of overfitting, and good versus bad eval queries. Only five capitalized imperatives in total. Points off for casual filler (\"Cool? Cool.\", \"billions a year in economic value\") and for terms that drift between files (assertions vs expectations).",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 219
+        },
+        {
+          "file": "SKILL.md",
+          "line": 298,
+          "end": 304
+        },
+        {
+          "file": "SKILL.md",
+          "line": 350,
+          "end": 358
+        },
+        {
+          "file": "references/schemas.md",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "id": "determinism",
+      "score": 4,
+      "note": "Benchmark stats, run discovery, trigger testing, held-out selection, validation and packaging are all scripted with stated invocations, and the prose tells the model to script checkable assertions. Still hand-made: timing.json, eval_metadata.json and, given the layout drift, possibly benchmark.json itself.",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 225,
+          "end": 231
+        },
+        {
+          "file": "scripts/run_loop.py",
+          "line": 216,
+          "end": 222
+        },
+        {
+          "file": "scripts/aggregate_benchmark.py",
+          "line": 105
+        }
+      ]
+    },
+    {
+      "id": "safety",
+      "score": 2,
+      "note": "Good intent rules (Principle of Lack of Surprise), a localhost-only server, snapshots before editing, and description tuning deferred until the user agrees. But several side effects are never mentioned in the markdown: killing whatever holds port 3117, writing into a possibly global `.claude/commands/`, removing Claude Code's nesting guard, and launching hundreds of billed sessions without a cost estimate or confirmation.",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 113
+        },
+        {
+          "file": "eval-viewer/generate_review.py",
+          "line": 440
+        },
+        {
+          "file": "scripts/run_eval.py",
+          "line": 53,
+          "end": 57
+        },
+        {
+          "file": "SKILL.md",
+          "line": 377
+        }
+      ],
+      "fix": "Before the optimization loop, state the session count and that it uses the user's account and ask to proceed; in the viewer, only kill a port holder that is a previous generate_review.py."
+    },
+    {
+      "id": "user-control",
+      "score": 4,
+      "note": "Asks at the decisions that are the user's: intent, whether to test, approval of test prompts, the eval set in a review page, and qualitative feedback; it lets the user opt out of evals entirely. It does not use a structured question tool and does not say what happens if the user never returns from the viewer.",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 26
+        },
+        {
+          "file": "SKILL.md",
+          "line": 54
+        },
+        {
+          "file": "SKILL.md",
+          "line": 143
+        },
+        {
+          "file": "SKILL.md",
+          "line": 360,
+          "end": 373
+        }
+      ]
+    },
+    {
+      "id": "maintainability",
+      "score": 3,
+      "note": "Clear layout, one schema file, no orphans. But no version in frontmatter, and visible drift: assertions vs expectations, stale \"Improve mode\" and \"Benchmark mode\", `old_skill` vs the allowed configurations, a `utils/` path in package_skill's usage, a `--previous-feedback` flag that generate_review.py does not have, the workspace layout vs the aggregator, and an \"unblids\" typo.",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 161
+        },
+        {
+          "file": "references/schemas.md",
+          "line": 41
+        },
+        {
+          "file": "references/schemas.md",
+          "line": 297
+        },
+        {
+          "file": "scripts/package_skill.py",
+          "line": 6
+        },
+        {
+          "file": "eval-viewer/generate_review.py",
+          "line": 10
+        },
+        {
+          "file": "agents/analyzer.md",
+          "line": 7
+        }
+      ],
+      "fix": "Add a tiny fixture workspace in the documented layout and a test that runs aggregate_benchmark.py and generate_review.py --static on it, so layout and field drift fails loudly."
+    },
+    {
+      "id": "portability",
+      "score": 3,
+      "note": "Rare care for other harnesses: explicit Claude.ai and Cowork sections and a `--static` viewer mode, and the viewer needs only the standard library. But it assumes macOS or Unix (`open`, `lsof`, `select` on pipes), `~/Downloads`, the `claude` CLI, an undeclared PyYAML, and a working directory equal to the skill-creator folder for every `python -m scripts.*` call.",
+      "evidence": [
+        {
+          "file": "SKILL.md",
+          "line": 432
+        },
+        {
+          "file": "SKILL.md",
+          "line": 369,
+          "end": 371
+        },
+        {
+          "file": "scripts/run_eval.py",
+          "line": 108
+        },
+        {
+          "file": "scripts/quick_validate.py",
+          "line": 9
+        }
+      ],
+      "fix": "Declare dependencies (`compatibility: python3, pyyaml, claude CLI`), resolve the skill-creator path in each command (`cd <skill-creator> && python -m ...`), and use Python's `webbrowser` instead of `open`."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "eval",
+      "meaning": "One test case: a realistic prompt, optional input files, a description of a good result and a list of checks. Stored in `evals/evals.json`."
+    },
+    {
+      "term": "assertion / expectation",
+      "meaning": "A pass/fail statement about an output, such as \"the spreadsheet has a SUM formula in B10\". SKILL.md says assertion; the schemas and grader say expectation."
+    },
+    {
+      "term": "baseline",
+      "meaning": "The comparison run: the same prompt with no skill (new skill) or with a snapshot of the previous version (existing skill)."
+    },
+    {
+      "term": "with_skill / without_skill / old_skill",
+      "meaning": "Folder names for the two arms of each test case; the viewer and benchmark group runs by them."
+    },
+    {
+      "term": "workspace",
+      "meaning": "`<skill-name>-workspace/`, a folder next to the skill holding every iteration's runs, grades, benchmark and feedback."
+    },
+    {
+      "term": "iteration",
+      "meaning": "One full round of runs in `iteration-N/`; each improvement to the skill starts a new one."
+    },
+    {
+      "term": "grading.json",
+      "meaning": "The grader's verdict for a run: each expectation with `text`, `passed`, `evidence`, plus a summary, claims and suggestions for better evals."
+    },
+    {
+      "term": "benchmark",
+      "meaning": "benchmark.json/.md: pass rate, time and tokens per configuration as mean, standard deviation, min and max, and the difference between arms."
+    },
+    {
+      "term": "viewer",
+      "meaning": "The local review page from generate_review.py, with an Outputs tab for clicking through results and leaving feedback and a Benchmark tab for the numbers."
+    },
+    {
+      "term": "feedback.json",
+      "meaning": "Your comments per run, saved by the viewer; an empty comment means the output looked fine."
+    },
+    {
+      "term": "blind comparison",
+      "meaning": "An independent judge scores two outputs labelled A and B without knowing which version made which."
+    },
+    {
+      "term": "trigger eval set",
+      "meaning": "About 20 realistic queries marked should-trigger or should-not-trigger, used to test the description rather than the skill's output."
+    },
+    {
+      "term": "trigger rate",
+      "meaning": "The share of the 3 runs of a query in which Claude reached for the skill; at or above 0.5 counts as triggered."
+    },
+    {
+      "term": "holdout",
+      "meaning": "The 40% of trigger queries kept out of tuning and used to pick the best description, so it is not overfitted."
+    },
+    {
+      "term": "`claude -p`",
+      "meaning": "Claude Code's non-interactive print mode; the optimizer runs it as a subprocess for each test query and for each rewrite."
+    },
+    {
+      "term": ".skill file",
+      "meaning": "A zip of the skill folder made by package_skill.py, ready to install or download."
+    }
+  ],
+  "verdict": {
+    "strengths": [
+      "Treats a skill as something to measure: paired with and without runs, graded with evidence, aggregated with variance, then reviewed by a human.",
+      "Description optimization is real engineering: triggering is detected from live `claude -p` stream events, the set is split train/test, the improver is blinded, and the winner is picked on held-out data.",
+      "The grader is told to distrust weak assertions and to fail superficial evidence, which guards against the most common way evals give false confidence.",
+      "Instructions explain their reasons almost everywhere and openly adapt to Claude.ai and Cowork instead of assuming one harness."
+    ],
+    "weaknesses": [
+      "Side effects that live only in code: killing the port-3117 process, writing temp commands into a possibly global `.claude/commands/`, and hundreds of billed sessions with no estimate or confirmation.",
+      "Drift between prose and scripts, worst in the workspace layout the aggregator expects, plus several stale names and flags.",
+      "One 8k-token SKILL.md that loads platform sections and advanced modes on every trigger, and no routing table to jump straight to the relevant one.",
+      "No negative trigger, and a validator that rejects frontmatter many Claude Code skills use."
+    ],
+    "bestFor": "Skill authors on Claude Code (or Cowork) who want evidence that a skill helps and are willing to spend time and tokens on paired runs and a description-tuning loop; for a quick one-off skill, ask it to \"just vibe\" and skip the evals.",
+    "lessons": [
+      "Always run a baseline: a skill's benchmark means nothing without the same prompt run without it.",
+      "Capture data that only exists in the moment (here, task-notification timing) the moment it arrives, and say why in the instructions.",
+      "Put the human review in front of the model's own self-assessment so the person sees the raw outputs first.",
+      "When tuning anything on a small set, hold some out and hide its scores from the optimizer.",
+      "Name the wrong field names explicitly in a schema; models drift to plausible synonyms.",
+      "Keep a fixture workspace and a test for every script that reads files the prose tells the model to write, or the layout will drift."
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.playwright-mcp/
+.tickets/
+.impeccable/
+DESIGN.md
+PRODUCT.md
+skills-plainer/scripts/publish.py
+skills-plainer/scripts/daily.py
+skills-plainer/scripts/rate.py

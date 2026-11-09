@@ -1,0 +1,28 @@
+[
+ {
+  "id": "impeccable",
+  "origin": "showcase",
+  "name": "impeccable",
+  "version": "4.8.0",
+  "headline": "A design director that runs a launcher binary, then loads one playbook per request",
+  "archetype": "router",
+  "analyzedAt": "2026-11-07",
+  "files": 59,
+  "commands": 24,
+  "onTrigger": 2774,
+  "score": 4.0
+ },
+ {
+  "id": "skill-creator",
+  "origin": "showcase",
+  "name": "skill-creator",
+  "version": null,
+  "headline": "A test lab for skills: draft, A/B against a baseline, grade, review in a browser, repeat",
+  "archetype": "workflow",
+  "analyzedAt": "2026-11-07",
+  "files": 18,
+  "commands": 0,
+  "onTrigger": 8156,
+  "score": 3.2
+ }
+]
